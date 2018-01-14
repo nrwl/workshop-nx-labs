@@ -1,1 +1,1 @@
-# workshop-labs-nx-enterprise
+# Lab Instructions for Nx Workshop
