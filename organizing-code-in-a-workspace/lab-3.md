@@ -1,4 +1,4 @@
-# Lab: 
+# Lab: Public APIs for Libs
 
 ## Scenario
 
@@ -25,12 +25,12 @@ export class LogService {
       this._rootUrl = apiConfig.rootUrl;
     }
   }
-  logs(): Observable<EventLog> {
-    return this.http.get<EventLog>(`${this._rootUrl}/api/eventlogs`);
+  logs(): Observable<EventLog[]> {
+    return this.http.get<EventLog[]>(`${this._rootUrl}/api/eventlogs`);
   }
 }
 ```
-6. The `ApiConfig` type is not public (you should see the tslint error). Make it public by adding an export of it to the **backlog** lib `index.ts` file.
+6. The `ApiConfig` type is not public (you should see the tslint error). Make it public by adding an export of it to the **backlog** lib `index.ts` file. Back in the `LogService` make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
 1. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 1. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
 

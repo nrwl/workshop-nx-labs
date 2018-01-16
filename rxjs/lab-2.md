@@ -1,4 +1,4 @@
-# Lab: 
+# Lab: Throttle Assigned to User Field and Transform
 
 ## Scenario
 

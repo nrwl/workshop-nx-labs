@@ -9,6 +9,7 @@
 1. Import the **comments-state** module into the **tickets-list** module.
 1. Create a new interface in the **tickets-list** lib that bridges the `tickets` and `comments` state features.
 1. Use the new interface in the ticket details component for the `Store` generic type.
+1. Dispatch an action to load the comments for the ticket in the component.
 1. Select the comments from the state and use them in the component.
 
 ## Next Lab

@@ -1,4 +1,4 @@
-# Lab: 
+# Lab: Use SwitchMap
 
 ## Scenario
 
