@@ -1,9 +1,9 @@
-# Lab: 
+# Lab: Create a Ticket Timer Observable
 
 ## Scenario
 
 ## Instructions
-1. Use the Angular CLI schematics to generate a new `TicketTimer` service in the `ticket-list-view` lib (make sure you add it to the providers for the ticket list view module).
+1. Use the Angular CLI schematics to generate a new `TicketTimer` service in the `ticket-list-view` lib (make sure you add it to the providers for the ticket list view module by using the `--module` flag).
 1. Create a private class field for a timer and set that equal to a call to `Observable.create`.
 1. Pass that in a function literal with an `observer` arguement. In the body, set up a count variable and use `setInterval` to increment it every `1000ms`. Make a call to `observer.next` in the setInterval callback and send that the counter value.
 1. Capture the handle to the `setInterval` and use it in teardown logic to clean it up (have the function literal return a function that clears the interval with `clearInterval`).
