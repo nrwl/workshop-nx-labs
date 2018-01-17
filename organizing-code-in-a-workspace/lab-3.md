@@ -1,6 +1,9 @@
 # Lab: Public APIs for Libs
 
 ## Scenario
+Just because we put code in a lib doesn't mean that we intend for it to be used outside of that lib. Some lib code should be made public and some should remain internal to the lib. The `index.ts` files in the libs provide a place to export code that is intended to be public.
+
+The time has come to replace the temporary logs data with actual data from the backend API. Create a new model interface for event logs and use the Angular CLI to generate a new service to fetch the logs with the Angular HttpClient. Use the index.ts files to export the bits that need to be used outside of the libs.
 
 ## Instructions
 1. Create a new interface for an `EventLog` data model in the **data-models** lib.
@@ -35,4 +38,4 @@ export class LogService {
 1. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
 
 ## Next Lab
-Go to []()
+Go to [Run the Build Command and NPM Scripts](organizing-code-in-a-workspace/lab-4.md)

@@ -11,4 +11,4 @@
 1. Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field. What do you notice?
 
 ## Next Lab
-Go to []()
+Go to [Throttle Assigned to User Field and Transform](rxjs/lab-2.md)

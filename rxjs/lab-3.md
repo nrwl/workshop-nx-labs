@@ -12,4 +12,4 @@
 1. (Bonus: figure out how to clear the users when value is empty)
 
 ## Next Lab
-Go to []()
+Go to [Create a Ticket Timer Observable](rxjs/lab-4.md)

@@ -10,4 +10,4 @@
 1. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property (Hint: you will need to do an array `map` within the `map` operator). Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
 
 ## Next Lab
-Go to []()
+Go to [Use SwitchMap](rxjs/lab-3.md)

@@ -1,6 +1,15 @@
 # Lab: Create a Lazy Loaded UI Lib
 
 ## Scenario
+The logs app needs some UI that displays the event logs reported by the system. Since apps should just be concerned with configuration and bootstrap, we will want to build this UI in libs.
+
+The `lib` schematic has options that support creating libs that are configured for routing. Create a new lib for the list of logs that is lazy loaded by the logs app and use the Angular CLI schematic to generate a component to render some temporary log data in that new lib.
+
+The Angular CLI schematic for generating a component:
+```console
+ng generate component <name>
+```
+(remember that you can always use the `-h` option flag to list details about the schematic)
 
 ## Instructions
 1. Use the `lib` schematic to create a new lib named **logs-view**. Use the `--routing` and `--lazy` option flags and use the `--parent-module` option set to the **logs** app module file.
@@ -11,4 +20,4 @@
 1. In the `logs-list.component.html`, add a `div` with an `ngFor` to render out the logs. Display the `message` in the div.
 
 ## Next Lab
-Go to []()
+Go to [Public APIs for Libs](organizing-code-in-a-workspace/lab-3.md)

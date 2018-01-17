@@ -13,4 +13,4 @@
 1. (Bonus: set up an array of `Observable<number>` as timers and push the `TicketTimer` service timer into it, then update the template to `ngFor` the timers and use the async pipe to display each timer value. What is this doing? What happens when you navigate away from the ticket?)
 
 ## Next Lab
-Go to []()
+Go to [Track Tickets to Work With a Multi-Cast Observable](rxjs/lab-5.md)
