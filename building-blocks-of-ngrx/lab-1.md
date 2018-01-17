@@ -32,4 +32,4 @@ loadData = this.actions.ofType('LOAD_DATA').pipe(
 1. Refactor the logs list component to dispatch the action to load logs and select the event logs from the store.
 
 ## Next Lab
-Go to [Refactor Tickets State to Use Key/Value Object](building-blocks-of-ngrx/lab-2.md)
+Go to [Refactor Tickets State to Use Key/Value Object](lab-2.md)

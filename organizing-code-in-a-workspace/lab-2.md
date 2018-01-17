@@ -20,4 +20,4 @@ ng generate component <name>
 1. In the `logs-list.component.html`, add a `div` with an `ngFor` to render out the logs. Display the `message` in the div.
 
 ## Next Lab
-Go to [Public APIs for Libs](organizing-code-in-a-workspace/lab-3.md)
+Go to [Public APIs for Libs](lab-3.md)

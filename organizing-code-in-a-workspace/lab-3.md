@@ -38,4 +38,4 @@ export class LogService {
 1. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
 
 ## Next Lab
-Go to [Run the Build Command and NPM Scripts](organizing-code-in-a-workspace/lab-4.md)
+Go to [Run the Build Command and NPM Scripts](lab-4.md)
