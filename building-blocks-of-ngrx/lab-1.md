@@ -1,4 +1,4 @@
-# Lab: 
+# Lab: Create a Root State for Logs
 
 ## Scenario
 
@@ -9,7 +9,7 @@
 1. Update the logs root init object to have an `eventLogs` property set to an empty array.
 1. Change the logs root actions to have unique names for the actions and update the loaded action payload to be an array of `EventLog` objects.
 1. Change the logs root reducer to use the updated type name and use the payload to set the eventLogs state.
-1. Refactor the logs root effects to use `ofType` and `mergeMap` to load the logs.
+1. Refactor the logs root effects to constructor inject the `LogService`, use `ofType` and `mergeMap` to load the logs.
 ```
 @Effect()
 loadData = this.actions.ofType('LOAD_DATA').pipe(
@@ -21,13 +21,15 @@ loadData = this.actions.ofType('LOAD_DATA').pipe(
           payload: logs
         };
       }),
-      catchError(() => Observable.of(null))
+      catchError(() => of(null))
     )
   )
 );
 ```
 8. Import the `LogsStateModule` into the **logs** app module.
-1. Refactor the logs list component to dispatch the action to load logs and select the event logs from the store, using the async pipe to display them in the template.
+1. Move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
+1. Export the `LogsRootState` from the index.ts file in the **logs-state** lib to make it public.
+1. Refactor the logs list component to dispatch the action to load logs and select the event logs from the store.
 
 ## Next Lab
 Go to []()
