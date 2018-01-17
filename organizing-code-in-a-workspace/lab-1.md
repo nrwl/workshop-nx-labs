@@ -24,4 +24,4 @@ ng g <schematic-name> --help
 1. Import the `LogsBackendModule` into the **logs** app module. Use the import path `@tuskdesk-suite/logs-backend`.
 
 ## Next Lab
-Go to [Lab 2](organizing-code-in-a-workspace/lab-2.md)
+Go to [Create a Lazy Loaded UI Lib](organizing-code-in-a-workspace/lab-2.md)

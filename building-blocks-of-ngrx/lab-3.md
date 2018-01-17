@@ -25,4 +25,4 @@ export const selectTicketAsEntities = createSelector(selectTicketState, selectTi
 1. Update the ticket details component to use the `selectTicketAsEntities` selector instead of the function literal of `s => s.ticketsStateModel.tickets`.
 
 ## Next Lab
-Go to []()
+Go to [Create a Feature State for Ticket Comments](building-blocks-of-ngrx/lab-4.md)

@@ -11,4 +11,4 @@
 1. Refactor the ticket details component to select the ticket based on the ticket object key.
 
 ## Next Lab
-Go to []()
+Go to [Refactor Tickets State to use NgRx Entity](building-blocks-of-ngrx/lab-3.md)

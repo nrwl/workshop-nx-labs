@@ -1,6 +1,9 @@
 # Lab: Run the Build Command and NPM Scripts
 
 ## Scenario
+Building apps within an Nx Workspace is done with the Angular CLI `ng build` command and using the `--app` option for targeting the app to build (along with any other options).
+
+Try out building the apps in the project and investigate the build artifacts as you use different build option flags. Also try out the npm scripts that Nx provides to only build affected apps and to format code.
 
 ## Instructions
 1. Run the Angular CLI `build` command and use the `-a` option to target different apps in the workspace by name.
@@ -11,4 +14,4 @@
 1. Test out the npm script `format` by making some formatting changes to an app or lib file and then running the script.
 
 ## Next Lab
-Go to []()
+Go to [RxJs: Add Subscriptions to Ticket Search Form](rxjs/lab-1.md)
