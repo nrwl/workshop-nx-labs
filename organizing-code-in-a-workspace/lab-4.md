@@ -1,4 +1,4 @@
-# Lab: 
+# Lab: Run the Build Command and NPM Scripts
 
 ## Scenario
 
