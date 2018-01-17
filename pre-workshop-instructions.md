@@ -4,7 +4,7 @@
 The following are required to be able to work with the workshop code on your local machine:
 - Node.js
 - Git
-- Angular CLI and Nx Schematics installed globally (can be done with NPM or Yarn)
+- Angular CLI and Nx Schematics installed globally (done with NPM or Yarn)
   ```console
   npm install -g @angular/cli @nrwl/schematics
   ```
@@ -17,7 +17,7 @@ https://github.com/nrwl/workshop-project-nx-enterprise
 #### Pulling down the code
 You can clone the repo onto your local machine by using the following **git** command at the terminal:
 ```console
-git clone https://github.com/nrwl/workshop-project-nx-enterprise
+git clone https://github.com/nrwl/workshop-project-nx-enterprise.git
 ```
 
 #### Installing dependencies
