@@ -13,4 +13,4 @@
 1. (Bonus: add a way to remove a ticket id to work so they can be toggled on and off from the ticket details view.)
 
 ## Next Lab
-Go to [Building Blocks of NgRx: Create a Root State for Logs](building-blocks-of-ngrx/lab-1.md)
+Go to [Building Blocks of NgRx: Create a Root State for Logs](/building-blocks-of-ngrx/lab-1.md)
