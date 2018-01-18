@@ -1,6 +1,9 @@
 # Lab: Refactor Tickets State to use NgRx Entity
 
 ## Scenario
+NgRx entity is designed to take care of data management in your state in a way that is efficient and performant. It handles the store structure part and provides an easy way to write reducer logic.
+
+Refactor the tickets state to use Entity instead of the hand crafted version you wrote last lab. Update the interface, initial state and reducer. Introduce selector functions as they are needed to get to the entities in the state. Take note how some of this will be easier to work with (and provide some additional mutation safety), but for other parts it will add some complexity.
 
 ## Instructions
 1. Update the `TicketsStateModel` interface to extend from `EntityState` and give it a generic of type `Ticket`. Remove the properties in it as they will be handled by the `EntityState`.

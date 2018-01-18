@@ -1,6 +1,9 @@
 # Lab: Create a Root State for Logs
 
 ## Scenario
+We want to implement NgRx to handle the data for the list of event logs in the logs app. To do that we can create an app specific state lib and then create the root state boilerplate using the Nx schematics to scaffold out that code.
+
+Make use of the Nx schematic for ngrx to generate the state files and modify those to store and load event logs, then use the store in the logs list component to display the logs. Configure the logs app to use the new logs state module.
 
 ## Instructions
 1. Create a new lib named **logs-state** using the `lib` schematic.
