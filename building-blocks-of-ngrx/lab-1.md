@@ -38,7 +38,7 @@ loadData = this.actions.ofType('LOAD_DATA').pipe(
 
 8. Import the `LogsStateModule` into the **logs** app module.
 
-1. Move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
+1. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
 1. Export the `LogsRootState` from the index.ts file in the **logs-state** lib to make it public.
 
