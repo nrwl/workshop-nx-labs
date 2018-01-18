@@ -21,7 +21,7 @@ const {
 ```
 
 5. Create selectors that can be used by components to query the tickets from the state. Make a feature selector for the `TicketsStateModel`. Use that to make selectors for tickets and tickets as entities.
-```
+```typescript
 export const selectTicketState = createFeatureSelector<TicketsStateModel>('ticketsStateModel');
 
 export const selectTickets = createSelector(selectTicketState, selectAllTickets);
