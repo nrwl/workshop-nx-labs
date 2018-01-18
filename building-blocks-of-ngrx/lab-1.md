@@ -36,13 +36,11 @@ loadData = this.actions.ofType('LOAD_DATA').pipe(
 );
 ```
 
-8. Import the `LogsStateModule` into the **logs** app module.
+8. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
-1. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
+1. Make use of the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). Also export the `LogsRootState` to make it public so it can be used in the **logs-view** lib.
 
-1. Export the `LogsRootState` from the index.ts file in the **logs-state** lib to make it public.
-
-1. Refactor the logs list component to dispatch the action to load logs and select the event logs from the store.
+1. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs and select the event logs from the store.
 
 ## Viewing in the Browser
 Run the following command(s) in individual terminals:
