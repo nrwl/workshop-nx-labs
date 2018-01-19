@@ -58,6 +58,14 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 4. Use an `*ngFor` template directive to display the list of users for the suggest-on-type feature. Make use of the `User::fullName` for both the label the value to pass to the `setAssignedToUser` class method.
 
+  ```html
+    <ul>
+      <li *ngFor="let user of users" (click)=""> 
+          &lt; USER_NAME HERE &gt;
+      </li>
+    </ul>
+  ```
+  
 <br/>
 
 ### Investigate
