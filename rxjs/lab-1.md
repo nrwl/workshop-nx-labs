@@ -2,23 +2,56 @@
 
 ## Scenario
 
-## Instructions
-1. Subscribe to `assignedToUser.valueChanges` in `ngOnInit` and make a call to the `UserService.users` method (pass in the `value` for the search term). Subscribe to that and wire up the `users` class field to the results.
+In this application, we have search features and a crude dropDown `assignedToUser` menu that is dynamically populated as the user types.
 
-1. Capture the `valueChanges` subscription into a class field and implement `OnDestroy` to unsubscribe from the subscription.
+![lab1_snapshot](https://user-images.githubusercontent.com/210413/35134346-67e08b64-fc9b-11e7-9756-aec2e5e38a7f.jpg)
 
-1. Set `searchResults$` class field equal to a call to `TicketService.searchTickets` in the `submit` class method.
 
-1. Use an `ngFor` to display the list of users for the suggest on type. Make use of the `User.fullName` for display and for the value to pass to the `setAssignedToUser` class method.
+Whenever the customer types in the `assignedToUser` input field, a RESTful service call should be dispatched to load all *matching* users using the current field value. A valid response from the server should be saved to `this.users` and the template should update to show the dynamic query results.
 
-1. Bring up the customer portal project in the browser (make sure the server is running) and search for the letter **a**. Type **nrwl** in the "Assigned To:" field to see the suggest on type.
+Search for Tickets matching the letter **a**. Search for assigned users matching **nrwl** in the "Assigned To:" field. Click **Search**.
 
-1. Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field. What do you notice?
+> Note: you should NOT use the `async` pipe. For now, you will manually subscribe to `assignedToUser` value changes. As such you will also need to manually unsubscribe.
 
-## Viewing in the Browser
+<br/><br/>
+
+### Instructions
+
+1. Subscribe to `assignedToUser.valueChanges` and make a call to the `UserService.users` method (pass in the `value` for the search term). Subscribe to that and wire up the `users` class field to the results.
+
+```js
+ngOnInit() {
+  this.subscription = this.assignedToUser // FINISH this
+}
+```
+
+   >  Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field. What do you notice?
+
+
+2. Save the `subscription` reference and implement `OnDestroy` to unsubscribe from the subscription.
+
+3. The Ticket Search will display a list of matching tickets using `searchResults$ | async`. When the `submit` button is clicked, search for tickets using `TicketService.searchTickets`.
+
+```js
+submit() {
+    this.searchResults$ = this.ticketService.searchTickets(<TICKET-SEARCH-TERM>, <ASSIGNED-USER>);
+}
+```  
+
+4. Use an `ngFor` to display the list of users for the suggest on type. Make use of the `User.fullName` for display and for the value to pass to the `setAssignedToUser` class method.
+
+<br/><br/>
+
+----
+
+#### Running the Application
+
 Run the following command(s) in individual terminals:
-- `npm run server`
-- `npm run customer-portal`
+
+```console
+npm run customer-portal && npm run server
+```
+
 
 Open up the browser to:
 - http://localhost:4203 (customer portal app)
