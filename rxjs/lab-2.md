@@ -130,11 +130,9 @@ Let's fix these **performance issues**!
   
 ### Investigate
 
-This code works great to manage and control REST server qeuries. 
+This ^ code works great to manage and control REST server qeuries. 
 
-There is, however, a **bad practice** code implementation here. 
-
-Be prepared to discuss it!  
+There is, however, a **bad practice** code implementation here. Be prepared to discuss it!  
 >  Don't cheat and look ahead! ;-)
 
 <br/>
@@ -142,6 +140,7 @@ Be prepared to discuss it!
 ----
 
 <br/>
+
 ## Next Lab
 
 Go to RxJS Lab #3: [Use SwitchMap](lab-3.md)
