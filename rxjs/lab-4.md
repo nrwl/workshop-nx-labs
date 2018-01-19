@@ -6,7 +6,8 @@ Now that performance and race-conditions have been addressed, let's explore crea
 
 ![starttimer](https://user-images.githubusercontent.com/210413/35164280-5fc82abc-fd0f-11e7-97f8-e71ef3618c6c.jpg)
 
-We will create a custom Observable that emits a ticker value and publish that in TimerService that uses Observable API.
+We will create a custom Observable that emits a ticker value.<br/>
+And then we will use that observable [in the `TickerTimerService`] as an Observable API.
 
 <br/>
 
