@@ -4,11 +4,10 @@
 
 We fixed the server-thrashing performance issue(s) in the last lab. 
 
-But **now** we have some subtle race-conditions to fix!  
 
 ![lab1_snapshot](https://user-images.githubusercontent.com/210413/35134346-67e08b64-fc9b-11e7-9756-aec2e5e38a7f.jpg)
 
-The server may respond with out-of-order responses to the AssignedUser query. What we need to do is cancel the previous query/search before we issuse another new query to the server!
+But **now** we have some subtle race-conditions to fix!  The server may respond with out-of-order responses to the AssignedUser query. What we need to do is cancel the previous query/search before we issue another new query to the server!
 
 Let's fix these **race-condition issues**!
 
