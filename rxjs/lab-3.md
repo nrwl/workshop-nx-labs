@@ -97,8 +97,6 @@ Let's fix these **race-condition issues**!
   ```  
 
   <br/>   
-  
-1. (Bonus: figure out how to clear the users when value is empty.)
 
 ----
 
