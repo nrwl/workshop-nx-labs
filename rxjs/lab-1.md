@@ -80,7 +80,7 @@ Be prepared to disucss what you notice!
 
 ### Bonus Exercise
 
-Currently the **Find Tickets** input field is used to specify *ticket search criteria*. Changes to the criteria does not dynamically load tickets... you must manually click the "Search" button. Your challenge is to enable dynamic searching for the ticket input field!
+Currently the **Find Tickets** input field is used to specify *ticket search criteria*. Changes to the criteria do not dynamically load tickets... you must manually click the "Search" button. Your challenge is to enable dynamic loading of matching tickets for current the search criteria!
 
 <br/>
 
