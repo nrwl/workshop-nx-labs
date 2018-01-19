@@ -8,9 +8,11 @@ In this application, we have search features and a crude dropDown `assignedToUse
 
 The dropDown menu should dynamically populate as the user types.
 
-Whenever the customer types in the `assignedToUser` input field, a RESTful service call should be dispatched to load all *matching* users using the current field value. A valid response from the server should be saved to `this.users` and the template should update to show the dynamic query results.
+Whenever the customer types in the `assignedToUser` input field, a RESTful service call should be dispatched to load all *matching* users using the current user-search criteria. 
 
-Search for Tickets matching the letter '**a**' for assigned users matching **nrwl** in the "Assigned To:" field. Currently the ticket search is not automatic... you must click the **Search** button.
+
+Let's start with a search for Tickets matching the letter '**a**' for assigned users matching **nrwl** in the "Assigned To:" field. Currently the ticket search is not automatic... you must click the **Search** button.
+
 
 > Note: you should NOT use the `async` pipe. For now, you will manually subscribe to `assignedToUser` value changes. As such you will also need to manually unsubscribe.
 
