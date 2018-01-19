@@ -32,18 +32,14 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
   ```js
     private _timer$ : Observable<number> = Observable.create(observer => {
-      // Add the observable Exection HERE... aka Producer activity
+      // Add the observable Exection HERE... 
+      // (aka Producer activity)
             
-      // Tear down function
-      return () => {
-        
-      };
     });
 
     get timer$() {
       return this._timer$;
     }
-
   ```
  
   >  Note: do not just copy this ^... type it yourself to learn better. 
@@ -72,7 +68,7 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
   ```js
     private _timer$ = Observable.create(observer => {      
-       // ...
+       // ... unchanged code
       
       return () => { 
         <ADD  TEARDOWN LOGIC HERE>
