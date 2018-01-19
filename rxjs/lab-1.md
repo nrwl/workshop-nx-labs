@@ -1,4 +1,4 @@
-# Lab: Add Subscriptions to Ticket Search Form
+# RxJs Lab #1: Add Subscriptions to Ticket Search Form
 
 ## Scenario
 
