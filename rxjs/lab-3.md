@@ -2,32 +2,137 @@
 
 ## Scenario
 
+In the last lab, we fixed the server-thrashing performance issue(s)! 
+
+<br/>
+
+![lab1_snapshot](https://user-images.githubusercontent.com/210413/35134346-67e08b64-fc9b-11e7-9756-aec2e5e38a7f.jpg)
+
+But **now** we have some subtle race-conditions to fix!  The server may respond with out-of-order responses to the AssignedUser query. What we need to do is cancel the previous query/search before we issue another new query to the server!
+
+Let's fix these **race-condition issues**!
+
+<br/>
+
+----
+
 ## Instructions
 1. Refactor the `assignedToUser.valueChanges` pipe of operators to remove the `tap` operator.
 
-1. Use the `switchMap` operator in the `assignedToUser.valueChanges` pipe and return the call to `UserService.users` from that. Make sure it still has the `map` operator for it!
+2. Use the `switchMap` operator in the `assignedToUser.valueChanges` pipe and return the call to `UserService.users` from that. Make sure it still has the `map` operator for it!
 
-1. Remove the `subscribe` to the `valueChanges` that contained the `UserService` call.
 
-1. Get rid of the `subscription` class field and the call to unsubscribe.
+  ```js
+    import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+    
+    
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
 
-1. Change the `users` class field to be an `Observable<string[]>`, set the call to `valueChanges` to that class field.
+        ngOnInit() {
+            this.subscription = this.assignedToUser.valueChanges
+              .pipe(
+                <ADD SWITCHMAP OPERATOR HERE>
+              )
+              .subscribe(value => { ... });
+        }
+        
+     }
+  ```
 
-1. Update the template to use the `async` pipe for the users.
+  <br/>
 
-1. (Bonus: figure out how to clear the users when value is empty.)
 
-## Viewing in the Browser
-Run the following command(s) in individual terminals:
-- `npm run server`
-- `npm run customer-portal`
+2. Change the `users` class field to be an observable
 
-Open up the browser to:
-- http://localhost:4203 (customer portal app)
 
-If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
+  ```js
+    import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+    
+    
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+        users$ : Observable<string>;
+        
+        ngOnInit() {
+          ...
+        }
+        
+     }
+  ```
+  
+  >  Note the use of the `$` suffix in `users$`. This is a recommended notation standard for all observable variables. Also note that this is an observable of a **string**. Why is that ?
 
-*(Note: sometimes a change to TypeScript interfaces will not get picked up by the watch so you may need to stop/restart these if you feel your code is correct but you are getting an error)*
+  <br/>  
+  
+3. Remove the `subscribe` to the `valueChanges` that contained the `UserService` call.
 
-## Next Lab
-Go to [Create a Ticket Timer Observable](lab-4.md)
+
+  ```js
+    import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+    
+    
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+
+        ngOnInit() {
+            this.users$ = this.assignedToUser.valueChanges.pipe(
+                ....                
+            );
+        }
+        
+     }
+  ```
+  
+  >  Note: 
+
+  <br/>     
+     
+4. Get rid of the `subscription` class field and the call to `unsubscribe()` in `ngOnDestroy`.
+
+  <br/>   
+  
+5. Update the template to use the `async` pipe for the users.
+
+ ```html
+    <li *ngFor="let userFullName of (users$ | async)" (click)="setAssignedToUser(userFullName)">
+      {{userFullName}}
+    </li>
+  ```  
+
+  <br/>   
+
+----
+
+<br/>
+
+### Bonus Exercise
+
+When the AssignedUsers search criteria field is empty, how can you auto-clear the dropDown menu?
+
+<br/>
+
+----
+
+<br/>
+
+### Next Lab
+
+Go to RxJS Lab #4: [Create a Ticket Timer Observable](lab-4.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
