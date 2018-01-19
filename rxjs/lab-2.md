@@ -132,7 +132,11 @@ Let's fix these **performance issues**!
 
 This code works great to manage and control REST server qeuries. There is a **bad practice** implementation here. Be prepared to discuss it!  (do not cheat and look ahead!)
 
+<br/>
 
+----
+
+<br/>
 ## Next Lab
 
 Go to RxJS Lab #3: [Use SwitchMap](lab-3.md)
