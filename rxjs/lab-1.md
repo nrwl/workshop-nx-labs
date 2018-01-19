@@ -16,9 +16,11 @@ Let's start with a search for Tickets matching the letter '**a**' for assigned u
 
 > Note: you should NOT use the `async` pipe. For now, you will manually subscribe to `assignedToUser` value changes. As such you will also need to manually unsubscribe.
 
-<br/><br/>
+<br/>
 
 ----
+
+<br/><br/>
 
 ### Code Instructions
 
@@ -56,11 +58,11 @@ Check out the `network` tab in the browser dev tools as you type in the "Assigne
 
 Be prepared to disucss what you notice!
 
-<br/><br/>
-
-
+<br/>
 
 ----
+
+<br/><br/>
 
 ### Running the Application
 
@@ -79,9 +81,11 @@ If you already have one(s) running and you need to restart, you can stop the run
 >  Note: sometimes a change to TypeScript interfaces <u>will not get picked up</u> by the watch. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
 
 
-<br/><br/>
+<br/>
 
 ----
+
+<br/><br/>
 
 ### Next Lab
 
