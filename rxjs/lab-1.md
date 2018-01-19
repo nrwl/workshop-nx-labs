@@ -62,7 +62,7 @@ Be prepared to disucss what you notice!
 Run the following command(s) in individual terminals:
 
 ```console
-npm run customer-portal && npm run server
+npm run server & npm run customer-portal
 ```
 
 
