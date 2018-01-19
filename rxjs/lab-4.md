@@ -15,7 +15,7 @@ And then we will use that observable [in the `TickerTimerService`] as an Observa
 
 <br/>
 
-## Code Instructions
+### Code Instructions
 
 1. Use the Angular CLI to generate a new `TicketTimer` service in the `ticket-list-view` lib.
   
