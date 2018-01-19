@@ -17,7 +17,7 @@
 1. [Create a Root State for Logs](building-blocks-of-ngrx/lab-1.md)
 1. [Refactor Tickets State to Use Key/Value Object](building-blocks-of-ngrx/lab-2.md)
 1. [Refactor Tickets State to use NgRx Entity](building-blocks-of-ngrx/lab-3.md)
-1. [Create a Feature State for Ticket Comments](building-blocks-of-ngrx/lab-4.md
+1. [Create a Feature State for Ticket Comments](building-blocks-of-ngrx/lab-4.md)
 
 
 ----
