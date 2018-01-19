@@ -33,9 +33,7 @@ And then we will use that observable [in the `TickerTimerService`] as an Observa
   ```js
     private timer$ = Observable.create(observer => {
       // Add the observable Exection HERE... aka Producer activity
-      
-      <OBSERVABLE EXECUTION>
-      
+            
       // Tear down function
       return () => {
         
@@ -43,7 +41,7 @@ And then we will use that observable [in the `TickerTimerService`] as an Observa
   });
   ```
  
-  >  Note: do not just copy this... type it yourself to learn better.
+  >  Note: do not just copy this ^... type it yourself to learn better.
   
   <br/>
 
@@ -60,7 +58,7 @@ And then we will use that observable [in the `TickerTimerService`] as an Observa
   });
   ```
  
-  >  Note: do not just copy this... type it yourself to learn better.
+  >  Note: do not just copy this ^... type it yourself to learn better.
   
   <br/>
   
@@ -75,11 +73,13 @@ And then we will use that observable [in the `TickerTimerService`] as an Observa
       };
   });
   ```
+  
+  >  Note: do not just copy this ^... type what is needed yourself; to learn better.
    
   <br/>
   
 
-5. Inject the service into the `TicketDetailsComponent` and set the `timer$` class field to the getter class field from `TicketTimer` service when the "Start a Timer" button is clicked.
+5. Inject the service into the `TicketDetailsComponent` and set the `timer$` class field to the getter class field from `TicketTimerService` service when the "Start a Timer" button is clicked.
 
   ```js
     export class TicketDetailsComponent implements OnInit {
