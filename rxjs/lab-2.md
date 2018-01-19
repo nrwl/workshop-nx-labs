@@ -125,6 +125,8 @@ Let's fix these **performance issues**!
         
      }
   ```
+  
+  >  Question: This ^ code should not compile just yet... what is missing?
 
   <br/>
   
