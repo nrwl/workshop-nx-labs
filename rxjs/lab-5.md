@@ -36,9 +36,6 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
   ```js
     export class TicketTimerService {
     
-       /**
-        *
-        */
       addTicketIdToWork(id:string) {
 
         <SAVE TICKET ID; NO DUPLICATES>
@@ -55,9 +52,6 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
   ```js
      export class TicketDetailsComponent {
 
-       /**
-        *
-        */     
        markToWork(ticketId: string) {                                                                                           
          <CALL TICKET TIMER SERVICE TO ADD TICKET ID>                                                                         
 
@@ -71,9 +65,6 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
      export class TicketDetailsComponent {
         isMarkedToWork$: Observable<boolean>; 
                 
-        /**
-         *
-         */
         ngOnInit() {
           this.route.params.subscribe(params => {
             const id = +params['id'
@@ -115,21 +106,13 @@ The important lesson here is the separation of concerns.
 
   ```js
   export class TicketListComponent implements OnInit {
-    // ... other code here
-    
+    // ... other code here    
     ticketsToWork$: Observable<number>;
 
-
-     /**
-      *
-      */
     constructor(
       private store             : Store<TicketsStateModelState>, 
       private ticketTimerService: TicketTimerService) { }
 
-      /**
-       *
-       */    
      ngOnInit() {
        // ... other existing code.
        this.tickets$ = this.store
