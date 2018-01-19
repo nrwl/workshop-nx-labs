@@ -20,7 +20,7 @@ Let's start with a search for Tickets matching the letter '**a**' for assigned u
 
 ----
 
-### Instructions
+### Code Instructions
 
 1. Subscribe to `assignedToUser.valueChanges` and make a call to the `UserService.users` method (pass in the `value` for the search term). Subscribe to that and wire up the `users` class field to the results.
 
@@ -48,7 +48,7 @@ Let's start with a search for Tickets matching the letter '**a**' for assigned u
 
 <br/>
 
-##### Tip  
+### Investigate
 
 Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field. 
 
