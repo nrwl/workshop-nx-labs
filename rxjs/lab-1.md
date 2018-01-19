@@ -38,6 +38,12 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 2. Save the `subscription` reference and implement `OnDestroy` to unsubscribe from the subscription.
 
+  ```js
+  ngOnDestroy() {
+    // <YOUR - CODE - HERE>
+  }
+  ```
+
 <br/>
 
 3. The Ticket Search will display a list of matching tickets using `searchResults$ | async`. When the `submit` button is clicked, search for tickets using `TicketService.searchTickets`.
