@@ -61,7 +61,7 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
   ```html
     <ul>
       <li *ngFor="let user of users" (click)=""> 
-          &lt; USER_NAME HERE &gt;
+          
       </li>
     </ul>
   ```
