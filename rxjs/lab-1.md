@@ -23,11 +23,9 @@ Search for Tickets matching the letter **a**. Search for assigned users matching
 
   ```js
   ngOnInit() {
-    this.subscription = this.assignedToUser // FINISH this
+    this.subscription = this.assignedToUser... // Update this code
   }
   ```
-
-   >  Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field. What do you notice?
 
 <br/>
 
@@ -45,7 +43,17 @@ Search for Tickets matching the letter **a**. Search for assigned users matching
 
 4. Use an `ngFor` to display the list of users for the suggest on type. Make use of the `User.fullName` for display and for the value to pass to the `setAssignedToUser` class method.
 
+<br/>
+
+##### Tip  
+
+Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field. 
+
+Be prepared to disucss what you notice!
+
 <br/><br/>
+
+
 
 ----
 
@@ -58,8 +66,8 @@ npm run customer-portal && npm run server
 ```
 
 
-Open the **Customer Portal** application with the browser: http://localhost:4203 
-Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
+*  Open the **Customer Portal** application with the browser: http://localhost:4203 
+*  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
 
 If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
