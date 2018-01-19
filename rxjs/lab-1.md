@@ -80,7 +80,7 @@ If you already have one(s) running and you need to restart, you can stop the run
 
 #### Restarting the App Server
 
-Sometimes a change to TypeScript interfaces <u>will not get picked up</u> by the watch. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
+Sometimes a change to TypeScript interfaces or adding new `*.ts` files <u>will not get picked up</u> by the watch processes. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
 
 
 <br/>
