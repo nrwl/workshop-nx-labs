@@ -124,9 +124,9 @@ Add a `console.log()` in the teardown function of your TicketTimerService. Tryin
 *  Set up an array of `Observable<number>` as timers and push the `TicketTimer` service timer into it. 
 *  Then update the template to `ngFor` the timers and use the async pipe to display each timer value. 
 
-Question: What is this doing? 
+**Question:** What is this doing? 
 
-Question: What happens when you navigate away from the ticket?
+**Question:** What happens when you navigate away from the ticket?
 
 
 <br/>
