@@ -117,7 +117,7 @@ Run the application and:
 
 Add a `console.log()` in the teardown function of your TicketTimerService. Trying navigating again and watch the console.
 
-br/>
+<br/>
 
 ### Bonus Exercise
 
