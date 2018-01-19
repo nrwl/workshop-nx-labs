@@ -126,13 +126,11 @@ The important lesson here is the separation of concerns.
   }
 ```
 
-Now update the `TicketListComponent` HTML template to render the current ticket count.
+Now, let's update the `TicketListComponent` HTML template to render the current count of tickets marked as 'to-work'.
 
   ```html
      <div>Tickets to work: {{ ticketsToWork$ | async }}</div> 
   ```
-
-1. (Bonus: add a way to remove a ticket id to work so they can be toggled on and off from the ticket details view.)
 
 ----
 
@@ -140,7 +138,7 @@ Now update the `TicketListComponent` HTML template to render the current ticket 
 
 ### Bonus Exercise
 
-Add a way to remove a ticket from the 'marked to work' list. This will allow the ticket status *to-work* to be toggled ON/OFF.
+Add a way to remove a ticket from the 'marked to work' status list. This will allow the ticket status *to-work* to be toggled ON/OFF.
 
 <br/>
 
