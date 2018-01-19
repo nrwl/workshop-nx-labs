@@ -24,7 +24,7 @@ And then we will use that observable [in the `TickerTimerService`] as an Observa
     ng g s ticketTimer --module TicketListView
   ```
 
-   >  Make sure you add it to the providers for the ticket list view module by using the `--module` flag. Open this module to see how the service has been registered.
+   >  Make sure you add it to the providers for the ticket list view module by using the `--module` flag. Open the `TicketListViewModule` module to see how the service has been registered.
 
 <br/>
 
