@@ -130,7 +130,9 @@ Let's fix these **performance issues**!
   
 ### Investigate
 
-This code works great to manage and control REST server qeuries. There is a **bad practice** implementation here. Be prepared to discuss it!  (do not cheat and look ahead!)
+This code works great to manage and control REST server qeuries. There is a **bad practice** implementation here. Be prepared to discuss it!  
+
+>  Don't cheat and look ahead! ;-)
 
 <br/>
 
