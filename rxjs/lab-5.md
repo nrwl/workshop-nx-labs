@@ -35,6 +35,10 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 
   ```js
     export class TicketTimerService {
+    
+       /**
+        *
+        */
       addTicketIdToWork(id:string) {
 
         <SAVE TICKET ID; NO DUPLICATES>
@@ -50,10 +54,14 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 
   ```js
      export class TicketDetailsComponent {
-        markToWork(ticketId: string) {                                                                                           
-          <CALL TICKET TIMER SERVICE TO ADD TICKET ID>                                                                         
-          
-        }
+
+       /**
+        *
+        */     
+       markToWork(ticketId: string) {                                                                                           
+         <CALL TICKET TIMER SERVICE TO ADD TICKET ID>                                                                         
+
+       }
     }
   ```
 
@@ -62,7 +70,10 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
   ```js
      export class TicketDetailsComponent {
         isMarkedToWork$: Observable<boolean>; 
-        
+                
+        /**
+         *
+         */
         ngOnInit() {
           this.route.params.subscribe(params => {
             const id = +params['id'
@@ -70,9 +81,9 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 
             const allMarkedTickets$ = this.ticketTimerService.ticketsToWork$;
             this.markedToWork$ = allMarkedTickets$.pipe(
-            
+
               <ADD CODE HERE TO FILTER ONLY CURRENT TICKET ID>
-              
+
             );
           });
         }
@@ -108,21 +119,28 @@ The important lesson here is the separation of concerns.
     
     ticketsToWork$: Observable<number>;
 
+
+     /**
+      *
+      */
     constructor(
       private store             : Store<TicketsStateModelState>, 
       private ticketTimerService: TicketTimerService) { }
-    
-    ngOnInit() {
-      // ... other existing code.
-      this.tickets$ = this.store
 
-      const allTicketsToWork$ = this.ticketTimerService.ticketsToWork$;
-      this.ticketsToWork$ = allTicketsToWork$.pipe(
+      /**
+       *
+       */    
+     ngOnInit() {
+       // ... other existing code.
+       this.tickets$ = this.store
 
-        <USE MAP OPERATOR TO EXTRACT NUMBER OF TICKETS IN THE LIST>
+       const allTicketsToWork$ = this.ticketTimerService.ticketsToWork$;
+       this.ticketsToWork$ = allTicketsToWork$.pipe(
 
-      );
-    }
+         <USE MAP OPERATOR TO EXTRACT NUMBER OF TICKETS IN THE LIST>
+
+       );
+     }
   }
 ```
 
