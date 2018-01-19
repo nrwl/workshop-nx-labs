@@ -2,8 +2,9 @@
 
 ## Scenario
 
-We fixed the server-thrashing performance issue(s) in the last lab. 
+In the last lab, we fixed the server-thrashing performance issue(s)! 
 
+<br/>
 
 ![lab1_snapshot](https://user-images.githubusercontent.com/210413/35134346-67e08b64-fc9b-11e7-9756-aec2e5e38a7f.jpg)
 
