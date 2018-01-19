@@ -1,6 +1,6 @@
 # Lab: Create a Ticket Timer Observable
 
-## Scenario
+### Scenario
 
 Now that performance and race-conditions have been addressed, let's explore creating observables and stopping the **observable execution**. We will also explore how an observable can be shared and the impacts of the sharing.
 
