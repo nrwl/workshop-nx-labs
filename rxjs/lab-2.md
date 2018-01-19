@@ -100,8 +100,9 @@ Let's fix these **performance issues**!
 
   <br/>
   
-5. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property (Hint: you will need to do an array `map` within the `map` operator). Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
+5. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
 
+  >  Hint: you will can use `Array.map()` within the observable `map` operator.
 
   ```js
     import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
