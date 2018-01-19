@@ -62,6 +62,15 @@ Be prepared to disucss what you notice!
 
 <br/>
 
+### Bonus Exercise
+
+Currently the ticket criteria input field does not dynamically load tickets... you must manually click the "Search" button. 
+
+Your challenge is to enable dynamic searching for the ticket input field!
+
+<br/>
+
+
 ----
 
 <br/>
