@@ -36,6 +36,8 @@ Let's start with a search for Tickets matching the letter '**a**' for assigned u
 
 2. Save the `subscription` reference and implement `OnDestroy` to unsubscribe from the subscription.
 
+<br/>
+
 3. The Ticket Search will display a list of matching tickets using `searchResults$ | async`. When the `submit` button is clicked, search for tickets using `TicketService.searchTickets`.
 
   ```js
