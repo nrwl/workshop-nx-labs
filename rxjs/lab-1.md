@@ -14,7 +14,11 @@ Whenever the customer types in the `assignedToUser` input field, a RESTful servi
 Let's start with a search for Tickets matching the letter '**a**' for assigned users matching **nrwl** in the "Assigned To:" field. Currently the ticket search is not automatic... you must click the **Search** button.
 
 
-> Note: you should NOT use the `async` pipe. For now, you will manually subscribe to `assignedToUser` value changes. As such you will also need to manually unsubscribe.
+<br/>
+
+----
+
+You should NOT use the `async` pipe. For now, you will manually subscribe to `assignedToUser` value changes. As such you will also need to manually unsubscribe.
 
 <br/>
 
@@ -100,4 +104,4 @@ Sometimes a change to TypeScript interfaces or adding new `*.ts` files <u>will n
 
 ### Next Lab
 
-Go to [Throttle Assigned to User Field and Transform](lab-2.md)
+Go to <u>RxJS Lab #2: [Throttle Assigned to User Field and Transform](lab-2.md)</u>
