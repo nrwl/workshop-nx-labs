@@ -2,28 +2,150 @@
 
 ## Scenario
 
+While searching is working for users and tickets, we have a performance issue!
+
+![lab1_snapshot](https://user-images.githubusercontent.com/210413/35134346-67e08b64-fc9b-11e7-9756-aec2e5e38a7f.jpg)
+
+For each change in the AssignedUsers search criter, we are thrashing the server:
+
+*  We are not waiting until the user appears to have finished changing the criteria.
+*  We are querying the server with possible same query as the most recent, previous query.
+
+
+Let's fix these **performance issues**!
+
+<br/>
+
+----
+
+<br/>
+
 ## Instructions
+
 1. Use the `pipe` method on the `assignedToUser.valueChanges` observable.
 
-1. Make use of the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` to throttle the user lookup.
+  ```js
+    ngOnInit() {
+        this.subscription = this.assignedToUser.valueChanges
+          .pipe(
+            
+          )
+          .subscribe(value => { ... });
+    }  
+  ```
+  
+  <br/>
 
-1. Use the `filter` operator on `assignedToUser` to only allow value strings with a length greater than zero.
+2. Import and use the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` observable... to manage and throttle the user lookup queries.
 
-1. Use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
+  ```js
+    import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+    
+    
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
 
-1. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property (Hint: you will need to do an array `map` within the `map` operator). Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
+        ngOnInit() {
+            this.subscription = this.assignedToUser.valueChanges
+              .pipe(
+                <ADD DEBOUNCETIME AND DISTINCTUNTILCHANGED OPERATORS HERE >
+              )
+              .subscribe(value => { ... });
+        }
+        
+     }
+  ```
 
-## Viewing in the Browser
-Run the following command(s) in individual terminals:
-- `npm run server`
-- `npm run customer-portal`
+  <br/>
 
-Open up the browser to:
-- http://localhost:4203 (customer portal app)
+3. Use the `filter` operator on `assignedToUser` to only allow value strings with a length greater than zero.
 
-If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
+  ```js
+    import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
+    
+    
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
 
-*(Note: sometimes a change to TypeScript interfaces will not get picked up by the watch so you may need to stop/restart these if you feel your code is correct but you are getting an error)*
+        ngOnInit() {
+            this.subscription = this.assignedToUser.valueChanges
+              .pipe(
+                <ADD FILTER OPERATOR HERE>
+              )
+              .subscribe(value => { ... });
+        }
+        
+     }
+  ```
+
+  <br/>
+  
+4. Use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
+
+
+  ```js
+    import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
+    
+    
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+
+        ngOnInit() {
+            this.subscription = this.assignedToUser.valueChanges
+              .pipe(
+                <ADD TAP OPERATOR HERE>
+              )
+              .subscribe(value => { ... });
+        }
+        
+     }
+  ```
+
+  <br/>
+  
+5. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
+
+  >  Hint: you can use `Array.map()` within the observable `map` operator.
+
+  ```js
+    import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
+    
+    
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+
+        ngOnInit() {
+            this.subscription = this.assignedToUser.valueChanges
+              .pipe(
+                ...
+              )
+              .subscribe(value => { 
+                this.userService.users(value)
+                  .pipe(
+                    <ADD MAP OPERATOR HERE>
+                  )
+                  .subscribe(userFullNames => { ... });              
+              });
+        }
+        
+     }
+  ```
+  
+  >  Question: This ^ code should not compile just yet... what is missing?
+
+  <br/>
+  
+### Investigate
+
+This ^ code works great to manage and control REST server qeuries. 
+
+There is, however, a **bad practice** code implementation here.. and an actual super-subtle **race-condition** bug! 
+
+Be prepared to discuss it!  
+>  Don't cheat and look ahead! ;-)
+
+<br/>
+
+----
+
+<br/>
 
 ## Next Lab
-Go to [Use SwitchMap](lab-3.md)
+
+Go to RxJS Lab #3: [Use SwitchMap](lab-3.md)
