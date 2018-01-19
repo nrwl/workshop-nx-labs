@@ -78,7 +78,9 @@ npm run server & npm run customer-portal
 
 If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
->  Note: sometimes a change to TypeScript interfaces <u>will not get picked up</u> by the watch. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
+#### Restarting the App Server
+
+Sometimes a change to TypeScript interfaces <u>will not get picked up</u> by the watch. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
 
 
 <br/>
