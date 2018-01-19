@@ -44,7 +44,7 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
  
   >  Note: do not just copy this ^... type it yourself to learn better. 
   
-  Question: Can you explain why the `get timer$()` is used?
+  **Question:** Can you explain why the `get timer$()` is used?
   
   <br/>
 
@@ -113,11 +113,9 @@ Run the application and:
 *  Start the timer... see the timer values increment. 
 *  Route to a different view and return tot the `TicketDetailsComponent`, confirm the timer is no longer working.
 
-Why does the timer stop on routing?
+**Question:** Why does the timer stop on routing?
 
-Add a `console.log()` in the teardown function of your TicketTimerService. 
-
-Trying navigating again and watch the console.
+Add a `console.log()` in the teardown function of your TicketTimerService. Trying navigating again and watch the console.
 
 br/>
 
