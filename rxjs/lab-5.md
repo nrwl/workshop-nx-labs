@@ -132,8 +132,6 @@ Now, let's update the `TicketListComponent` HTML template to render the current 
      <div>Tickets to work: {{ ticketsToWork$ | async }}</div> 
   ```
 
-----
-
 <br/>
 
 ### Bonus Exercise
