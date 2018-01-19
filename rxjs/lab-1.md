@@ -20,7 +20,7 @@ Let's start with a search for Tickets matching the letter '**a**' for assigned u
 
 ----
 
-<br/><br/>
+<br/>
 
 ### Code Instructions
 
@@ -62,7 +62,7 @@ Be prepared to disucss what you notice!
 
 ----
 
-<br/><br/>
+<br/>
 
 ### Running the Application
 
@@ -85,7 +85,7 @@ If you already have one(s) running and you need to restart, you can stop the run
 
 ----
 
-<br/><br/>
+<br/>
 
 ### Next Lab
 
