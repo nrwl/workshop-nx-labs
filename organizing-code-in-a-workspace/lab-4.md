@@ -19,4 +19,4 @@ Try out building the apps in the project and investigate the build artifacts as 
 1. Test out the npm script `format` by making some formatting changes to an app or lib file and then running the script.
 
 ## Next Lab
-Go to [RxJs: Add Subscriptions to Ticket Search Form](/rxjs/lab-1.md)
+Go to RxJS Lab #1: [Add Subscriptions to Ticket Search Form](/rxjs/lab-1.md)

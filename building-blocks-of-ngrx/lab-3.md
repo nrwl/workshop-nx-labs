@@ -52,4 +52,4 @@ If you already have one(s) running and you need to restart, you can stop the run
 If you have the Redux DevTools extension installed, open that up either under the dev tools panel or via the icon in the top browser bar. Usually you will have to have this open before hitting the site for the data to load, so if you don't see data try refreshing the page.
 
 ## Next Lab
-Go to [Create a Feature State for Ticket Comments](lab-4.md)
+Go to Building Blocks of NgRx Lab #4: [Create a Feature State for Ticket Comments](lab-4.md)
