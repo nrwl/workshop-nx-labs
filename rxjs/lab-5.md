@@ -147,4 +147,4 @@ Add a way to remove a ticket from the 'marked to work' status list. This will al
 
 ### Next Lab
 
-Go to [Building Blocks of NgRx: Create a Root State for Logs](/building-blocks-of-ngrx/lab-1.md)
+Go to Building Blocks of NgRx Lab #1: [Create a Root State for Logs](/building-blocks-of-ngrx/lab-1.md)

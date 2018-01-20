@@ -40,4 +40,4 @@ If you already have one(s) running and you need to restart, you can stop the run
 *(Note: sometimes a change to TypeScript interfaces will not get picked up by the watch so you may need to stop/restart these if you feel your code is correct but you are getting an error)*
 
 ## Next Lab
-Go to [Create a Lazy Loaded UI Lib](lab-2.md)
+Go to Organizing Code in a Workspace Lab #2: [Create a Lazy Loaded UI Lib](lab-2.md)

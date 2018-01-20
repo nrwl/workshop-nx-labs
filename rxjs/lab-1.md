@@ -109,4 +109,4 @@ Sometimes a change to TypeScript interfaces or adding new `*.ts` files <u>will n
 
 ### Next Lab
 
-Go to <u>RxJS Lab #2: [Throttle Assigned to User Field and Transform](lab-2.md)</u>
+Go to RxJS Lab #2: [Throttle Assigned to User Field and Transform](lab-2.md)
