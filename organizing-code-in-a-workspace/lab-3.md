@@ -38,7 +38,7 @@ export class LogService {
 }
 ```
 
-6. The `ApiConfig` type is not public (you should see the tslint error). Make it public by adding an export of it to the **backlog** lib `index.ts` file. Back in the `LogService` make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
+6. The `ApiConfig` type is not public (you should see the tslint error). Make it public by adding an export of it to the **backend** lib `index.ts` file. Back in the `LogService` make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
 
 1. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 
