@@ -1,5 +1,7 @@
 # Lab: Refactor Tickets State to Use Key/Value Object
 
+## Time: 10 minutes
+
 ## Scenario
 The ticket state code is currently storing the tickets as an array. The customer portal app already has the need to pull up individual tickets, and it will eventually need to get updated to support editing tickets. Finding items in an array can be painful and a potential performance hit.
 

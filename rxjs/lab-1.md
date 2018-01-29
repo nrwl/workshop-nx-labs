@@ -1,5 +1,7 @@
 # Lab Exercise: Add Subscriptions to Ticket Search Form
 
+## Time: 15 minutes
+
 ## Scenario
 
 In this application, we have search features and a crude dropDown `assignedToUser` menu. 
@@ -26,9 +28,9 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 ### Code Instructions
 
-1. Subscribe to `assignedToUser.valueChanges` and make a call to the `UserService.users` method (pass in the `value` for the search term). Subscribe to that and wire up the `users` class field to the results.
+1. In `search-tickets.component.ts`, subscribe to `assignedToUser.valueChanges` and make a call to the `UserService.users` method (pass in the `value` for the search term). Subscribe to that and wire up the `users` class field to the results.
 
-  ```js
+  ```typescript
   ngOnInit() {
     this.subscription = this.assignedToUser... // Update this code
   }
@@ -36,9 +38,9 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 <br/>
 
-2. Save the `subscription` reference and implement `OnDestroy` to unsubscribe from the subscription.
+2. In `search-tickets.component.ts`, save the `subscription` reference and implement `OnDestroy` to unsubscribe from the subscription.
 
-  ```js
+  ```typescript
   ngOnDestroy() {
     // <YOUR - CODE - HERE>
   }
@@ -46,9 +48,9 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 <br/>
 
-3. The Ticket Search will display a list of matching tickets using `searchResults$ | async`. When the `submit` button is clicked, search for tickets using `TicketService.searchTickets`.
+3. The Ticket Search will display a list of matching tickets using `searchResults$ | async`. In `search-tickets.component.ts`, when the `submit` button is clicked, search for tickets using `TicketService.searchTickets`. You can use the `FormControl.value` property to get the value from the form field (example: `this.searchTerm.value`).
 
-  ```js
+  ```typescript
   submit() {
       this.searchResults$ = this.ticketService.searchTickets(<TICKET-SEARCH-TERM>, <ASSIGNED-USER>);
   }
@@ -56,7 +58,7 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
   
 <br/>  
 
-4. Use an `*ngFor` template directive to display the list of users for the suggest-on-type feature. Make use of the `User::fullName` for both the label the value to pass to the `setAssignedToUser` class method.
+4. In `search-tickets.component.html`, use an `*ngFor` template directive to display the list of users for the suggest-on-type feature. Make use of the `user.fullName` property for both the label the value to pass to the `setAssignedToUser` class method.
 
   ```html
     <ul>

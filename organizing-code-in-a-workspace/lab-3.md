@@ -1,5 +1,7 @@
 # Lab: Public APIs for Libs
 
+## Time: 15 minutes
+
 ## Scenario
 Just because we put code in a lib doesn't mean that we intend for it to be used outside of that lib. Some lib code should be made public and some should remain internal to the lib. The `index.ts` files in the libs provide a place to export code that is intended to be public.
 
@@ -23,8 +25,8 @@ export interface EventLog {
 
 1. Use the Angular CLI schematic for generating a new service to create a new service named **log** to the **logs-backend** lib with the `-a` option. Include the `module` option to tell the CLI schematic to include the service in the `providers` NgModule metadata (`--module=logs-backend.module.ts`).
 
-1. Set up the `LogService` logic:
-```
+1. Set up the `LogService` logic (can copy/paste this code...but make sure you add the necessary import statements!):
+```typescript
 export class LogService {
   private _rootUrl = '';
   constructor(@Optional() private apiConfig: ApiConfig, private http: HttpClient) {

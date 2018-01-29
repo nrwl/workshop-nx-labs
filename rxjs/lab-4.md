@@ -1,5 +1,7 @@
 # Lab: Create a Ticket Timer Observable
 
+## Time: 30 minutes
+
 ### Scenario
 
 Now that performance and race-conditions have been addressed, let's explore creating observables and stopping the **observable execution**. We will also explore how an observable can be shared and the impacts of the sharing.
@@ -30,7 +32,7 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 2. In the `ticket-timer.service.ts`, create a class field for a `timer$ : Observable<number>` and instantiate a custom observable.
 
-  ```js
+  ```typescript
     private _timer$ : Observable<number> = Observable.create(observer => {
       // Add the observable Exection HERE... 
       // (aka Producer activity)
@@ -48,9 +50,9 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
   
   <br/>
 
-3. In the Observable Execution area, set up a count variable and use `setInterval` to increment it every `1000ms`. Make a call to `observer.next` in the setInterval callback and send that the counter value.
+3. In the `ticket-timer.service.ts`, in the Observable Execution area, set up a count variable and use `setInterval` to increment it every `1000ms`. Make a call to `observer.next` in the setInterval callback and send that the counter value.
 
-  ```js
+  ```typescript
     private timer$ = Observable.create(observer => {      
       let count = 0;
       const intervalId = setInterval(() => {
@@ -64,9 +66,9 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
   
   <br/>
   
-4. Capture the handle to the `setInterval` and use it when creating a *teardown* function. Teardown functions are needed to clean up producer activity when the observer unsubscribes. In this case, we need to return a function that clears the interval with `clearInterval`).
+4. In the `ticket-timer.service.ts`, capture the handle to the `setInterval` and use it when creating a *teardown* function. Teardown functions are needed to clean up producer activity when the observer unsubscribes. In this case, we need to return a function that clears the interval with `clearInterval`).
 
-  ```js
+  ```typescript
     private _timer$ = Observable.create(observer => {      
        // ... unchanged code
       
@@ -81,7 +83,7 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
   <br/>
   
 
-5. Inject the service into the `TicketDetailsComponent` and set the `timer$` class field to the getter class field from `TicketTimerService` service when the "Start a Timer" button is clicked.
+5. In the `ticket-details.component.ts`, inject the service into the `constructor` and set the `timer$` class field to the getter class field from the `TicketTimerService` object when the "Start a Timer" button is clicked.
 
   ```js
     export class TicketDetailsComponent implements OnInit {
@@ -111,7 +113,7 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 Run the application and:
 
 *  Start the timer... see the timer values increment. 
-*  Route to a different view and return tot the `TicketDetailsComponent`, confirm the timer is no longer working.
+*  Route to a different view and return to the `TicketDetailsComponent`, confirm the timer is no longer working.
 
 **Question:** Why does the timer stop on routing?
 
