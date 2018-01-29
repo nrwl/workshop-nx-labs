@@ -1,5 +1,7 @@
 # Lab: Create an App and a Lib
 
+## Time: 10 minutes
+
 ## Scenario
 An Nx Workspace is an Angular CLI project configured to support multiple Angular applications as well as libs. The existing workspace is already set up with a customer portal app, a reporting app, libs for thier UI and business logic and even a Node server API for the data.
 

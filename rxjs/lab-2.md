@@ -1,5 +1,7 @@
 # Lab: Throttle Assigned to User Field and Transform
 
+## Time: 20 minutes
+
 ## Scenario
 
 While searching is working for users and tickets, we have a performance issue!
@@ -22,9 +24,9 @@ Let's fix these **performance issues**!
 
 ## Instructions
 
-1. Use the `pipe` method on the `assignedToUser.valueChanges` observable.
+1. In `search-tickets.component.ts`, use the `pipe` method on the `assignedToUser.valueChanges` observable.
 
-  ```js
+  ```typescript
     ngOnInit() {
         this.subscription = this.assignedToUser.valueChanges
           .pipe(
@@ -36,9 +38,9 @@ Let's fix these **performance issues**!
   
   <br/>
 
-2. Import and use the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` observable... to manage and throttle the user lookup queries.
+2. In `search-tickets.component.ts`, import and use the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` observable... to manage and throttle the user lookup queries. A good suggested debounce time is **500** milliseconds, although feel free to try out different values and see what the user experience is like!
 
-  ```js
+  ```typescript
     import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
     
     
@@ -57,9 +59,9 @@ Let's fix these **performance issues**!
 
   <br/>
 
-3. Use the `filter` operator on `assignedToUser` to only allow value strings with a length greater than zero.
+3. In `search-tickets.component.ts`, use the `filter` operator on `assignedToUser` to only allow value strings with a length greater than zero.
 
-  ```js
+  ```typescript
     import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
     
     
@@ -78,10 +80,10 @@ Let's fix these **performance issues**!
 
   <br/>
   
-4. Use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
+4. In `search-tickets.component.ts`, use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
 
 
-  ```js
+  ```typescript
     import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
     
     
@@ -100,11 +102,11 @@ Let's fix these **performance issues**!
 
   <br/>
   
-5. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
+5. In `search-tickets.component.ts`, use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
 
   >  Hint: you can use `Array.map()` within the observable `map` operator.
 
-  ```js
+  ```typescript
     import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
     
     
@@ -126,9 +128,6 @@ Let's fix these **performance issues**!
         
      }
   ```
-  
-  >  Question: This ^ code should not compile just yet... what is missing?
-
   <br/>
   
 ### Investigate

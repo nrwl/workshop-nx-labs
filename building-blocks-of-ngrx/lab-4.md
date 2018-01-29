@@ -1,5 +1,7 @@
 # Lab: Create a Feature State for Ticket Comments
 
+## Time: 30 minutes
+
 ## Scenario
 Creating feature state for NgRx is very similar to root state, with a few different configurations and selector logic. But feature state can be lazy loaded, making it a good fit for lazy loaded modules. They also allow you to flatten your store structure and group related state together.
 

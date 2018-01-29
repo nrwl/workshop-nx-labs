@@ -1,5 +1,7 @@
 # Lab: Refactor Tickets State to use NgRx Entity
 
+## Time: 20 minutes
+
 ## Scenario
 NgRx entity is designed to take care of data management in your state in a way that is efficient and performant. It handles the store structure part and provides an easy way to write reducer logic.
 

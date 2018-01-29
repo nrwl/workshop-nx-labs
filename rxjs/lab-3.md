@@ -1,5 +1,7 @@
 # Lab: Use SwitchMap
 
+## Time: 20 minutes
+
 ## Scenario
 
 In the last lab, we fixed the server-thrashing performance issue(s)! 
@@ -17,12 +19,12 @@ Let's fix these **race-condition issues**!
 ----
 
 ## Instructions
-1. Refactor the `assignedToUser.valueChanges` pipe of operators to remove the `tap` operator.
+1. In `search-tickets.component.ts`, refactor the `assignedToUser.valueChanges` pipe of operators to remove the `tap` operator.
 
-2. Use the `switchMap` operator in the `assignedToUser.valueChanges` pipe and return the call to `UserService.users` from that. Make sure it still has the `map` operator for it!
+2. In `search-tickets.component.ts`, use the `switchMap` operator in the `assignedToUser.valueChanges` pipe and return the call to `UserService.users` from that. Make sure it still has the `map` operator for it!
 
 
-  ```js
+  ```typescript
     import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
     
     
@@ -42,10 +44,10 @@ Let's fix these **race-condition issues**!
   <br/>
 
 
-2. Change the `users` class field to be an observable
+2. In `search-tickets.component.ts`, change the `users` class field to be an observable
 
 
-  ```js
+  ```typescript
     import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
     
     
@@ -63,10 +65,10 @@ Let's fix these **race-condition issues**!
 
   <br/>  
   
-3. Remove the `subscribe` to the `valueChanges` that contained the `UserService` call.
+3. In `search-tickets.component.ts`, remove the `subscribe` to the `valueChanges` that contained the `UserService` call.
 
 
-  ```js
+  ```typescript
     import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
     
     
@@ -85,11 +87,11 @@ Let's fix these **race-condition issues**!
 
   <br/>     
      
-4. Get rid of the `subscription` class field and the call to `unsubscribe()` in `ngOnDestroy`.
+4. In `search-tickets.component.ts`, get rid of the `subscription` class field and the call to `unsubscribe()` in `ngOnDestroy`.
 
   <br/>   
   
-5. Update the template to use the `async` pipe for the users.
+5. In `search-tickets.component.html`, update the template to use the `async` pipe for the users.
 
  ```html
     <li *ngFor="let userFullName of (users$ | async)" (click)="setAssignedToUser(userFullName)">

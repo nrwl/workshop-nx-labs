@@ -1,5 +1,7 @@
 # Lab: Create a Root State for Logs
 
+## Time: 30 minutes
+
 ## Scenario
 We want to implement NgRx to handle the data for the list of event logs in the logs app. To do that we can create an app specific state lib and then create the root state boilerplate using the Nx schematics to scaffold out that code.
 
@@ -19,7 +21,7 @@ Make use of the Nx schematic for ngrx to generate the state files and modify tho
 1. Change the logs root reducer to use the updated type name and use the payload to set the eventLogs state.
 
 1. Refactor the logs root effects to constructor inject the `LogService`, use `ofType` and `mergeMap` to load the logs.
-```
+```typescript
 @Effect()
 loadData = this.actions.ofType('LOAD_DATA').pipe(
   mergeMap(action =>
