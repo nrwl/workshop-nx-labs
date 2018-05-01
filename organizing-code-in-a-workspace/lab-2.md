@@ -1,8 +1,9 @@
 # Lab: Create a Lazy Loaded UI Lib
 
-## Time: 20 minutes
+### Scenario
 
-## Scenario
+>  Time: 20 minutes
+
 The logs app needs some UI that displays the event logs reported by the system. Since apps should just be concerned with configuration and bootstrap, we will want to build this UI in libs.
 
 The `lib` schematic has options that support creating libs that are configured for routing. Create a new lib for the list of logs that is lazy loaded by the logs app and use the Angular CLI schematic to generate a component to render some temporary log data in that new lib.
@@ -25,11 +26,45 @@ ng generate component <name>
 
 1. In the **logs-view** module, add a route with an empty path to the `LogsListComponent`. Include the `pathMatch: 'full'` property on the route object.
 
+```ts
+@NgModule({
+  imports: [
+    CommonModule, 
+    RouterModule.forChild([
+      { path: '', pathMatch: 'full', component: LogsListComponent }
+    ])
+  ],
+  declarations: [LogsListComponent]
+})
+export class LogsViewModule {}
+```
+
 1. In the `LogsListComponent`, add a class field for logs and in the `ngOnInit` set that to an array of sample log objects (with a `message` property).
+
+```ts
+  ngOnInit() {
+    this.logs = [
+      { message : "log one" },
+      { message : "log two" },
+    ]
+  }
+```
 
 1. In the `logs-list.component.html`, add a `div` with an `ngFor` to render out the logs. Display the `message` in the div.
 
+  ```html
+  <div *ngFor="let log of logs">
+    {{log.message}}
+  </div>
+  ```
+
 ## Viewing in the Browser
+
+<br/>
+
+<img width="1440" alt="screen shot 2018-04-17 at 12 12 00 am" src="https://user-images.githubusercontent.com/210413/38851708-05c87bb6-41d4-11e8-8f1f-971dbfe566fc.png">
+
+
 Run the following command(s) in individual terminals:
 - `npm run server`
 - `npm run logs`

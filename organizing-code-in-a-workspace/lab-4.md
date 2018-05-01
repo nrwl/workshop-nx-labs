@@ -1,8 +1,9 @@
 # Lab: Run the Build Command and NPM Scripts
 
-## Time: 10 minutes
+### Scenario
 
-## Scenario
+>  Time: 10 minutes
+
 Building apps within an Nx Workspace is done with the Angular CLI `ng build` command and using the `--app` option for targeting the app to build (along with any other options).
 
 Try out building the apps in the project and investigate the build artifacts as you use different build option flags. Also try out the npm scripts that Nx provides to only build affected apps and to format code.

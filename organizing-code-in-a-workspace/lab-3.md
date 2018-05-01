@@ -1,13 +1,17 @@
 # Lab: Public APIs for Libs
 
-## Time: 15 minutes
+### Scenario
+> Time: 15 minutes
 
-## Scenario
 Just because we put code in a lib doesn't mean that we intend for it to be used outside of that lib. Some lib code should be made public and some should remain internal to the lib. The `index.ts` files in the libs provide a place to export code that is intended to be public.
 
-The time has come to replace the temporary logs data with actual data from the backend API. Create a new model interface for event logs and use the Angular CLI to generate a new service to fetch the logs with the Angular HttpClient. Use the index.ts files to export the bits that need to be used outside of the libs.
+The time has come to replace the temporary logs data with actual data from the backend API. 
+*  Create a new model interface for event logs, and 
+*  Use the Angular CLI to generate a new service to fetch the logs with the Angular **HttpClient**. 
+*  Use the `index.ts` files to export the bits that need to be used outside of the libs.
 
 ## Instructions
+
 1. Create a new interface for an `EventLog` data model in the **data-models** lib.
 ```
 export interface EventLog {
@@ -25,7 +29,10 @@ export interface EventLog {
 
 1. Use the Angular CLI schematic for generating a new service to create a new service named **log** to the **logs-backend** lib with the `-a` option. Include the `module` option to tell the CLI schematic to include the service in the `providers` NgModule metadata (`--module=logs-backend.module.ts`).
 
-1. Set up the `LogService` logic (can copy/paste this code...but make sure you add the necessary import statements!):
+   >  `ng g service log --a=<lib-name> --module=logs-backend.module.ts`
+
+1. Set up the `LogService` logic:
+
 ```typescript
 export class LogService {
   private _rootUrl = '';
@@ -40,13 +47,46 @@ export class LogService {
 }
 ```
 
-6. The `ApiConfig` type is not public (you should see the tslint error). Make it public by adding an export of it to the **backend** lib `index.ts` file. Back in the `LogService` make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
+   >  Make sure you add the necessary import statements!
 
-1. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
+6. The `ApiConfig` type is not public (you should see the tslint error). Make it **public** by adding an export of it to the **backend** lib `index.ts` file. Back in the `LogService` make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
 
-1. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
+   >  Do not use `import { ApiConfig } from '../../backend/src/api-config';`
+   
+   
+7. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 
-## Viewing in the Browser
+8. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
+
+```ts
+import { LogService } from '@tuskdesk-suite/logs-backend';
+
+@Component({
+  selector: 'app-logs-list',
+  templateUrl: './logs-list.component.html',
+  styleUrls: ['./logs-list.component.scss']
+})
+export class LogsListComponent implements OnInit {
+  logs : EventLog[];  // or use observable...
+
+  constructor(private logService: LogService) {}
+
+  ngOnInit() {
+
+  }
+}  
+  ```
+
+
+---
+
+### Viewing in the Browser
+
+<br/>
+
+<img width="1440" alt="screen shot 2018-04-17 at 12 00 27 am" src="https://user-images.githubusercontent.com/210413/38851293-6dd66dbe-41d2-11e8-8d02-324226819ce7.png">
+
+
 Run the following command(s) in individual terminals:
 - `npm run server`
 - `npm run logs`
