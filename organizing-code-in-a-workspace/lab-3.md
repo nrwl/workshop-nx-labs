@@ -13,7 +13,8 @@ The time has come to replace the temporary logs data with actual data from the b
 ## Instructions
 
 1. Create a new interface for an `EventLog` data model in the **data-models** lib.
-```
+
+```js
 export interface EventLog {
   id: number;
   message: string;
