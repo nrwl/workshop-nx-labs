@@ -30,7 +30,7 @@ export interface EventLog {
 
 1. Use the Angular CLI schematic for generating a new service to create a new service named **log** to the **logs-backend** lib with the `-a` option. Include the `module` option to tell the CLI schematic to include the service in the `providers` NgModule metadata (`--module=logs-backend.module.ts`).
 
-   >  `ng g service log --a=<lib-name> --module=logs-backend.module.ts`
+   >  `ng g service log -a=<lib-name> --module=logs-backend.module.ts`
 
 1. Set up the `LogService` logic:
 
