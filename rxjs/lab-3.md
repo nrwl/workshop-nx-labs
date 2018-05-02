@@ -52,7 +52,7 @@ Let's fix these **race-condition issues**!
     
     
     export class SearchTicketsComponent implements OnInit, OnDestroy  {   
-        users$ : Observable<string>;
+        users$ : Observable<string[]>;
         
         ngOnInit() {
           ...
@@ -61,7 +61,7 @@ Let's fix these **race-condition issues**!
      }
   ```
   
-  >  Note the use of the `$` suffix in `users$`. This is a recommended notation standard for all observable variables. Also note that this is an observable of a **string**. Why is that ?
+  >  Note the use of the `$` suffix in `users$`. This is a recommended notation standard for all observable variables. Also note that this is an observable of a **string[]**. Why is that ?
 
   <br/>  
   
