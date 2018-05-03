@@ -23,6 +23,7 @@ Change `package.json`:
   devDependencies : {
     "@nrwl/schematics": "1.0.3",  
   }  
+}
 ```
 
 ```console
