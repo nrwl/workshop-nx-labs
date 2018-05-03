@@ -116,7 +116,6 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 ```ts
 // file: logs-state/index.ts
 
-import { LogsRootState } from "./src/+state/logs-root.reducer";
 export { LogsStateModule } from "./src/logs-state.module";
 export { LogsRootEffects } from "./src/+state/logs-root.effects";
 export { LoadLogsRoot, LogsRootLoaded } from "./src/+state/logs-root.actions";
