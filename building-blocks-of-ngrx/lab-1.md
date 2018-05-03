@@ -36,42 +36,45 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 ## Instructions
 
 1. Create a new lib named **logs-state** using the `lib` schematic.
-```console
-ng g lib logs-state
-```
+
+  ```console
+  ng g lib logs-state
+  ```
 
 1. Use the `ngrx` schematic to create a new **logsRoot** state. Target the **logs-state** lib by using the `--module` option and path to the module file in logs-state. Use the `--root` flag to make it a root state.
-```console
-ng g ngrx logsRoot --root --module=./libs/logs-state/src/logs-state.module.ts
-```
+
+  ```console
+  ng g ngrx logsRoot --root --module=./libs/logs-state/src/logs-state.module.ts
+  ```
 
 1. Add an `eventLogs` property to the `LogsRoot` interface and set it as the type of an array of `EventLog` objects. Update the logs root init object to have an `eventLogs` property set to an empty array.
 
-##### logs-root.reducer.ts
+  ##### logs-root.reducer.ts
 
-```ts
-export interface LogsRootData {
-  eventLogs: EventLog[];
-}
+  ```ts
+  export interface LogsRootData {
+    eventLogs: EventLog[];
+  }
 
-export interface LogsRootState {
-  readonly logsRoot: LogsRootData;
-}
+  export interface LogsRootState {
+    readonly logsRoot: LogsRootData;
+  }
 
-export const initialState: LogsRootData = {
-  eventLogs: []
-};
-```
+  export const initialState: LogsRootData = {
+    eventLogs: []
+  };
+  ```
 
 1. Change the logs root actions to have unique names for the actions and update the loaded action payload to be an array of `EventLog` objects.
 
-##### logs-root.action.ts
-```ts
-export class LogsRootLoaded implements Action {
-  readonly type = LogsRootActionTypes.LogsRootLoaded;
-  constructor(public payload: EventLog[]) {}
-}
-```
+  ##### logs-root.action.ts
+  
+  ```ts
+  export class LogsRootLoaded implements Action {
+    readonly type = LogsRootActionTypes.LogsRootLoaded;
+    constructor(public payload: EventLog[]) {}
+  }
+  ```
 
 1. Change the logs root reducer to use the updated type name and use the payload to set the eventLogs state.
 
