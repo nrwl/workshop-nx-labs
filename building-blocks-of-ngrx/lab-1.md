@@ -41,13 +41,13 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
   ng g lib logs-state
   ```
 
-1. Use the `ngrx` schematic to create a new **logsRoot** state. Target the **logs-state** lib by using the `--module` option and path to the module file in logs-state. Use the `--root` flag to make it a root state.
+2. Use the `ngrx` schematic to create a new **logsRoot** state. Target the **logs-state** lib by using the `--module` option and path to the module file in logs-state. Use the `--root` flag to make it a root state.
 
   ```console
   ng g ngrx logsRoot --root --module=./libs/logs-state/src/logs-state.module.ts
   ```
 
-1. Add an `eventLogs` property to the `LogsRoot` interface and set it as the type of an array of `EventLog` objects. Update the logs root init object to have an `eventLogs` property set to an empty array.
+3. Add an `eventLogs` property to the `LogsRoot` interface and set it as the type of an array of `EventLog` objects. Update the logs root init object to have an `eventLogs` property set to an empty array.
 
   ##### logs-root.reducer.ts
 
@@ -65,7 +65,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
   };
   ```
 
-1. Change the logs root actions to have unique names for the actions and update the loaded action payload to be an array of `EventLog` objects.
+4. Change the logs root actions to have unique names for the actions and update the loaded action payload to be an array of `EventLog` objects.
 
   ##### logs-root.action.ts
   
@@ -76,7 +76,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
   }
   ```
 
-1. Change the logs root reducer to use the updated type name and use the payload to set the eventLogs state.
+5. Change the logs root reducer to use the updated type name and use the payload to set the eventLogs state.
 
 ##### logs-root.reducer.ts
 ```ts
@@ -86,7 +86,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 ```    
 
 
-1. Refactor the logs root effects to constructor inject the `LogService`, use `ofType` and `mergeMap` to load the logs.
+6. Refactor the logs root effects to constructor inject the `LogService`, use `ofType` and `mergeMap` to load the logs.
 ```typescript
   @Effect()
   effect$ = this.actions$.ofType(LogsRootActionTypes.LoadLogsRoot).pipe(
@@ -101,7 +101,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
   );
 ```
 
-1. Update the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). Also export the `LogsRootState` to make it public so it can be used in the **logs-view** lib.
+7. Update the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). Also export the `LogsRootState` to make it public so it can be used in the **logs-view** lib.
 
 ##### logs-state/index.ts
 ```ts
@@ -116,7 +116,7 @@ export { initialState as logsRootInitialState, logsRootReducer, LogsRootState } 
 8. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
 
-1. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs and select the event logs from the store.
+9. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs and select the event logs from the store.
 
 #####  logs-list.component.ts
 ```ts
