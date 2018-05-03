@@ -126,6 +126,7 @@ export { initialState as logsRootInitialState, logsRootReducer, LogsRootState } 
 
 8. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
+>  Remember: `.forRoot()`, `environment` and root providers all belong in the app shells, not in the lib modules.
 
 9. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs and select the event logs from the store.
 
