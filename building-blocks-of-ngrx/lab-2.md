@@ -31,9 +31,11 @@ Refactor the tickets array in state to use a key/value object approach. Add a ne
   };
   ```
   
-1. Refactor the tickets state model reducer to work with the tickets object instead of an array of tickets.
+2. Refactor the tickets state model reducer to work with the tickets object instead of an array of tickets.
 
-1. Refactor the ticket details component to select the ticket based on the ticket object key.
+  > Sorry, no hints here :-(
+
+3. Refactor the ticket details component to select the ticket based on the ticket object key.
 
 ```ts
 // file: ticket-details.component.ts
@@ -44,8 +46,9 @@ ngOnInit() {
 }
 ```
 
-1. Refactor the tickets list component to select the `ids` and map to the tickets from the `tickets` object. Make sure you keep the logic for filtering open tickets in there.
+4. Refactor the tickets list component to select the `ids` and map to the tickets from the `tickets` object. Make sure you keep the logic for filtering open tickets in there.
 
+  > You have to solve this one without any hints ;-)
 
 ## Viewing in the Browser
 Run the following command(s) in individual terminals:
