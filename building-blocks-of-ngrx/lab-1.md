@@ -135,14 +135,18 @@ import { ... } from "@tuskdesk-suite/logs-state";
 
   >  Remember: `.forRoot()`, `environment` and root providers all belong in the app shells, not in the lib modules.
 
-9. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs and select the event logs from the store.
+9. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs. Don't forget to select the event logs from the store.
 
 ```ts
 // file:  logs-list.component.ts
+  
+export class LogsListComponent implements OnInit {
+  logs$: Observable<EventLog[]> =  this.store.select(s => s.logsRoot.eventLogs);
 
   ngOnInit() {
     this.store.dispatch(new LoadLogsRoot());
   }
+}
 ```
 
 ## Viewing in the Browser
