@@ -8,7 +8,7 @@ While searching is working for users and tickets, we have a performance issue!
 
 ![lab1_snapshot](https://user-images.githubusercontent.com/210413/35134346-67e08b64-fc9b-11e7-9756-aec2e5e38a7f.jpg)
 
-For each change in the AssignedUsers search criter, we are thrashing the server:
+For each change in the AssignedUsers search criteria, we are thrashing the server:
 
 *  We are not waiting until the user appears to have finished changing the criteria.
 *  We are querying the server with possible same query as the most recent, previous query.
@@ -132,7 +132,7 @@ Let's fix these **performance issues**!
   
 ### Investigate
 
-This ^ code works great to manage and control REST server qeuries. 
+This ^ code works great to manage and control REST server queries. 
 
 There is, however, a **bad practice** code implementation here.. and an actual super-subtle **race-condition** bug! 
 
