@@ -112,6 +112,8 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 > Note: For now, be sure to disable the `@Effect() loadLogsRoot$` code block...
 
+<br/>
+
 7. Update the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). 
 
 
@@ -126,6 +128,8 @@ export { initialState as logsRootInitialState, logsRootReducer, LogsRootState } 
 
   >  Also export the `LogsRootState` to make it public so it can be used in the **logs-view** lib.
 
+<br/>
+
 8. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
 ```ts
@@ -136,6 +140,8 @@ import { ... } from "@tuskdesk-suite/logs-state";
 ```
 
   >  Remember: `.forRoot()`, `environment` and root providers all belong in the app shells, not in the lib modules.
+
+<br/>
 
 9. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs. Don't forget to select the event logs from the store.
 
@@ -150,6 +156,8 @@ export class LogsListComponent implements OnInit {
   }
 }
 ```
+
+<br/>
 
 ## Viewing in the Browser
 Run the following command(s) in individual terminals:
