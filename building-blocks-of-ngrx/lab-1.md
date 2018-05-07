@@ -98,7 +98,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 // file: logs-root.effects.ts
 
   @Effect()
-  effect$ = this.actions$.ofType(LogsRootActionTypes.LoadLogsRoot).pipe(
+  loadLogsRoot$ = this.actions$.ofType(LogsRootActionTypes.LoadLogsRoot).pipe(
     mergeMap(action => {
       return this.logsService
         .logs()
@@ -110,7 +110,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
   );
 ```
 
-> Note: For now, be sure to disable the `@Effect() loadLogsRoot$` code block...
+> Note: For now, be sure to disable the existing `@Effect() loadLogsRoot$` code block...
 
 <br/>
 
@@ -133,9 +133,53 @@ export { initialState as logsRootInitialState, logsRootReducer, LogsRootState } 
 8. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
 ```ts
+// file : libs/logs-state/logs-state.module.ts
+
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { LogsRootEffects } from "./+state/logs-root.effects";
+
+@NgModule({
+  imports: [CommonModule],
+  providers: [LogsRootEffects]
+})
+export class LogsStateModule {}
+
+```
+
+```ts
 // file: apps/logs/src/app/app.module.ts 
 
-import { ... } from "@tuskdesk-suite/logs-state";
+import { LogsBackendModule } from '@tuskdesk-suite/logs-backend';
+import { logsRootInitialState, logsRootReducer, LogsRootEffects } from '@tuskdesk-suite/logs-state';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    NxModule.forRoot(),
+    StoreModule.forRoot(
+      { logsRoot: logsRootReducer },
+      {
+        initialState: {
+          logsRoot: logsRootInitialState,
+          inventory: inventoryInitialState
+        },
+        metaReducers: !environment.production ? [storeFreeze] : []
+      }
+    ),
+    EffectsModule.forRoot([LogsRootEffects]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    RouterModule.forRoot([
+        { path: '', loadChildren: '@tuskdesk-suite/logs-view#LogsViewModule' }
+      ], 
+      { initialNavigation: 'enabled' }
+    ),
+    LogsBackendModule
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 
 ```
 
@@ -148,13 +192,14 @@ import { ... } from "@tuskdesk-suite/logs-state";
 ```ts
 // file:  logs-list.component.ts
   
-export class LogsListComponent implements OnInit {
-  logs$: Observable<EventLog[]> =  this.store.select(s => s.logsRoot.eventLogs);
+export class LogsListComponent {
+  logs$: Observable<EventLog[]> = this.store.select(LogsRootQuery.getEventLogs);
 
-  ngOnInit() {
+  constructor(private store: Store<LogsRootState>) {
     this.store.dispatch(new LoadLogsRoot());
   }
 }
+
 ```
 
 <br/>
