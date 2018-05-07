@@ -61,7 +61,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
   export const initialState: LogsRootData = { eventLogs: []   };      // initial managed state
   ```
 
-4. Change the logs root actions to have unique names for the actions and update the loaded action payload to be an array of `EventLog` objects.
+4. Update the loaded action payload in `LogsRootLoaded` to be an array of `EventLog` objects.
 
   
   
