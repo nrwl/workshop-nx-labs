@@ -112,7 +112,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 > Note: For now, be sure to disable the `@Effect() loadLogsRoot$` code block...
 
-7. Update the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). Also export the `LogsRootState` to make it public so it can be used in the **logs-view** lib.
+7. Update the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). 
 
 
 ```ts
@@ -124,6 +124,7 @@ export { LoadLogsRoot, LogsRootLoaded } from "./src/+state/logs-root.actions";
 export { initialState as logsRootInitialState, logsRootReducer, LogsRootState } from "./src/+state/logs-root.reducer";
 ```
 
+  >  Also export the `LogsRootState` to make it public so it can be used in the **logs-view** lib.
 
 8. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
