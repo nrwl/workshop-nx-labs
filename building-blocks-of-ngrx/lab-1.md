@@ -55,17 +55,10 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
   ```ts
   // file: logs-root.reducer.ts
   
-  export interface LogsRootData {
-    eventLogs: EventLog[];
-  }
+  export interface LogsRootData  { eventLogs: EventLog[];  }             // managed data within this Feature
+  export interface LogsRootState { readonly logsRoot: LogsRootData;  }   // slice of Store state (aka Feature)
 
-  export interface LogsRootState {
-    readonly logsRoot: LogsRootData;
-  }
-
-  export const initialState: LogsRootData = {
-    eventLogs: []
-  };
+  export const initialState: LogsRootData = { eventLogs: []   };         // initial managed state
   ```
 
 4. Change the logs root actions to have unique names for the actions and update the loaded action payload to be an array of `EventLog` objects.
