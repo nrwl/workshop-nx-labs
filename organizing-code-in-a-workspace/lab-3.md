@@ -14,6 +14,8 @@ The time has come to replace the temporary logs data with actual data from the b
 
 1. Create a new interface for an `EventLog` data model in the **data-models** lib.
 
+###### libs/data-models/src/data-models.ts
+
 ```js
 export interface EventLog {
   id: number;
@@ -39,6 +41,8 @@ export interface EventLog {
 
 1. Set up the `LogService` logic:
 
+###### libs/logs-backend/src/log.service.ts
+
 ```typescript
 export class LogService {
   private _rootUrl = '';
@@ -59,6 +63,8 @@ export class LogService {
 7. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 
 8. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
+
+###### libs/logs-view/src/logs-list/logs-list.component.ts
 
 ```ts
 import { LogService } from '@tuskdesk-suite/logs-backend';
