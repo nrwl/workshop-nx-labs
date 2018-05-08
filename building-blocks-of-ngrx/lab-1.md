@@ -50,11 +50,9 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 3. Add an `eventLogs` property to the `LogsRoot` interface and set it as the type of an array of `EventLog` objects. Update the logs root init object to have an `eventLogs` property set to an empty array.
 
-  
+  ###### libs/logs-state/src/+state/logs-root.reducer.ts  
 
-  ```ts
-  // file: logs-root.reducer.ts
-  
+  ```ts  
   export interface LogsRootData  { eventLogs: EventLog[];  }          // managed data within this Feature
   export interface LogsRootState { readonly logsRoot: LogsRootData; } // slice of Store state (aka Feature)
 
@@ -63,11 +61,9 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 4. Update the loaded action payload in `LogsRootLoaded` to be an array of `EventLog` objects.
 
-  
+  ###### libs/logs-state/src/+state/logs-root.action.ts  
   
   ```ts
-  // file: logs-root.action.ts
-  
   export class LogsRootLoaded implements Action {
     readonly type = LogsRootActionTypes.LogsRootLoaded;
     constructor(public payload: EventLog[]) {}
@@ -77,9 +73,9 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 5. Change the logs root reducer to use the updated type name and use the payload to set the eventLogs state.
 
 
-```ts
-// file: logs-root.reducer.ts
+###### libs/logs-state/src/+state/logs-root.reducer.ts  
 
+```ts
     case LogsRootActionTypes.LogsRootLoaded: {
       return { ...state, eventLogs : action.payload };
     }
@@ -87,9 +83,10 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 
 6. Refactor the logs root effects to constructor inject the `LogService`, use `ofType` and `mergeMap` to load the logs.
-```typescript
-// file: logs-root.effects.ts
 
+###### ###### libs/logs-state/src/+state/logs-root.effects.ts  
+
+```typescript
   @Effect()
   loadLogsRoot$ = this.actions$.ofType(LogsRootActionTypes.LoadLogsRoot).pipe(
     mergeMap(action => {
@@ -109,10 +106,9 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 7. Update the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). 
 
+###### ###### libs/logs-state/index.ts  
 
 ```ts
-// file: logs-state/index.ts
-
 export { LogsStateModule } from "./src/logs-state.module";
 export { LogsRootEffects } from "./src/+state/logs-root.effects";
 export { LoadLogsRoot, LogsRootLoaded } from "./src/+state/logs-root.actions";
@@ -125,9 +121,9 @@ export { initialState as logsRootInitialState, logsRootReducer, LogsRootState } 
 
 8. Move the `StoreModule.forRoot` and `EffectsModule.forRoot` out of the lib module and into the logs app module (the forRoot calls should be provisioned in the app at the root module). Also move the `!environment.production ? StoreDevtoolsModule.instrument() : []` import out of the `LogStateModule` and up to the **logs** app module so it has access to the `environment` object.
 
-```ts
-// file : libs/logs-state/logs-state.module.ts
+###### libs/logs-state/src/logs-state.module.ts
 
+```ts
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { LogsRootEffects } from "./+state/logs-root.effects";
@@ -140,9 +136,9 @@ export class LogsStateModule {}
 
 ```
 
-```ts
-// file: apps/logs/src/app/app.module.ts 
+###### apps/logs/src/app/app.module.ts
 
+```ts
 import { LogsBackendModule } from '@tuskdesk-suite/logs-backend';
 import { logsRootInitialState, logsRootReducer, LogsRootEffects } from '@tuskdesk-suite/logs-state';
 
@@ -182,9 +178,9 @@ export class AppModule {}
 
 9. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs. Don't forget to select the event logs from the store.
 
+###### libs/logs-view/src/logs-list/logs-list.component.ts
+
 ```ts
-// file:  logs-list.component.ts
-  
 export class LogsListComponent {
   logs$: Observable<EventLog[]> = this.store.select(LogsRootQuery.getEventLogs);
 
