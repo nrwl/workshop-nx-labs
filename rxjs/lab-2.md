@@ -26,6 +26,8 @@ Let's fix these **performance issues**!
 
 1. In `search-tickets.component.ts`, use the `pipe` method on the `assignedToUser.valueChanges` observable.
 
+###### libs/ticket-list-view/src/search-tickets/search-tickets.component.ts
+
   ```typescript
     ngOnInit() {
         this.subscription = this.assignedToUser.valueChanges
