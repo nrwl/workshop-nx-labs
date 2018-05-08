@@ -26,9 +26,9 @@ ng generate component <name>
 
 1. In the **logs-view** module, add a route with an empty path to the `LogsListComponent`. Include the `pathMatch: 'full'` property on the route object.
 
-```ts
-// file: libs/logs-view/src/logs-view.module.ts
+###### libs/logs-view/src/logs-view.module.ts
 
+```ts
 @NgModule({
   imports: [
     CommonModule, 
@@ -43,8 +43,9 @@ export class LogsViewModule {}
 
 1. In the `LogsListComponent`, add a class field for logs and in the `ngOnInit` set that to an array of sample log objects (with a `message` property).
 
+###### libs/logs-view/src/logs-list/logs-list.component.ts
+
 ```ts
-// file: libs/logs-view/src/logs-list/logs-list.component.ts
 
   ngOnInit() {
     this.logs = [
@@ -56,7 +57,7 @@ export class LogsViewModule {}
 
 1. In the `logs-list.component.html`, add a `div` with an `ngFor` to render out the logs. Display the `message` in the div.
 
-  ###### file: libs/logs-view/src/logs-list/logs-list.component.ts
+  ###### libs/logs-view/src/logs-list/logs-list.component.ts
   
   ```html
 
