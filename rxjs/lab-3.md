@@ -23,6 +23,7 @@ Let's fix these **race-condition issues**!
 
 2. In `search-tickets.component.ts`, use the `switchMap` operator in the `assignedToUser.valueChanges` pipe and return the call to `UserService.users` from that. Make sure it still has the `map` operator for it!
 
+  ###### libs/ticket-list-view/src/search-tickets/search-tickets.component.ts
 
   ```typescript
     import { debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
