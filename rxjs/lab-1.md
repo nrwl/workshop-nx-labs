@@ -30,7 +30,7 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 1. In `search-tickets.component.ts`, subscribe to `assignedToUser.valueChanges` and make a call to the `UserService.users` method (pass in the `value` for the search term). Subscribe to that and wire up the `users` class field to the results.
 
-  ####### libs/ticket-list-view/src/search-tickets/search-tickets.component.ts
+  ###### libs/ticket-list-view/src/search-tickets/search-tickets.component.ts
   
   ```typescript
   ngOnInit() {
@@ -62,7 +62,7 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 4. In `search-tickets.component.html`, use an `*ngFor` template directive to display the list of users for the suggest-on-type feature. Make use of the `user.fullName` property for both the label the value to pass to the `setAssignedToUser` class method.
 
-  ####### libs/ticket-list-view/src/search-tickets/search-tickets.component.html
+  ###### libs/ticket-list-view/src/search-tickets/search-tickets.component.html
 
   ```html
     <ul>
