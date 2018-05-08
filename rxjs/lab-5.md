@@ -115,6 +115,8 @@ The important lesson here is the separation of concerns.
 
 5. Finally, let's update the `ticket-list.component.ts` to watch for the `ticketsToWork$` list and update a counter of current tickets 'marked to work'.
 
+  ###### libs/ticket-list-view/src/ticket-list/ticket-list.component.ts
+  
   ```typescript
   export class TicketListComponent implements OnInit {
     // ... other code here    
