@@ -56,8 +56,9 @@ export class LogsViewModule {}
 
 1. In the `logs-list.component.html`, add a `div` with an `ngFor` to render out the logs. Display the `message` in the div.
 
+  ###### file: libs/logs-view/src/logs-list/logs-list.component.ts
+  
   ```html
-  <!-- file: libs/logs-view/src/logs-list/logs-list.component.ts ->
 
   <div *ngFor="let log of logs">
     {{log.message}}
