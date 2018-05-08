@@ -18,7 +18,8 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
      *  Instantiate to a new `BehaviorSubject` with an initial value of the current empty `_ticketsIdsToWork` list.
   *  Create a accessor (aka getter) field to publish the private tickets-to-work list.
 
-
+ ###### libs/ticket-list-view/src/ticket-timer.ts
+ 
   ```typescript
     export class TicketTimerService {
       private _ticketIdsToWork = [];
@@ -34,7 +35,8 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 
 2. In the `TicketTimerService`, create an `addTicketIdToWork()` class method to add ticket id to the internal, private list and then use the *BehaviourSubject* `next()` to announce the changes to external observers.
 
-
+  ###### libs/ticket-list-view/src/ticket-timer.ts
+  
   ```typescript
     export class TicketTimerService {
     
@@ -51,6 +53,8 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
  
 3. In the `ticket-details.component.ts`, this view component has a click handler on the header to call `markToWork()`. Update `markToWork()` to make a call to the ticket timer service method to add a ticket id to work.
 
+  ###### libs/ticket-list-view/src/ticket-details/ticket-details.component.ts
+  
   ```typescript
      export class TicketDetailsComponent {
 
@@ -63,6 +67,8 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 
 4. In (3) above we added code to add a ticket to our 'to-work' list. Now we need to configure (using observables) a watch to update the header color when the current ticket is in that 'to-work' list. 
 
+  ###### libs/ticket-list-view/src/ticket-details/ticket-details.component.ts
+  
   ```typescript
      export class TicketDetailsComponent {
         // ... other code here    
@@ -86,6 +92,8 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 
 In `ticket-details.component.html`, use class data binding to update CSS header stylings when the ticket is "marked to work":
 
+  ###### libs/ticket-list-view/src/ticket-details/ticket-details.component.html
+  
   ```html
      <header class="ticket-header" 
              (click)="markToWork(ticket.id)"                                                                                                [class.marked]="markedToWork$ | async"> 
