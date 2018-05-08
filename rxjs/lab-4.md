@@ -32,6 +32,8 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 2. In the `ticket-timer.service.ts`, create a class field for a `timer$ : Observable<number>` and instantiate a custom observable.
 
+  ###### libs/ticket-list-view/src/ticket-timer.ts
+
   ```typescript
     private _timer$ : Observable<number> = Observable.create(observer => {
       // Add the observable Exection HERE... 
@@ -85,6 +87,8 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 5. In the `ticket-details.component.ts`, inject the service into the `constructor` and set the `timer$` class field to the getter class field from the `TicketTimerService` object when the "Start a Timer" button is clicked.
 
+  ###### libs/ticket-list-view/src/ticket-details/ticket-details.component.ts
+  
   ```js
     export class TicketDetailsComponent implements OnInit {
         timer$ : Observable<number>;
