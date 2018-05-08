@@ -84,7 +84,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 6. Refactor the logs root effects to constructor inject the `LogService`, use `ofType` and `mergeMap` to load the logs.
 
-###### ###### libs/logs-state/src/+state/logs-root.effects.ts  
+###### libs/logs-state/src/+state/logs-root.effects.ts  
 
 ```typescript
   @Effect()
@@ -106,7 +106,7 @@ At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 
 
 7. Update the public api for the **logs-state** so you can expose the pieces needed in the `forRoot` registrations (like the reducer and initial state, etc). 
 
-###### ###### libs/logs-state/index.ts  
+###### libs/logs-state/index.ts  
 
 ```ts
 export { LogsStateModule } from "./src/logs-state.module";
