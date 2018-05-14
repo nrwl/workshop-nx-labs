@@ -4,7 +4,7 @@ Here are the labs for the Git repos:  workshop-nx-starter
 
 ## Organizing Code in a Workspace 
 
-For your local repository, checkout branch `m2start`:
+For your local repository, checkout branch [`m2start`}(https://github.com/nrwl/workshop-nx-starter/tree/m2start):
 
 1. [Create an App and a Lib](organizing-code-in-a-workspace/lab-1.md)
 1. [Create a Lazy Loaded UI Lib](organizing-code-in-a-workspace/lab-2.md)
@@ -13,7 +13,7 @@ For your local repository, checkout branch `m2start`:
 
 ## RxJS
 
-For your local repository, checkout branch `m3start`:
+For your local repository, checkout branch [`m3start`](https://github.com/nrwl/workshop-nx-starter/tree/m3start):
 
 1. [Add Subscriptions to Ticket Search Form](rxjs/lab-1.md)
 1. [Throttle Assigned to User Field and Transform](rxjs/lab-2.md)
@@ -23,7 +23,7 @@ For your local repository, checkout branch `m3start`:
 
 ## Building Blocks of NgRx  
 
-For your local repository, checkout branch `m5start`:
+For your local repository, checkout branch [`m5start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
 
 1. [Create a Root State for Logs](building-blocks-of-ngrx/lab-1.md)
 1. [Refactor Tickets State to Use Key/Value Object](building-blocks-of-ngrx/lab-2.md)
