@@ -4,7 +4,7 @@ Here are the labs for the Git repos:  workshop-nx-starter
 
 ## Organizing Code in a Workspace 
 
-For your local repository, checkout branch [`m2start`}(https://github.com/nrwl/workshop-nx-starter/tree/m2start):
+For your local repository, checkout branch [`m2start`](https://github.com/nrwl/workshop-nx-starter/tree/m2start):
 
 1. [Create an App and a Lib](organizing-code-in-a-workspace/lab-1.md)
 1. [Create a Lazy Loaded UI Lib](organizing-code-in-a-workspace/lab-2.md)
