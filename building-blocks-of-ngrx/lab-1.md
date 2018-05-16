@@ -150,8 +150,7 @@ import { logsRootInitialState, logsRootReducer, LogsRootEffects } from '@tuskdes
       { logsRoot: logsRootReducer },
       {
         initialState: {
-          logsRoot: logsRootInitialState,
-          inventory: inventoryInitialState
+          logsRoot: logsRootInitialState
         },
         metaReducers: !environment.production ? [storeFreeze] : []
       }
