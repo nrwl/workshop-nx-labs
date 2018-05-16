@@ -110,6 +110,8 @@ Let's fix these **race-condition issues**!
 
 When the AssignedUsers search criteria field is empty, how can you auto-clear the dropDown menu?
 
+> Please do NOT use the `tap()` operator. Hint use `Observable.of()`
+
 <br/>
 
 ----
