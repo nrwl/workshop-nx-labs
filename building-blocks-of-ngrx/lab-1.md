@@ -176,7 +176,16 @@ export class AppModule {}
 
 <br/>
 
-9. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs. Don't forget to select the event logs from the store.
+9. Add the `LogsRootQuery` query registry to the `logs-root.reducer.ts`
+```ts
+export const LogsRootQuery = {
+  getEventLogs : (s) => s.logsRoot.eventLogs
+}
+```
+
+> Don't forget to export this in the barrel file (aka Public API)
+
+10. Refactor the logs list component in the **logs-view** lib to dispatch the action to load logs. Don't forget to select the event logs from the store.
 
 ###### file: libs/logs-view/src/logs-list/logs-list.component.ts
 
