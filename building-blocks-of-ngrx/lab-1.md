@@ -9,31 +9,6 @@ Make use of the Nx schematic for ngrx to generate the state files and modify tho
 
 ---
 
-## Upgrade to @nrwl/schematics v1.0.3
-
-The latest Nrwl schematics use enhanced versions of ngrx schematics. We need to upgrade those in the repo.
-
-Change `package.json`:
-
-```js
-{
-  dependencies : {
-    "@nrwl/nx": "1.0.3",
-  },
-  devDependencies : {
-    "@nrwl/schematics": "1.0.3",  
-  }  
-}
-```
-
-```console
-npm i && npm i @angular/cli@latest -D && npm run update
-```
-
-At this point you should have Angular CLI v1.7.4 or higher and @nrwl/schematics 1.0.3.
-
----
-
 ## Instructions
 
 1. Create a new lib named **logs-state** using the `lib` schematic.
