@@ -51,9 +51,11 @@ npm run customer-portal
 
 <br/>
 
-## Lab Instructions for HTTP REST Server
+## Using the HTTP REST Server
 
-Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
+Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets. Use terminal command to launch the server if needed: `npm run server`.
+
+> You can easily throttle the server responses with random delays using `npm run server -- -throttled`
 
 <br/>
 
