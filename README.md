@@ -46,6 +46,8 @@ npm run customer-portal
 
 >  If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
+<br/>
+
 *  Open the **Customer Portal** application with the browser: http://localhost:4203 
 *  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
 
