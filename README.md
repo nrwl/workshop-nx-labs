@@ -52,8 +52,6 @@ npm run customer-portal
 *  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
   >  ![screen shot 2018-05-21 at 7 14 38 am](https://user-images.githubusercontent.com/210413/40307086-ca016b0c-5cc6-11e8-9fb4-6d3a8ad3dc72.png)
 
-----
-
 <br/>
 
 The REST server also provides a help listing (with links) when viewing **http://localhost:3000/**.
