@@ -50,11 +50,15 @@ npm run customer-portal
 
 ![screen shot 2018-05-21 at 7 14 38 am](https://user-images.githubusercontent.com/210413/40307086-ca016b0c-5cc6-11e8-9fb4-6d3a8ad3dc72.png)
 
->  Note: If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
+----
+
+<br/>
 
 The REST server also provides a help listing (with links) when viewing **http://localhost:3000/**.
 
 ![screen shot 2018-05-20 at 8 54 39 pm](https://user-images.githubusercontent.com/210413/40286980-0dec895c-5c70-11e8-98e1-76555b23f6a2.png)
+
+>  Note: If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
 ----
 
