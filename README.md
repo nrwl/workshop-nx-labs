@@ -30,8 +30,11 @@ For your local repository, checkout branch [`m5start`](https://github.com/nrwl/w
 1. [Refactor Tickets State to use NgRx Entity](building-blocks-of-ngrx/lab-3.md)
 1. [Create a Feature State for Ticket Comments](building-blocks-of-ngrx/lab-4.md)
 
+----
 
-### Running the Application
+<br/>
+
+## Running the Application
 
 Run the following command(s) in individual terminals:
 
