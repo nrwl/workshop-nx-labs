@@ -43,14 +43,14 @@ npm run customer-portal
 >  If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
 *  Open the **Customer Portal** application with the browser: http://localhost:4203 
-*  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
-
 
 <br/>
 
 # Lab Instructions for HTTP REST Server
 
 Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
+
+<br/>
 
 ![screen shot 2018-05-21 at 7 14 38 am](https://user-images.githubusercontent.com/210413/40307086-ca016b0c-5cc6-11e8-9fb4-6d3a8ad3dc72.png)
 
