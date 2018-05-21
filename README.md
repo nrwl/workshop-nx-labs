@@ -47,9 +47,11 @@ npm run customer-portal
 
 *  Open the **Customer Portal** application with the browser: http://localhost:4203 
 
+----
+
 <br/>
 
-# Lab Instructions for HTTP REST Server
+## Lab Instructions for HTTP REST Server
 
 Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
 
