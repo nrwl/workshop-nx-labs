@@ -49,10 +49,11 @@ Run the following command(s) in individual terminals:
 
 Open up the browser to:
 - http://localhost:4204 (logs app)
+- http://localhost:3000 (REST server)
 
-If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
+![screen shot 2018-05-20 at 8 54 39 pm](https://user-images.githubusercontent.com/210413/40286980-0dec895c-5c70-11e8-98e1-76555b23f6a2.png)
 
-*(Note: sometimes a change to TypeScript interfaces will not get picked up by the watch so you may need to stop/restart these if you feel your code is correct but you are getting an error)*
+>  Note: Sometimes a change to TypeScript interfaces will not get picked up by the watch so you may need to stop/restart these if you feel your code is correct but you are getting an error. If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`. 
 
 ## Next Lab
 Go to Organizing Code in a Workspace Lab #2: [Create a Lazy Loaded UI Lib](lab-2.md)
