@@ -46,26 +46,25 @@ npm run customer-portal
 
 >  If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
-<br/>
-
 *  Open the **Customer Portal** application with the browser: http://localhost:4203 
 *  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
-  >  ![screen shot 2018-05-21 at 7 14 38 am](https://user-images.githubusercontent.com/210413/40307086-ca016b0c-5cc6-11e8-9fb4-6d3a8ad3dc72.png)
 
-<br/>
 
-The REST server also provides a help listing (with links) when viewing **http://localhost:3000/**.
+# Lab Instructions for HTTP REST Server
+
+Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
+
+![screen shot 2018-05-21 at 7 14 38 am](https://user-images.githubusercontent.com/210413/40307086-ca016b0c-5cc6-11e8-9fb4-6d3a8ad3dc72.png)
+
+To see the server HELP page (with links), navigate to **http://localhost:3000/**.
 
 ![screen shot 2018-05-20 at 8 54 39 pm](https://user-images.githubusercontent.com/210413/40286980-0dec895c-5c70-11e8-98e1-76555b23f6a2.png)
-
-----
-
-<br/>
 
 #### Restarting the App Server
 
 Sometimes a change to TypeScript interfaces or adding new `*.ts` files <u>will not get picked up</u> by the watch processes. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
 
+If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
 <br/>
 
