@@ -31,10 +31,6 @@ For your local repository, checkout branch [`m5start`](https://github.com/nrwl/w
 1. [Create a Feature State for Ticket Comments](building-blocks-of-ngrx/lab-4.md)
 
 
-----
-
-<br/>
-
 ### Running the Application
 
 Run the following command(s) in individual terminals:
@@ -49,6 +45,9 @@ npm run customer-portal
 *  Open the **Customer Portal** application with the browser: http://localhost:4203 
 *  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
 
+----
+
+<br/>
 
 # Lab Instructions for HTTP REST Server
 
