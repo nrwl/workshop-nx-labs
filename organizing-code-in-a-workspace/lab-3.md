@@ -39,6 +39,7 @@ export interface EventLog {
    >  `ng g service log -a=<lib-name> --module=logs-backend.module.ts`
 
 6. Set up the `LogService` logic (`libs/logs-backend/src/log.service.ts`):
+  >  Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. Do not use `import { ApiConfig } from '../../backend/src/api-config';`
 
   ```typescript
    export class LogService {
@@ -54,7 +55,6 @@ export interface EventLog {
    }
   ```
 
-Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. Do not use `import { ApiConfig } from '../../backend/src/api-config';`
      
 7. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 
