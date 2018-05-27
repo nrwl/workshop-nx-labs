@@ -28,17 +28,17 @@ export interface EventLog {
 
 2. Export the `EventLog` in the **data-models** `index.ts` file to make it "public".
 
-1. Add the `HttpClientModule` to the **logs-backend** module.
+3. Add the `HttpClientModule` to the **logs-backend** module.
 
-6. The `ApiConfig` type is not public (you should see the tslint error). Make it **public** by adding an export of it to the **backend** lib `index.ts` file. 
+4. The `ApiConfig` type is not public (you should see the tslint error). Make it **public** by adding an export of it to the **backend** lib `index.ts` file. 
 
    > Be prepared to talk about how the barrel files work in a Nx workspace: `angular.json`, `tslint.json`, `tsconfig.json`.
 
-1. Use the Angular CLI schematic for generating a new service to create a new service named **log** to the **logs-backend** lib with the `-a` option. Include the `module` option to tell the CLI schematic to include the service in the `providers` NgModule metadata (`--module=logs-backend.module.ts`).
+5. Use the Angular CLI schematic for generating a new service to create a new service named **log** to the **logs-backend** lib with the `-a` option. Include the `module` option to tell the CLI schematic to include the service in the `providers` NgModule metadata (`--module=logs-backend.module.ts`).
 
    >  `ng g service log -a=<lib-name> --module=logs-backend.module.ts`
 
-1. Set up the `LogService` logic:
+6. Set up the `LogService` logic:
 
 ###### libs/logs-backend/src/log.service.ts
 
@@ -56,11 +56,9 @@ export class LogService {
 }
 ```
 
-Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
-
-   >  Do not use `import { ApiConfig } from '../../backend/src/api-config';`
-   
-   
+Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. 
+>  Do not use `import { ApiConfig } from '../../backend/src/api-config';`
+     
 7. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 
 8. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
