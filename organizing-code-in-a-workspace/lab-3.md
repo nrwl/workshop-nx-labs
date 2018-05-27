@@ -38,23 +38,21 @@ export interface EventLog {
 
    >  `ng g service log -a=<lib-name> --module=logs-backend.module.ts`
 
-6. Set up the `LogService` logic:
+6. Set up the `LogService` logic (`libs/logs-backend/src/log.service.ts`):
 
-###### libs/logs-backend/src/log.service.ts
-
-```typescript
-export class LogService {
-  private _rootUrl = '';
-  constructor(@Optional() private apiConfig: ApiConfig, private http: HttpClient) {
-    if (apiConfig) {
-      this._rootUrl = apiConfig.rootUrl;
-    }
-  }
-  logs(): Observable<EventLog[]> {
-    return this.http.get<EventLog[]>(`${this._rootUrl}/api/eventlogs`);
-  }
-}
-```
+  ```typescript
+   export class LogService {
+     private _rootUrl = '';
+     constructor(@Optional() private apiConfig: ApiConfig, private http: HttpClient) {
+       if (apiConfig) {
+         this._rootUrl = apiConfig.rootUrl;
+       }
+     }
+     logs(): Observable<EventLog[]> {
+       return this.http.get<EventLog[]>(`${this._rootUrl}/api/eventlogs`);
+     }
+   }
+  ```
 
 Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. Do not use `import { ApiConfig } from '../../backend/src/api-config';`
      
