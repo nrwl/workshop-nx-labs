@@ -30,10 +30,9 @@ export interface EventLog {
 
 1. Add the `HttpClientModule` to the **logs-backend** module.
 
-6. The `ApiConfig` type is not public (you should see the tslint error). Make it **public** by adding an export of it to the **backend** lib `index.ts` file. Back in the `LogService` make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
+6. The `ApiConfig` type is not public (you should see the tslint error). Make it **public** by adding an export of it to the **backend** lib `index.ts` file. 
 
-   >  Do not use `import { ApiConfig } from '../../backend/src/api-config';`
-   
+   > Be prepared to talk about how the barrel files work in a Nx workspace: `angular.json`, `tslint.json`, `tsconfig.json`.
 
 1. Use the Angular CLI schematic for generating a new service to create a new service named **log** to the **logs-backend** lib with the `-a` option. Include the `module` option to tell the CLI schematic to include the service in the `providers` NgModule metadata (`--module=logs-backend.module.ts`).
 
@@ -57,8 +56,10 @@ export class LogService {
 }
 ```
 
-   >  Make sure you add the necessary import statements!
+Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`.
 
+   >  Do not use `import { ApiConfig } from '../../backend/src/api-config';`
+   
    
 7. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 
