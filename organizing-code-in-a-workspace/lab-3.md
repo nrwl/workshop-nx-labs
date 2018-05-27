@@ -56,8 +56,7 @@ export class LogService {
 }
 ```
 
-Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. 
->  Do not use `import { ApiConfig } from '../../backend/src/api-config';`
+Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. Do not use `import { ApiConfig } from '../../backend/src/api-config';`
      
 7. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
 
