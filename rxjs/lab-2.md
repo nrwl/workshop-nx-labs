@@ -26,27 +26,27 @@ Let's fix these **performance issues**!
 
 1. In `search-tickets.component.ts`, use the `pipe` method on the `assignedToUser.valueChanges` observable.
 
-###### libs/ticket-list-view/src/search-tickets/search-tickets.component.ts
+###### libs/ticket-list-view/src/lib/search-tickets/search-tickets.component.ts
 
   ```typescript
     ngOnInit() {
         this.subscription = this.assignedToUser.valueChanges
           .pipe(
-            
+
           )
           .subscribe(value => { ... });
-    }  
+    }
   ```
-  
+
   <br/>
 
 2. In `search-tickets.component.ts`, import and use the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` observable... to manage and throttle the user lookup queries. A good suggested debounce time is **500** milliseconds, although feel free to try out different values and see what the user experience is like!
 
   ```typescript
     import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-    
-    
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+
+
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {
 
         ngOnInit() {
             this.subscription = this.assignedToUser.valueChanges
@@ -55,7 +55,7 @@ Let's fix these **performance issues**!
               )
               .subscribe(value => { ... });
         }
-        
+
      }
   ```
 
@@ -65,9 +65,9 @@ Let's fix these **performance issues**!
 
   ```typescript
     import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
-    
-    
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+
+
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {
 
         ngOnInit() {
             this.subscription = this.assignedToUser.valueChanges
@@ -76,20 +76,20 @@ Let's fix these **performance issues**!
               )
               .subscribe(value => { ... });
         }
-        
+
      }
   ```
 
   <br/>
-  
+
 4. In `search-tickets.component.ts`, use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
 
 
   ```typescript
     import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
-    
-    
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+
+
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {
 
         ngOnInit() {
             this.subscription = this.assignedToUser.valueChanges
@@ -98,47 +98,47 @@ Let's fix these **performance issues**!
               )
               .subscribe(value => { ... });
         }
-        
+
      }
   ```
 
   <br/>
-  
+
 5. In `search-tickets.component.ts`, use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
 
   >  Hint: you can use `Array.map()` within the observable `map` operator.
 
   ```typescript
     import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
-    
-    
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {   
+
+
+    export class SearchTicketsComponent implements OnInit, OnDestroy  {
 
         ngOnInit() {
             this.subscription = this.assignedToUser.valueChanges
               .pipe(
                 ...
               )
-              .subscribe(value => { 
+              .subscribe(value => {
                 this.userService.users(value)
                   .pipe(
                     <ADD MAP OPERATOR HERE>
                   )
-                  .subscribe(userFullNames => { ... });              
+                  .subscribe(userFullNames => { ... });
               });
         }
-        
+
      }
   ```
   <br/>
-  
+
 ### Investigate
 
-This ^ code works great to manage and control REST server queries. 
+This ^ code works great to manage and control REST server queries.
 
-There is, however, a **bad practice** code implementation here.. and an actual super-subtle **race-condition** bug! 
+There is, however, a **bad practice** code implementation here.. and an actual super-subtle **race-condition** bug!
 
-Be prepared to discuss it!  
+Be prepared to discuss it!
 >  Don't cheat and look ahead! ;-)
 
 <br/>
