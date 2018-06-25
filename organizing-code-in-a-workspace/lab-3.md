@@ -5,16 +5,16 @@
 
 Just because we put code in a lib doesn't mean that we intend for it to be used outside of that lib. Some lib code should be made public and some should remain internal to the lib. The `index.ts` files in the libs provide a place to export code that is intended to be public.
 
-The time has come to replace the temporary logs data with actual data from the backend API. 
-*  Create a new model interface for event logs, and 
-*  Use the Angular CLI to generate a new service to fetch the logs with the Angular **HttpClient**. 
+The time has come to replace the temporary logs data with actual data from the backend API.
+*  Create a new model interface for event logs, and
+*  Use the Angular CLI to generate a new service to fetch the logs with the Angular **HttpClient**.
 *  Use the `index.ts` files to export the bits that need to be used outside of the libs.
 
 ## Instructions
 
 1. Create a new interface for an `EventLog` data model in the **data-models** lib.
 
-###### libs/data-models/src/data-models.ts
+###### libs/data-models/src/lib/data-models.ts
 
 ```js
 export interface EventLog {
@@ -26,20 +26,20 @@ export interface EventLog {
 }
 ```
 
-2. Export the `EventLog` in the **data-models** `index.ts` file to make it "public".
+2. Export the `EventLog` in the **data-models** `src/index.ts` file to make it "public".
 
 3. Add the `HttpClientModule` to the **logs-backend** module.
 
-4. The `ApiConfig` type is not public (you should see the tslint error). Make it **public** by adding an export of it to the **backend** lib `index.ts` file. 
+4. The `ApiConfig` type is not public (you should see the tslint error). Make it **public** by adding an export of it to the **backend** lib `src/index.ts` file.
 
    > Be prepared to talk about how the barrel files work in a Nx workspace: `angular.json`, `tslint.json`, `tsconfig.json`.
 
 5. Use the Angular CLI schematic for generating a new service to create a new service named **log** to the **logs-backend** lib with the `-a` option. Include the `module` option to tell the CLI schematic to include the service in the `providers` NgModule metadata (`--module=logs-backend.module.ts`).
 
-   >  `ng g service log -a=<lib-name> --module=logs-backend.module.ts`
+   >  `ng g service log --project=logs-backend --module=logs-backend.module.ts`
 
-6. Set up the `LogService` logic (`libs/logs-backend/src/log.service.ts`):
-  >  Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. Do not use `import { ApiConfig } from '../../backend/src/api-config';`
+6. Set up the `LogService` logic (`libs/logs-backend/src/lib/log.service.ts`):
+  >  Make sure the import path for `ApiConfig` is set to `@tuskdesk-suite/backend`. Do not use `import { ApiConfig } from '../../backend/src/lib/api-config';`
 
   ```typescript
    export class LogService {
@@ -55,12 +55,12 @@ export interface EventLog {
    }
   ```
 
-     
-7. Add an export for the `LogService` to the **logs-backend** `index.ts` file to make it public.
+
+7. Add an export for the `LogService` to the **logs-backend** `src/index.ts` file to make it public.
 
 8. Refactor the `LogsListComponent` to inject the `LogService` (use the npm scope short path for the import) and use it to get logs from the `logs` method. You can `subscribe` to that and set the `logs` class field with the data, or you can make use of the `async` pipe.
 
-###### libs/logs-view/src/logs-list/logs-list.component.ts
+###### libs/logs-view/src/lib/logs-list/logs-list.component.ts
 
 ```ts
 import { LogService } from '@tuskdesk-suite/logs-backend';
@@ -78,7 +78,7 @@ export class LogsListComponent implements OnInit {
   ngOnInit() {
 
   }
-}  
+}
   ```
 
 
