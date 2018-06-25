@@ -32,7 +32,7 @@ ng g <schematic-name> --help
 
 1. Remove the default content in the `app.component.html` in the **logs** app and replace with an `h1` element for "TuskDesk Logs" and the `router-outlet` element.
 
-1. Create a new npm script in the `package.json` file to serve the new logs app. Name it "logs" and use the command `ng serve --proxy-config=proxy.config.json -a=logs -p=4204`. Try the script out to make sure it works (pull up the logs app in the browser at http://localhost:4204).
+1. Create a new npm script in the `package.json` file to serve the new logs app. Name it "logs" and use the command `ng serve logs --proxy-config=proxy.config.json --port=4204`. Try the script out to make sure it works (pull up the logs app in the browser at http://localhost:4204).
 
    > Bonus: Do you recall how to run the npm command and auto-open the browser?
 
@@ -53,7 +53,7 @@ Open up the browser to:
 
 ![screen shot 2018-05-20 at 8 54 39 pm](https://user-images.githubusercontent.com/210413/40286980-0dec895c-5c70-11e8-98e1-76555b23f6a2.png)
 
->  Note: Sometimes a change to TypeScript interfaces will not get picked up by the watch so you may need to stop/restart these if you feel your code is correct but you are getting an error. If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`. 
+>  Note: Sometimes a change to TypeScript interfaces will not get picked up by the watch so you may need to stop/restart these if you feel your code is correct but you are getting an error. If you already have one(s) running and you need to restart, you can stop the run with `ctrl+c`.
 
 ## Next Lab
 Go to Organizing Code in a Workspace Lab #2: [Create a Lazy Loaded UI Lib](lab-2.md)
