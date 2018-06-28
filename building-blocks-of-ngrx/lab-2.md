@@ -33,7 +33,39 @@ Refactor the tickets array in state to use a key/value object approach. Add a ne
   
 2. Refactor the tickets state model reducer to work with the tickets object instead of an array of tickets.
 
-  > Sorry, no hints here :-(
+```ts
+export type TicketDictionary = { [id: string]: Ticket };
+
+const gatherTicketIDs = tickets => tickets.map(ticket => ticket.id);
+const buildTicketDictionary = tickets => tickets.reduce((tickets: TicketDictionary, ticket: Ticket) => {
+  return Object.assign(tickets, {
+    [ticket.id]: ticket
+  });
+}, {});
+
+export function ticketsStateModelReducer(state: TicketsStateModel, action: TicketsStateModelAction): TicketsStateModel {
+  switch (action.type) {
+    case 'TICKETS_LOADED': {
+      return {
+        ids : gatherTicketIDs(action.payload),
+        tickets : buildTicketDictionary(action.payload)
+      };
+    }
+    case 'TICKET_LOADED': {
+      const id = action.payload.id;
+      const ticket = { [id]: action.payload };
+
+      return {
+        ids: [...state.ids, id],
+        tickets: Object.assign(state.tickets, ticket) 
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+```
 
 3. Refactor the ticket details component to select the ticket based on the ticket object key.
 
