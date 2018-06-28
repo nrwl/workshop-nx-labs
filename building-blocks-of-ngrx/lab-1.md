@@ -172,7 +172,7 @@ export class LogsListComponent {
   logs$: Observable<EventLog[]> = this.store.select(LogsRootQuery.getEventLogs);
 
   constructor(private store: Store<LogsRootState>) {
-    this.store.dispatch(new LoadLogsRoot({});
+    this.store.dispatch(new LoadLogsRoot({}));
   }
 }
 
