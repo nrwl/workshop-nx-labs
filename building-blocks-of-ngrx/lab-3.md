@@ -10,25 +10,31 @@ Refactor the tickets state to use Entity instead of the hand crafted version you
 ## Instructions
 1. Update the `TicketsStateModel` interface to extend from `EntityState` and give it a generic of type `Ticket`. Remove the properties in it as they will be handled by the `EntityState`.
 
-1. Use the `createEntityAdapter` to create a new `ticketsStateAdapter` constant in the `tickets-state-model.init.ts` file and export that.
-
-1. Use the `getInitialState` method from the adapter to set the `ticketsStateModelInitialState` initial state object.
-
-1. Create some selectors using the adapter `getSelectors` method in the `tickets-state-model.init.ts` file.
-```typescript
-const {
-  selectAll: selectAllTickets,
-  selectEntities: selectTicketEntities
-} = ticketsStateAdapter.getSelectors();
+1. Use `createFeatureSelector` to query for the feature state for Tickets:
+```ts
+export const selectTicketState = createFeatureSelector<TicketsStateModel>('ticketsStateModel');
 ```
 
-5. Create selectors that can be used by components to query the tickets from the state. Make a feature selector for the `TicketsStateModel`. Use that to make selectors for tickets and tickets as entities.
-```typescript
-export const selectTicketState = createFeatureSelector<TicketsStateModel>('ticketsStateModel');
+1. Use the `createEntityAdapter` to create a new `ticketsStateAdapter` constant in the `tickets-state-model.init.ts` file and export that.
+```ts
+export const ticketsStateAdapter = createEntityAdapter<Ticket>();
+```
 
-export const selectTickets = createSelector(selectTicketState, selectAllTickets);
+1. Use the `getInitialState` method from the adapter to set the `ticketsStateModelInitialState` initial state object.
+```ts
+export const ticketsStateModelInitialState: TicketsStateModel = ticketsStateAdapter.getInitialState();
+```
 
-export const selectTicketAsEntities = createSelector(selectTicketState, selectTicketEntities);
+1. Create some selectors using the adapter `getSelectors` method in the `tickets-state-model.init.ts` file.
+> Be sure to specify the featureSelector query as the argument to `getSelectors()`
+```ts
+const { selectAll, selectEntities } = ticketsStateAdapter.getSelectors(selectTicketState);
+```
+
+5. Export selectors that can be used by components to query for tickets and tickets as entities.
+```ts
+export const selectTickets = selectAll;
+export const selectTicketAsEntities = selectEntities;
 ```
 
 6. Export the `selectTickets` and `selectTicketsAsEntities` from the index.ts file in the **tickets-state** lib to make them public.
