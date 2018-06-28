@@ -26,7 +26,7 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
     ng g s ticketTimer --project=ticket-list-view 
   ```
 
-   >  The Angular CLI adds Make sure you adds `@Injectable({  providedIn: 'root' })` to the service so it auto-registers as a root provider!
+   >  The Angular CLI adds `@Injectable({  providedIn: 'root' })` to the service so the service auto self-registers as a root provider!
 
 <br/>
 
