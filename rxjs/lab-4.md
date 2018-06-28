@@ -23,10 +23,10 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 
   ```console
-    ng g s ticketTimer --project=ticket-list-view --module=ticket-list-view.module.ts
+    ng g s ticketTimer --project=ticket-list-view 
   ```
 
-   >  Make sure you add it to the providers for the ticket list view module by using the `--module` flag. Open the `TicketListViewModule` module to see how the service has been registered.
+   >  The Angular CLI adds Make sure you adds `@Injectable({  providedIn: 'root' })` to the service so it auto-registers as a root provider!
 
 <br/>
 
