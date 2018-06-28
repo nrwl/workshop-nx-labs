@@ -57,7 +57,7 @@ export function ticketsStateModelReducer(state: TicketsStateModel, action: Ticke
 
       return {
         ids: [...state.ids, id],
-        tickets: Object.assign(state.tickets, ticket) 
+        tickets: Object.assign({}, state.tickets, ticket) 
       };
     }
     default: {
