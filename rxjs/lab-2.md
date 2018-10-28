@@ -27,10 +27,10 @@ Let's fix these **performance issues**!
 ##### In `search-tickets.component.ts`
 
 1. Use the `pipe` method on the `assignedToUser.valueChanges` observable.
-2. Import and use the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` observable... to manage and throttle the user lookup queries. A good suggested debounce time is **500** milliseconds, although feel free to try out different values and see what the user experience is like!
-3. Use the `filter` operator on `assignedToUser` to only allow value strings with a length greater than zero.
-4. Use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
-5. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
+2. Import and use the **`debounceTime`** and **`distinctUntilChanged`** operators for the `assignedToUser` observable... to manage and throttle the user lookup queries. A good suggested debounce time is **500** milliseconds, although feel free to try out different values and see what the user experience is like!
+3. Use the **`filter`** operator on `assignedToUser` to only allow value strings with a length greater than zero.
+4. Use the **`tap`** operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
+5. Use `pipe` with the **`map`** operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
   >  Hint: you can use `Array.map()` within the observable `map` operator.
 
 ### Investigate
