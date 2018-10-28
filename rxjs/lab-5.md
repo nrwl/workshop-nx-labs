@@ -12,92 +12,33 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 
 
 ## Instructions
-1. In the `TicketTimerService`, create a private class field for cache a list of 'working' ticket ids.
 
-  *  Also add a private class field for tickets to work.
-     *  Instantiate to a new `BehaviorSubject` with an initial value of the current empty `_ticketsIdsToWork` list.
-  *  Create a accessor (aka getter) field to publish the private tickets-to-work list.
+##### In `ticket-timer.service.ts`, 
 
- ###### libs/ticket-list-view/src/lib/ticket-timer.ts
+1. Create a private class field for cache a list of 'working' ticket ids.
+2. Add a private class field for tickets to work.
+3. Instantiate to a new `BehaviorSubject` with an initial value of the current empty `_ticketsIdsToWork` list.
+4. Create a accessor (aka getter) field to publish the private tickets-to-work list.
+5. Create an `addTicketIdToWork()` class method to add ticket id to the internal, private list and then use the *BehaviourSubject* `next()` to announce the changes to external observers.
+  > Note: you should announce the changes using a clone of the list. **Question:** Why?
 
-  ```typescript
-    export class TicketTimerService {
-      private _ticketIdsToWork = [];
-      private _ticketsToWork$  = new BehaviorSubject(this._ticketIdsToWork);
+##### In `ticket-details.component.ts`, 
 
-     get ticketsToWork$() {
-        <RETURN TO-WORK LIST>
-      }
-    }
-  ```
+1. This view component has a click handler on the header to call `markToWork()`. Update `markToWork()` to make a call to the ticket timer service method to add a ticket id to work.
+2. In (3) above we added code to add a ticket to our 'to-work' list. Now we need to configure (using observables) a watch to update the header color when the current ticket is in that 'to-work' list.
 
-  <br/>
+##### In `ticket-details.component.html`, 
 
-2. In the `TicketTimerService`, create an `addTicketIdToWork()` class method to add ticket id to the internal, private list and then use the *BehaviourSubject* `next()` to announce the changes to external observers.
+Use class data binding to update CSS header stylings when the ticket is "marked to work":
 
-  ###### libs/ticket-list-view/src/lib/ticket-timer.ts
+##### In `ticket-list.component.ts` 
 
-  ```typescript
-    export class TicketTimerService {
+Watch for the `ticketsToWork$` list and update a counter of current tickets 'marked to work'.
 
-      addTicketIdToWork(id:string) {
+##### In `ticket-list.component.html ` 
 
-        <SAVE TICKET ID; NO DUPLICATES>
-        <ANNOUNCE CHANGE TO OBSERVERS>
-      }
-    }
- ```
+Now, let's update template to render the current count of tickets marked as 'to-work'.
 
- >  Note: you should announce the changes using a clone of the list. **Question:** Why?
-
-
-3. In the `ticket-details.component.ts`, this view component has a click handler on the header to call `markToWork()`. Update `markToWork()` to make a call to the ticket timer service method to add a ticket id to work.
-
-  ###### libs/ticket-list-view/src/lib/ticket-details/ticket-details.component.ts
-
-  ```typescript
-     export class TicketDetailsComponent {
-
-       markToWork(ticketId: string) {
-         <CALL TICKET TIMER SERVICE TO ADD TICKET ID>
-
-       }
-    }
-  ```
-
-4. In (3) above we added code to add a ticket to our 'to-work' list. Now we need to configure (using observables) a watch to update the header color when the current ticket is in that 'to-work' list.
-
-  ###### libs/ticket-list-view/src/lib/ticket-details/ticket-details.component.ts
-
-  ```typescript
-     export class TicketDetailsComponent {
-        // ... other code here
-        markedToWork$: Observable<boolean>;
-
-        ngOnInit() {
-          this.route.params.subscribe(params => {
-            const id = +params['id'];
-            // .... current code
-
-            const allMarkedTickets$ = this.ticketTimerService.ticketsToWork$;
-            this.markedToWork$ = allMarkedTickets$.pipe(
-
-              <ADD CODE HERE TO TRANSFORM VALUE TO BOOLEAN BASED ON TICKET ID IN LIST OF TICKETS>
-
-            );
-          });
-        }
-    }
-  ```
-
-In `ticket-details.component.html`, use class data binding to update CSS header stylings when the ticket is "marked to work":
-
-  ###### libs/ticket-list-view/src/lib/ticket-details/ticket-details.component.html
-
-  ```html
-     <header class="ticket-header"
-             (click)="markToWork(ticket.id)"                                                                                                [class.marked]="markedToWork$ | async">
-  ```
 
 <br/>
 
@@ -110,46 +51,35 @@ The important lesson here is the separation of concerns.
 
 ---
 
-<br/>
+### Code Snippets
 
+###### `ticket-timer.service.ts`
 
-5. Finally, let's update the `ticket-list.component.ts` to watch for the `ticketsToWork$` list and update a counter of current tickets 'marked to work'.
+![rxjs5 1](https://user-images.githubusercontent.com/210413/47623164-ab36fa00-dadb-11e8-91f5-034c7e5daa62.jpg)
 
-  ###### libs/ticket-list-view/src/lib/ticket-list/ticket-list.component.ts
+###### `ticket-details.component.ts`
 
-  ```typescript
-  export class TicketListComponent implements OnInit {
-    // ... other code here
-    ticketsToWork$: Observable<number>;
+![rxjs5 2](https://user-images.githubusercontent.com/210413/47623163-ab36fa00-dadb-11e8-8f38-2543265ed4a2.jpg)
 
-    constructor(
-      private store             : Store<TicketsStateModelState>,
-      private ticketTimerService: TicketTimerService) { }
+###### `ticket-details.component.html`
 
-     ngOnInit() {
-       // ... other existing code.
+![rxjs5 3](https://user-images.githubusercontent.com/210413/47623162-ab36fa00-dadb-11e8-8bdc-f8fddc922c45.jpg)
 
-       const allTicketsToWork$ = this.ticketTimerService.ticketsToWork$;
-       this.ticketsToWork$ = allTicketsToWork$.pipe(
+###### `ticket-list.component.ts`
 
-         <USE MAP OPERATOR TO EXTRACT NUMBER OF TICKETS IN THE LIST>
+![rxjs5 4](https://user-images.githubusercontent.com/210413/47623161-ab36fa00-dadb-11e8-8003-7a2722fbbda8.jpg)
 
-       );
-     }
-  }
-```
+###### `ticket-list.component.html`
 
-Now, let's update the `ticket-list.component.html` template to render the current count of tickets marked as 'to-work'.
+![rxjs5 5](https://user-images.githubusercontent.com/210413/47623160-ab36fa00-dadb-11e8-9d86-72073618f73c.jpg)
 
-  ```html
-     <div>Tickets to work: {{ ticketsToWork$ | async }}</div>
-  ```
 
 <br/>
 
 ### Bonus Exercise
 
 Add a way to remove a ticket from the 'marked to work' status list. This will allow the ticket status *to-work* to be toggled ON/OFF.
+
 
 <br/>
 
