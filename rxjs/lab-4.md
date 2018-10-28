@@ -55,7 +55,7 @@ Run the application and:
 *  Start the timer... see the timer values increment.
 *  Route to a different view and return to the `TicketDetailsComponent`, confirm the timer is no longer working.
 
-Questions:
+**Questions**:
   * Why does the timer stop on routing?
   * What happens when you navigate away from the ticket?
   * Why does the start timer not start immediately after clicking?
