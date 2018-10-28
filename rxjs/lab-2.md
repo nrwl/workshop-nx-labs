@@ -14,7 +14,7 @@ For each change in the AssignedUsers search criteria, we are thrashing the serve
 *  We are querying the server with possible same query as the most recent, previous query.
 
 
-Let's fix these **performance issues**!
+Let's fix these **performance issues**! 😱 
 
 <br/>
 
@@ -44,7 +44,7 @@ Let's fix these **performance issues**!
 
 This ^ code works great to manage and control REST server queries.
 
-There is, however, a **bad practice** code implementation here.. 😱 and an actual super-subtle **race-condition** bug 😜! Be prepared to discuss it! (Don't cheat and look ahead! 🤗)
+There is, however, a **bad practice** code implementation here.. and an actual super-subtle **race-condition** bug 😜! Be prepared to discuss it! (Don't cheat and look ahead! 🤗)
 
 
 <br/>
