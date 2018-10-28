@@ -6,7 +6,8 @@
 
 In this application, we have search features and a crude dropDown `assignedToUser` menu.
 
-![rxjs1 0](https://user-images.githubusercontent.com/210413/47621937-b5053100-dacc-11e8-84c8-3b8658c814c3.jpg)
+![rxjs1 0](https://user-images.githubusercontent.com/210413/47622025-ce5aad00-dacd-11e8-9e4b-48e84d0498d7.jpg)
+
 
 The dropDown menu should dynamically populate as the user types.
 
