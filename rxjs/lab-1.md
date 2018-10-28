@@ -60,6 +60,14 @@ Be prepared to discuss what you notice!
 ![rxjs1 1](https://user-images.githubusercontent.com/210413/47621896-05c85a00-dacc-11e8-80f4-76f75451e56d.jpg)
 
 
+
+<br/>
+
+### Bonus:
+
+Replace you custom drop down with [Material **Select** component](https://material.angular.io/components/select/examples).
+
+
 <br/>
 
 ----
@@ -84,14 +92,6 @@ If you already have one(s) running and you need to restart, you can stop the run
 #### Restarting the App Server
 
 Sometimes a change to TypeScript interfaces or adding new `*.ts` files <u>will not get picked up</u> by the watch processes. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
-
-<br/>
-
-### Bonus:
-
-Replace you custom drop down with [Material **Select** component](https://material.angular.io/components/select/examples).
-
-
 
 <br/>
 
