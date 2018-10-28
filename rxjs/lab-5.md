@@ -55,24 +55,22 @@ The important lesson here is the separation of concerns.
 
 ###### `ticket-timer.service.ts`
 
-![rxjs5 1](https://user-images.githubusercontent.com/210413/47623164-ab36fa00-dadb-11e8-91f5-034c7e5daa62.jpg)
-
+![rxjs5 1](https://user-images.githubusercontent.com/210413/47623212-8abb6f80-dadc-11e8-895c-09a176387a29.jpg)
 ###### `ticket-details.component.ts`
 
-![rxjs5 2](https://user-images.githubusercontent.com/210413/47623163-ab36fa00-dadb-11e8-8f38-2543265ed4a2.jpg)
+![rxjs5 2](https://user-images.githubusercontent.com/210413/47623211-8abb6f80-dadc-11e8-97b4-04d40c44348e.jpg)
 
 ###### `ticket-details.component.html`
 
-![rxjs5 3](https://user-images.githubusercontent.com/210413/47623162-ab36fa00-dadb-11e8-8bdc-f8fddc922c45.jpg)
+![rxjs5 3](https://user-images.githubusercontent.com/210413/47623210-8abb6f80-dadc-11e8-8f36-9af7dea2ee9c.jpg)
 
 ###### `ticket-list.component.ts`
 
-![rxjs5 4](https://user-images.githubusercontent.com/210413/47623161-ab36fa00-dadb-11e8-8003-7a2722fbbda8.jpg)
+![rxjs5 4](https://user-images.githubusercontent.com/210413/47623209-8abb6f80-dadc-11e8-910e-b0ede49de17b.jpg)
 
 ###### `ticket-list.component.html`
 
-![rxjs5 5](https://user-images.githubusercontent.com/210413/47623160-ab36fa00-dadb-11e8-9d86-72073618f73c.jpg)
-
+![rxjs5 5](https://user-images.githubusercontent.com/210413/47623208-8abb6f80-dadc-11e8-96be-fcb974fa7f6a.jpg)
 
 <br/>
 
