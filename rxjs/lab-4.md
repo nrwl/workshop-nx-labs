@@ -1,4 +1,4 @@
-# Lab: Create a custom Observable
+# RxJS Lab 4: Create a custom Observable
 
 ## Time: 30 minutes
 
