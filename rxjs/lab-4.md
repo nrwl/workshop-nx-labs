@@ -55,7 +55,11 @@ Run the application and:
 *  Start the timer... see the timer values increment.
 *  Route to a different view and return to the `TicketDetailsComponent`, confirm the timer is no longer working.
 
-**Question:** Why does the timer stop on routing?
+### Questions 
+
+  **1)** Why does the timer stop on routing?
+  **2)** What happens when you navigate away from the ticket?
+  **3)** Why does the start timer not start immediately after clicking?
 
 Add a `console.log()` in the teardown function of your TicketTimerService. Trying navigating again and watch the console.
 
@@ -66,11 +70,7 @@ Add a `console.log()` in the teardown function of your TicketTimerService. Tryin
 *  Set up an array of `Observable<number>` as timers and push the `TicketTimer` service timer into it.
 *  Then update the template to `ngFor` the timers and use the async pipe to display each timer value.
 
-### Questions 
 
-**1)** What is this doing?
-**2)** What happens when you navigate away from the ticket?
-**3)** Why does the start timer not start immediately after clicking?
 
 
 <br/>
