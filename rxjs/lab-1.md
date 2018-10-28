@@ -55,7 +55,7 @@ Be prepared to discuss what you notice!
 
 ###### `search-tickets.component.ts`
 
-![rxjs1 2](https://user-images.githubusercontent.com/210413/47622115-10d0b980-dacf-11e8-9f53-099615dc1ceb.jpg)
+![rxjs1 2](https://user-images.githubusercontent.com/210413/47622136-660ccb00-dacf-11e8-8e62-2cbc910fea9f.jpg)
 
 ###### `search-tickets.component.html`
 
