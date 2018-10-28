@@ -47,7 +47,7 @@ Be prepared to discuss it!
 
 ###### `search-tickets.component.ts`
 
-![rxjs2 1](https://user-images.githubusercontent.com/210413/47622218-7a9d9300-dad0-11e8-91ed-cfdf2f5005e8.jpg)
+![rxjs2 1](https://user-images.githubusercontent.com/210413/47622233-a456ba00-dad0-11e8-84cf-96899908704f.jpg)
 
 
 <br/>
