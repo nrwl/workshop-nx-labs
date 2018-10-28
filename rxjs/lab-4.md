@@ -23,13 +23,13 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 1. Use the Angular CLI to generate a new `TicketTimerService` in the `ticket-list-view` lib.
   > The Angular CLI adds `@Injectable({  providedIn: 'root' })` to the service so the service auto self-registers as a root provider!
 
-###### `libs/ticket-list-view/src/ticket-timer.service.ts`
+##### In `libs/ticket-list-view/src/ticket-timer.service.ts`
 
 1. Create a class field for a `timer$ : Observable<number>` and instantiate a custom observable.
 2. In the Observable Execution area, set up a count variable and use `setInterval` to increment it every `1000ms`. Make a call to `observer.next` in the setInterval callback and emit the current counter value.
 3. Capture the handle to the `setInterval` and use it when creating a *teardown* function. Teardown functions are needed to clean up producer activity when the observer unsubscribes. In this case, we need to return a function that clears the interval with `clearInterval`).
 
-###### `ticket-details.component.ts`
+##### In `ticket-details.component.ts`
 
 5. Inject the service into the `constructor` and set the `timer$` class field to the getter class field from the `TicketTimerService` object when the "Start a Timer" button is clicked.
 
