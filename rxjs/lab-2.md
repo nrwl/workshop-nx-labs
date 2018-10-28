@@ -1,4 +1,4 @@
-# Lab 2: Throttle Assigned to User Field and Transform
+# Lab 2: Throttle Search Requests
 
 ## Time: 20 minutes
 
