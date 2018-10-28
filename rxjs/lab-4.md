@@ -1,4 +1,4 @@
-# Lab: Create a Ticket Timer Observable
+# Lab: Create a custom Observable
 
 ## Time: 30 minutes
 
