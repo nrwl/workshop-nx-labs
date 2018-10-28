@@ -59,7 +59,7 @@ Be prepared to discuss what you notice!
 
 ###### `search-tickets.component.html`
 
-![rxjs1 1](https://user-images.githubusercontent.com/210413/47622116-10d0b980-dacf-11e8-8a13-3adb4f1086f6.jpg)
+![rxjs1 1](https://user-images.githubusercontent.com/210413/47622122-2e9e1e80-dacf-11e8-8f0a-9616c55943f8.jpg)
 
 
 
