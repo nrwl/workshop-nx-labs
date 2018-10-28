@@ -1,4 +1,4 @@
-# Lab: Throttle Assigned to User Field and Transform
+# Lab 2: Throttle Assigned to User Field and Transform
 
 ## Time: 20 minutes
 
@@ -6,7 +6,7 @@
 
 While searching is working for users and tickets, we have a performance issue!
 
-![lab1_snapshot](https://user-images.githubusercontent.com/210413/35134346-67e08b64-fc9b-11e7-9756-aec2e5e38a7f.jpg)
+![rxjs1 0](https://user-images.githubusercontent.com/210413/47622033-f1855c80-dacd-11e8-9ec0-1d26a90b3456.jpg)
 
 For each change in the AssignedUsers search criteria, we are thrashing the server:
 
@@ -24,113 +24,14 @@ Let's fix these **performance issues**!
 
 ## Instructions
 
-1. In `search-tickets.component.ts`, use the `pipe` method on the `assignedToUser.valueChanges` observable.
+##### In `search-tickets.component.ts`
 
-###### libs/ticket-list-view/src/lib/search-tickets/search-tickets.component.ts
-
-  ```typescript
-    ngOnInit() {
-        this.subscription = this.assignedToUser.valueChanges
-          .pipe(
-
-          )
-          .subscribe(value => { ... });
-    }
-  ```
-
-  <br/>
-
-2. In `search-tickets.component.ts`, import and use the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` observable... to manage and throttle the user lookup queries. A good suggested debounce time is **500** milliseconds, although feel free to try out different values and see what the user experience is like!
-
-  ```typescript
-    import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-
-
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {
-
-        ngOnInit() {
-            this.subscription = this.assignedToUser.valueChanges
-              .pipe(
-                <ADD DEBOUNCETIME AND DISTINCTUNTILCHANGED OPERATORS HERE >
-              )
-              .subscribe(value => { ... });
-        }
-
-     }
-  ```
-
-  <br/>
-
-3. In `search-tickets.component.ts`, use the `filter` operator on `assignedToUser` to only allow value strings with a length greater than zero.
-
-  ```typescript
-    import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
-
-
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {
-
-        ngOnInit() {
-            this.subscription = this.assignedToUser.valueChanges
-              .pipe(
-                <ADD FILTER OPERATOR HERE>
-              )
-              .subscribe(value => { ... });
-        }
-
-     }
-  ```
-
-  <br/>
-
-4. In `search-tickets.component.ts`, use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
-
-
-  ```typescript
-    import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
-
-
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {
-
-        ngOnInit() {
-            this.subscription = this.assignedToUser.valueChanges
-              .pipe(
-                <ADD TAP OPERATOR HERE>
-              )
-              .subscribe(value => { ... });
-        }
-
-     }
-  ```
-
-  <br/>
-
-5. In `search-tickets.component.ts`, use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
-
+1. Use the `pipe` method on the `assignedToUser.valueChanges` observable.
+2. Import and use the `debounceTime` and `distinctUntilChanged` operators for the `assignedToUser` observable... to manage and throttle the user lookup queries. A good suggested debounce time is **500** milliseconds, although feel free to try out different values and see what the user experience is like!
+3. Use the `filter` operator on `assignedToUser` to only allow value strings with a length greater than zero.
+4. Use the `tap` operator on `assignedToUser` to set the `users` class field to `null` when the length of `value` is zero.
+5. Use `pipe` with the `map` operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
   >  Hint: you can use `Array.map()` within the observable `map` operator.
-
-  ```typescript
-    import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
-
-
-    export class SearchTicketsComponent implements OnInit, OnDestroy  {
-
-        ngOnInit() {
-            this.subscription = this.assignedToUser.valueChanges
-              .pipe(
-                ...
-              )
-              .subscribe(value => {
-                this.userService.users(value)
-                  .pipe(
-                    <ADD MAP OPERATOR HERE>
-                  )
-                  .subscribe(userFullNames => { ... });
-              });
-        }
-
-     }
-  ```
-  <br/>
 
 ### Investigate
 
@@ -140,6 +41,14 @@ There is, however, a **bad practice** code implementation here.. and an actual s
 
 Be prepared to discuss it!
 >  Don't cheat and look ahead! ;-)
+
+
+### Code Snippets
+
+###### `search-tickets.component.ts`
+
+![rxjs2 1](https://user-images.githubusercontent.com/210413/47622218-7a9d9300-dad0-11e8-91ed-cfdf2f5005e8.jpg)
+
 
 <br/>
 
