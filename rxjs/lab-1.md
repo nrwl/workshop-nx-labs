@@ -1,4 +1,4 @@
-# Lab Exercise: Add Subscriptions to Ticket Search Form
+# Lab Exercise: Ticket Search DropDown
 
 ## Time: 15 minutes
 
