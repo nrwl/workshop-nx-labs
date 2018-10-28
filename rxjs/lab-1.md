@@ -1,4 +1,4 @@
-# Lab Exercise: Ticket Search DropDown
+# RxJS Lab 1: Ticket Search DropDown
 
 ## Time: 15 minutes
 
