@@ -55,11 +55,11 @@ Be prepared to discuss what you notice!
 
 ###### `search-tickets.component.ts`
 
-![rxjs1 2](https://user-images.githubusercontent.com/210413/47621895-05c85a00-dacc-11e8-9a20-1b40cbb29d8a.jpg)
+![rxjs1 2](https://user-images.githubusercontent.com/210413/47622115-10d0b980-dacf-11e8-9f53-099615dc1ceb.jpg)
 
 ###### `search-tickets.component.html`
 
-![rxjs1 1](https://user-images.githubusercontent.com/210413/47621896-05c85a00-dacc-11e8-80f4-76f75451e56d.jpg)
+![rxjs1 1](https://user-images.githubusercontent.com/210413/47622116-10d0b980-dacf-11e8-8a13-3adb4f1086f6.jpg)
 
 
 
