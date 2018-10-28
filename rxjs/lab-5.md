@@ -1,4 +1,4 @@
-# Lab: Track Tickets to Work With a Multi-Cast Observable
+# Lab: Use BehaviorSubject
 
 ## Time: 20 minutes
 
