@@ -45,7 +45,7 @@ Check out the `network` tab in the browser dev tools as you type in the "Assigne
 
 ![networktraffic](https://user-images.githubusercontent.com/210413/35155098-37725cbc-fcf2-11e7-9466-d852d6722873.jpg)
 
-Be prepared to disucss what you notice!
+Be prepared to discuss what you notice!
 
 <br/>
 
@@ -84,6 +84,13 @@ If you already have one(s) running and you need to restart, you can stop the run
 #### Restarting the App Server
 
 Sometimes a change to TypeScript interfaces or adding new `*.ts` files <u>will not get picked up</u> by the watch processes. In such cases, you may need to stop/restart these... if you feel your code is correct but you are getting an error.
+
+<br/>
+
+### Bonus:
+
+Replace you custom drop down with [Material **Select** component](https://material.angular.io/components/select/examples).
+
 
 
 <br/>
