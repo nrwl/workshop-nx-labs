@@ -80,4 +80,4 @@ Add a `console.log()` in the teardown function of your TicketTimerService. Tryin
 
 ### Next Lab
 
-Go to RxJS Lab #5: [Track Tickets to Work With a Multi-Cast Observable](lab-5.md)
+Go to RxJS Lab #5: [Use Mulitcast BehaviorSubject](lab-5.md)
