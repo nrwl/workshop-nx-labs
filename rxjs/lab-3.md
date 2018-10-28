@@ -1,4 +1,4 @@
-# Lab: Use SwitchMap
+# RxJS Lab 3: Use SwitchMap
 
 ## Time: 20 minutes
 
