@@ -19,98 +19,34 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 ### Code Instructions
 
+
 1. Use the Angular CLI to generate a new `TicketTimerService` in the `ticket-list-view` lib.
+  > The Angular CLI adds `@Injectable({  providedIn: 'root' })` to the service so the service auto self-registers as a root provider!
 
+###### `libs/ticket-list-view/src/ticket-timer.service.ts`
 
-  ```console
-    ng g s ticketTimer --project=ticket-list-view 
-  ```
+1. Create a class field for a `timer$ : Observable<number>` and instantiate a custom observable.
+2. In the Observable Execution area, set up a count variable and use `setInterval` to increment it every `1000ms`. Make a call to `observer.next` in the setInterval callback and emit the current counter value.
+3. Capture the handle to the `setInterval` and use it when creating a *teardown* function. Teardown functions are needed to clean up producer activity when the observer unsubscribes. In this case, we need to return a function that clears the interval with `clearInterval`).
 
-   >  The Angular CLI adds `@Injectable({  providedIn: 'root' })` to the service so the service auto self-registers as a root provider!
+###### `ticket-details.component.ts`
 
-<br/>
+5. Inject the service into the `constructor` and set the `timer$` class field to the getter class field from the `TicketTimerService` object when the "Start a Timer" button is clicked.
 
-2. In the `ticket-timer.service.ts`, create a class field for a `timer$ : Observable<number>` and instantiate a custom observable.
+### Code Snippets
 
-  ###### libs/ticket-list-view/src/ticket-timer.ts
+###### `ticket-timer.service.ts`
 
-  ```typescript
-    private _timer$ : Observable<number> = Observable.create(observer => {
-      // Add the observable Exection HERE...
-      // (aka Producer activity)
+![rxjs4 1](https://user-images.githubusercontent.com/210413/47622805-5e512480-dad7-11e8-8bbb-31e3e1d8b450.jpg)
 
-    });
+###### `ticket-details.component.ts`
 
-    get timer$() {
-      return this._timer$;
-    }
-  ```
+![rxjs4 2](https://user-images.githubusercontent.com/210413/47622804-5e512480-dad7-11e8-888b-17173d872de3.jpg)
 
-  >  Note: do not just copy this ^... type it yourself to learn better.
+###### `ticket-details.component.html`
 
-  **Question:** Can you explain why the `get timer$()` is used?
+![rxjs4 3](https://user-images.githubusercontent.com/210413/47622803-5e512480-dad7-11e8-9091-defca17547fe.jpg)
 
-  <br/>
-
-3. In the `ticket-timer.service.ts`, in the Observable Execution area, set up a count variable and use `setInterval` to increment it every `1000ms`. Make a call to `observer.next` in the setInterval callback and send that the counter value.
-
-  ```typescript
-    private timer$ = Observable.create(observer => {
-      let count = 0;
-      const intervalId = setInterval(() => {
-
-      }, 1000);
-
-  });
-  ```
-
-  >  Note: do not just copy this ^... type it yourself to learn better.
-
-  <br/>
-
-4. In the `ticket-timer.service.ts`, capture the handle to the `setInterval` and use it when creating a *teardown* function. Teardown functions are needed to clean up producer activity when the observer unsubscribes. In this case, we need to return a function that clears the interval with `clearInterval`).
-
-  ```typescript
-    private _timer$ = Observable.create(observer => {
-       // ... unchanged code
-
-      return () => {
-        <ADD  TEARDOWN LOGIC HERE>
-      };
-  });
-  ```
-
-  >  Note: do not just copy this ^... type what is needed yourself; to learn better.
-
-  <br/>
-
-
-5. In the `ticket-details.component.ts`, inject the service into the `constructor` and set the `timer$` class field to the getter class field from the `TicketTimerService` object when the "Start a Timer" button is clicked.
-
-  ###### libs/ticket-list-view/src/lib/ticket-details/ticket-details.component.ts
-
-  ```js
-    export class TicketDetailsComponent implements OnInit {
-        timer$ : Observable<number>;
-
-        constructor(
-          private store              : Store<TicketsStateModelState>,
-          private route              : ActivatedRoute,
-          private ticketTimerService : TicketTimerService
-        ) {};
-
-        startTimer() {
-          <USE TICKET TIMER SERVICE HERE>
-
-          this.timer$ = ...
-        }
-
-    }
-  ```
-
-   >  Note: do not just copy this... add the parts needed by typing it yourself.
-
-  <br/>
 
 ### Investigate
 
