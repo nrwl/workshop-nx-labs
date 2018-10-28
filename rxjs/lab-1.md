@@ -65,7 +65,7 @@ Be prepared to discuss what you notice!
 
 ### Bonus:
 
-Replace you custom drop down with [Material **Select** component](https://material.angular.io/components/select/examples).
+Replace your custom drop down with [Material **Select** component](https://material.angular.io/components/select/examples).
 
 
 <br/>
