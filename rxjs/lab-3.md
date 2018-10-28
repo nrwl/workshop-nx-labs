@@ -54,4 +54,4 @@ When the AssignedUsers search criteria field is empty, how can you auto-clear th
 
 ### Next Lab
 
-Go to RxJS Lab #4: [Create a Ticket Timer Observable](lab-4.md)
+Go to RxJS Lab #4: [Create a custom Observable](lab-4.md)
