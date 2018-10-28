@@ -31,7 +31,7 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 ##### In `ticket-details.component.ts`
 
-5. Inject the service into the `constructor` and set the `timer$` class field to the getter class field from the `TicketTimerService` object when the "Start a Timer" button is clicked.
+4. Inject the service into the `constructor`. When the "Start a Timer" button is clicked, set the `timer$` class field to the `timer$` property in the `TicketTimerService` object .
 
 ### Code Snippets
 
@@ -66,9 +66,11 @@ Add a `console.log()` in the teardown function of your TicketTimerService. Tryin
 *  Set up an array of `Observable<number>` as timers and push the `TicketTimer` service timer into it.
 *  Then update the template to `ngFor` the timers and use the async pipe to display each timer value.
 
-**Question:** What is this doing?
+### Questions 
 
-**Question:** What happens when you navigate away from the ticket?
+**1)** What is this doing?
+**2)** What happens when you navigate away from the ticket?
+**3)** Why does the start timer not start immediately after clicking?
 
 
 <br/>
