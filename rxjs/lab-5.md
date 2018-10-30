@@ -58,7 +58,7 @@ The important lesson here is the separation of concerns.
 ![rxjs5 1](https://user-images.githubusercontent.com/210413/47623212-8abb6f80-dadc-11e8-895c-09a176387a29.jpg)
 ###### `ticket-details.component.ts`
 
-![rxjs5 2](https://user-images.githubusercontent.com/210413/47623211-8abb6f80-dadc-11e8-97b4-04d40c44348e.jpg)
+![rxjs5 2](https://user-images.githubusercontent.com/210413/47692896-73a47c80-dbc5-11e8-8ab4-799ab4cef1e4.jpg)
 
 ###### `ticket-details.component.html`
 
@@ -66,7 +66,7 @@ The important lesson here is the separation of concerns.
 
 ###### `ticket-list.component.ts`
 
-![rxjs5 4](https://user-images.githubusercontent.com/210413/47623209-8abb6f80-dadc-11e8-910e-b0ede49de17b.jpg)
+![rxjs5 4](https://user-images.githubusercontent.com/210413/47692895-73a47c80-dbc5-11e8-9ef5-73b05daabf4d.jpg)
 
 ###### `ticket-list.component.html`
 
