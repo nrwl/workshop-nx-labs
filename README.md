@@ -5,7 +5,7 @@
 Here are the labs synced with the git repos:  [workshop-nx-starter](https://github.com/nrwl/workshop-nx-starter)
 
 
-## Organizing Code in a Workspace 
+## Workspaces
 
 For your local repository, checkout branch [`m2start`](https://github.com/nrwl/workshop-nx-starter/tree/m2start):
 
