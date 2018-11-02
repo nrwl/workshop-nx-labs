@@ -1,8 +1,6 @@
 # RxJS Lab 2: Throttle Search Requests
 
-## Time: 20 minutes
-
-## Scenario
+### Scenario
 
 While searching is working for users and tickets, we have a performance issue!
 
@@ -40,16 +38,18 @@ Let's fix these **performance issues**! 😱
 ![rxjs2 1](https://user-images.githubusercontent.com/210413/47622233-a456ba00-dad0-11e8-84cf-96899908704f.jpg)
 
 
+<br/>
+
+----
+
+<br/>
+
+
 ### Investigate
 
 This ^ code works great to manage and control REST server queries.
 
 There is, however, a **bad practice** code implementation here.. and an actual super-subtle **race-condition** bug 😜! Be prepared to discuss it! (Don't cheat and look ahead! 🤗)
-
-
-<br/>
-
-----
 
 <br/>
 
