@@ -1,7 +1,5 @@
 # RxJS Lab 4: Create a custom Observable
 
-## Time: 30 minutes
-
 ### Scenario
 
 Now that performance and race-conditions have been addressed, let's explore creating observables and stopping the **observable execution**. We will also explore how an observable can be shared and the impacts of the sharing.
@@ -47,6 +45,19 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 ![rxjs4 3](https://user-images.githubusercontent.com/210413/47622803-5e512480-dad7-11e8-9091-defca17547fe.jpg)
 
+<br/>
+
+### Bonus Exercise
+
+*  Set up an array of `Observable<number>` as timers and push the `TicketTimer` service timer into it.
+*  Then update the template to `ngFor` the timers and use the async pipe to display each timer value.
+
+
+<br/>
+
+----
+
+<br/>
 
 ### Investigate
 
@@ -62,19 +73,6 @@ Run the application and:
 
 Add a `console.log()` in the teardown function of your TicketTimerService. Trying navigating again and watch the console.
 
-<br/>
-
-### Bonus Exercise
-
-*  Set up an array of `Observable<number>` as timers and push the `TicketTimer` service timer into it.
-*  Then update the template to `ngFor` the timers and use the async pipe to display each timer value.
-
-
-
-
-<br/>
-
-----
 
 <br/>
 
