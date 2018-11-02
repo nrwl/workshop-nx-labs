@@ -17,7 +17,7 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
 ----
   
 
-#### Feature A: **Loading Indicators**
+#### Feature (a): **Loading Indicators**
 
 <br/>
 
@@ -73,7 +73,7 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
   
 <br/>
 
-#### Feature B: **SelectTicket**
+#### Feature (b): **SelectTicket**
 
 <br/>
 
