@@ -2,7 +2,7 @@
 
 ## Time: 15 minutes
 
-## Scenario
+### Scenario
 
 In this application, we have search features and a crude dropDown `assignedToUser` menu.
 
@@ -42,16 +42,6 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 <br/>
 
-### Investigate
-
-Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field.
-
-![networktraffic](https://user-images.githubusercontent.com/210413/35155098-37725cbc-fcf2-11e7-9466-d852d6722873.jpg)
-
-Be prepared to discuss what you notice!
-
-<br/>
-
 ### Code Snippets
 
 ###### `search-tickets.component.ts`
@@ -61,8 +51,6 @@ Be prepared to discuss what you notice!
 ###### `search-tickets.component.html`
 
 ![rxjs1 1](https://user-images.githubusercontent.com/210413/47622122-2e9e1e80-dacf-11e8-8f0a-9616c55943f8.jpg)
-
-
 
 <br/>
 
@@ -74,6 +62,16 @@ Replace your custom drop down with [Material **Select** component](https://mater
 <br/>
 
 ----
+
+<br/>
+
+### Investigate
+
+Check out the `network` tab in the browser dev tools as you type in the "Assigned To:" field.
+
+![networktraffic](https://user-images.githubusercontent.com/210413/35155098-37725cbc-fcf2-11e7-9466-d852d6722873.jpg)
+
+Be prepared to discuss what you notice!
 
 <br/>
 
