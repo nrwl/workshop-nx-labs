@@ -33,7 +33,7 @@ Use class data binding to update CSS header stylings when the current ticket is 
 
 ##### In `ticket-list.component.ts` 
 
-Watch for the `ticketsToWork$` list and update a counter of current tickets 'marked to work'.
+Watch for the `markedToWork$` list and update a counter of current tickets 'marked to work'.
 
 ##### In `ticket-list.component.html ` 
 
