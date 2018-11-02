@@ -35,7 +35,8 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 ###### `ticket-timer.service.ts`
 
-![rxjs4 1](https://user-images.githubusercontent.com/210413/47622805-5e512480-dad7-11e8-8bbb-31e3e1d8b450.jpg)
+![ticket-timer.service.ts](https://user-images.githubusercontent.com/210413/47941498-5d940600-debc-11e8-88c9-46fb2178d318.png)
+
 
 ###### `ticket-details.component.ts`
 
