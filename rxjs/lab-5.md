@@ -1,4 +1,4 @@
-# Lab 5: Use BehaviorSubject
+# RxJS Lab 5: Use BehaviorSubject
 
 ## Time: 20 minutes
 
