@@ -40,7 +40,8 @@ And then we will use that observable [in the `TicketTimerService`] as an Observa
 
 ###### `ticket-details.component.ts`
 
-![rxjs4 2](https://user-images.githubusercontent.com/210413/47622804-5e512480-dad7-11e8-888b-17173d872de3.jpg)
+![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47941597-c3808d80-debc-11e8-8b30-e9510ceea1d1.png)
+
 
 ###### `ticket-details.component.html`
 
