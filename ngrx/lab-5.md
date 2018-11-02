@@ -1,4 +1,4 @@
-# NgRx Lab 5: Use DataPersistence fetch(( and navigate()
+# NgRx Lab 5: Use DataPersistence fetch() & navigate()
 
 
 ### Scenario
