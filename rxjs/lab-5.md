@@ -55,22 +55,23 @@ The important lesson here is the separation of concerns.
 
 ###### `ticket-timer.service.ts`
 
-![rxjs5 1](https://user-images.githubusercontent.com/210413/47623212-8abb6f80-dadc-11e8-895c-09a176387a29.jpg)
+![ticket-timer.service.ts](https://user-images.githubusercontent.com/210413/47942022-81584b80-debe-11e8-872b-3c476a0d99e7.png)
+
 ###### `ticket-details.component.ts`
 
-![rxjs5 2](https://user-images.githubusercontent.com/210413/47692896-73a47c80-dbc5-11e8-8ab4-799ab4cef1e4.jpg)
+![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47942039-903efe00-debe-11e8-84aa-e20bd46c8d96.png)
 
 ###### `ticket-details.component.html`
 
-![rxjs5 3](https://user-images.githubusercontent.com/210413/47623210-8abb6f80-dadc-11e8-8f36-9af7dea2ee9c.jpg)
+![ticket-details.component.html](https://user-images.githubusercontent.com/210413/47942058-9fbe4700-debe-11e8-92cb-5cafd2011adf.png)
 
 ###### `ticket-list.component.ts`
 
-![rxjs5 4](https://user-images.githubusercontent.com/210413/47692895-73a47c80-dbc5-11e8-9ef5-73b05daabf4d.jpg)
+![ticket-list.component.ts](https://user-images.githubusercontent.com/210413/47942074-af3d9000-debe-11e8-84b6-09f1f963388e.png)
 
 ###### `ticket-list.component.html`
 
-![rxjs5 5](https://user-images.githubusercontent.com/210413/47623208-8abb6f80-dadc-11e8-96be-fcb974fa7f6a.jpg)
+![ticket-list.component.html](https://user-images.githubusercontent.com/210413/47942090-bcf31580-debe-11e8-8a2f-c0980fb40f34.png)
 
 <br/>
 
@@ -87,4 +88,4 @@ Add a way to remove a ticket from the 'marked to work' status list. This will al
 
 ### Next Lab
 
-Go to Building Blocks of NgRx Lab #1: [Create a Root State for Logs](/ngrx/lab-1.md)
+Go to NgRx Lab #1: [Actions, Reducers, and Selectors](/ngrx/lab-1.md)
