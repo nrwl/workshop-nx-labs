@@ -35,14 +35,13 @@ Let's fix these **race-condition issues**!
 
 When the AssignedUsers search criteria field is empty, how can you auto-clear the dropDown menu? Please do NOT use the `tap()` operator. Hint use `Observable.of()`
 
+<br/>
+
 ### Code Snippets
 
 ###### `search-tickets.component.ts`
 
 ![image](https://user-images.githubusercontent.com/210413/47941339-c29b2c00-debb-11e8-96a3-bdf0b2e0bfad.png)
-
-
-
 
 
 <br/>
