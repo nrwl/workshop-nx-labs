@@ -1,7 +1,5 @@
 # RxJS Lab 1: Ticket Search DropDown
 
-## Time: 15 minutes
-
 ### Scenario
 
 In this application, we have search features and a crude dropDown `assignedToUser` menu.
