@@ -2,8 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/210413/47935906-02f1ae80-deaa-11e8-8cd7-0615e6234c76.png)
 
-Here are the labs synced with the git repos:  [workshop-nx-starter](https://github.com/nrwl/workshop-nx-starter)
-
+Here are the labs synced with the git repos:  [workshop-nx-finisher](https://github.com/nrwl/workshop-nx-project)
+  > When starting the workshop, developers will checkout [workshop-nx-starter](https://github.com/nrwl/workshop-nx-starter)
 
 ## Workspaces
 
