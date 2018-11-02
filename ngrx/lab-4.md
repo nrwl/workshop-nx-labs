@@ -1,4 +1,4 @@
-# NgRx Lab 3: Use @ngrx/entity
+# NgRx Lab 4: Use @ngrx/entity
 
 
 ### Scenario
