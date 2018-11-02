@@ -25,11 +25,11 @@ Using a **BehaviorSubject** to cache the current list of tickets with "work" sta
 ##### In `ticket-details.component.ts`, 
 
 1. This view component has a click handler on the header to call `markToWork()`. Update `markToWork()` to make a call to the ticket timer service method to add a ticket id to work.
-2. In (3) above we added code to add a ticket to our 'to-work' list. Now we need to configure (using observables) a watch to update the header color when the current ticket is in that 'to-work' list.
+2. In (3) above we added code to add a ticket to our 'to-work' list. Now we need to configure (using observables) a watch to update the header color when the current ticket is contained in the 'work in-progress' list.
 
 ##### In `ticket-details.component.html`, 
 
-Use class data binding to update CSS header stylings when the ticket is "marked to work":
+Use class data binding to update CSS header stylings when the current ticket is "marked to work":
 
 ##### In `ticket-list.component.ts` 
 
