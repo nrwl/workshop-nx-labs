@@ -15,20 +15,23 @@ For your local repository, checkout branch [`m2start`](https://github.com/nrwl/w
 
 For your local repository, checkout branch [`m3start`](https://github.com/nrwl/workshop-nx-starter/tree/m3start):
 
-1. [Add Subscriptions to Ticket Search Form](rxjs/lab-1.md)
-1. [Throttle Assigned to User Field and Transform](rxjs/lab-2.md)
-1. [Use SwitchMap](rxjs/lab-3.md)
-1. [Create a Ticket Timer Observable](rxjs/lab-4.md)
-1. [Track Tickets to Work With a Multi-Cast Observable](rxjs/lab-5.md)
+1. [Lab 1: Ticket Search DropDown](rxjs/lab-1.md)
+1. [Lab 2: Throttle Search Requests](rxjs/lab-2.md)
+1. [Lab 3: Use SwitchMap](rxjs/lab-3.md)
+1. [Lab 4: Create a custom Observable](rxjs/lab-4.md)
+1. [Lab 5: Use BehaviorSubject](rxjs/lab-5.md)
 
-## Building Blocks of NgRx  
+## NgRx  
 
-For your local repository, checkout branch [`m5start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
+For your local dev repository, checkout branch [`m5start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
 
-1. [Create a Root State for Logs](ngrx/lab-1.md)
-1. [Refactor Tickets State to Use Key/Value Object](ngrx/lab-2.md)
-1. [Refactor Tickets State to use NgRx Entity](ngrx/lab-3.md)
-1. [Create a Feature State for Ticket Comments](ngrx/lab-4.md)
+1. [Lab 1: Actions, Reducers, and Selectors](ngrx/lab-1.md)
+1. [Lab 2: Effects and Redux Tools](ngrx/lab-2.md)
+1. [Lab 3: Use Entity-like Pattern](ngrx/lab-3.md)
+1. [Lab 4: Use @ngrx/entity](ngrx/lab-4.md)
+1. [Lab 5: Use DataPersistence fetch() & navigate()](ngrx/lab-5.md)
+1. [Lab 6: Use NgRx Facade](ngrx/lab-6.md)
+1. [Lab 7: Select Action and Loading Indicators](ngrx/lab-7.md)
 
 ----
 
