@@ -17,7 +17,7 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
 ----
   
 
-#### Part A: 'Loading Indicators' feature
+##### Feature A: **Loading Indicators**
 
 ##### In `tickets-list-view.module.ts`
 
@@ -71,7 +71,7 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
   
 <br/>
 
-#### Part B: SelectTicket feature
+##### Feature B: **SelectTicket**
 
 <br/>
 
