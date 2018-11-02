@@ -25,10 +25,10 @@ For your local repository, checkout branch [`m3start`](https://github.com/nrwl/w
 
 For your local repository, checkout branch [`m5start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
 
-1. [Create a Root State for Logs](building-blocks-of-ngrx/lab-1.md)
-1. [Refactor Tickets State to Use Key/Value Object](building-blocks-of-ngrx/lab-2.md)
-1. [Refactor Tickets State to use NgRx Entity](building-blocks-of-ngrx/lab-3.md)
-1. [Create a Feature State for Ticket Comments](building-blocks-of-ngrx/lab-4.md)
+1. [Create a Root State for Logs](ngrx/lab-1.md)
+1. [Refactor Tickets State to Use Key/Value Object](ngrx/lab-2.md)
+1. [Refactor Tickets State to use NgRx Entity](ngrx/lab-3.md)
+1. [Create a Feature State for Ticket Comments](ngrx/lab-4.md)
 
 ----
 
