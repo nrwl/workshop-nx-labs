@@ -1,8 +1,6 @@
 # RxJS Lab 3: Use SwitchMap
 
-## Time: 20 minutes
-
-## Scenario
+### Scenario
 
 In the last lab, we fixed the server-thrashing performance issue(s)!
 
@@ -41,7 +39,8 @@ When the AssignedUsers search criteria field is empty, how can you auto-clear th
 
 ###### `search-tickets.component.ts`
 
-![rxjs3 1](https://user-images.githubusercontent.com/210413/47622584-b5092f00-dad4-11e8-8482-2edf7ee16987.jpg)
+![image](https://user-images.githubusercontent.com/210413/47941339-c29b2c00-debb-11e8-96a3-bdf0b2e0bfad.png)
+
 
 
 
