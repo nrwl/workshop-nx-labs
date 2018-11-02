@@ -9,10 +9,10 @@ Here are the labs synced with the git repos:  [workshop-nx-starter](https://gith
 
 For your local repository, checkout branch [`m2start`](https://github.com/nrwl/workshop-nx-starter/tree/m2start):
 
-1. [Create an App and a Lib](organizing-code-in-a-workspace/lab-1.md)
-1. [Create a Lazy Loaded UI Lib](organizing-code-in-a-workspace/lab-2.md)
-1. [Public APIs for Libs](organizing-code-in-a-workspace/lab-3.md)
-1. [Run the Build Command and NPM Scripts](organizing-code-in-a-workspace/lab-4.md)
+1. [Lab 1: Create an App and a Lib](organizing-code-in-a-workspace/lab-1.md)
+1. [Lab 2: Create a Lazy Loaded UI Lib](organizing-code-in-a-workspace/lab-2.md)
+1. [Lab 3: Public APIs for Libs](organizing-code-in-a-workspace/lab-3.md)
+1. [Lab 4: Run the Build Command and NPM Scripts](organizing-code-in-a-workspace/lab-4.md)
 
 ## RxJS
 
