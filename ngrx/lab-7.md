@@ -131,7 +131,7 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
 
 <br/>
 
-### Running the Application
+### Running the Application with REST Delays
 
 *  Open the **Customer Portal** application with the browser: http://localhost:4203
 *  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
@@ -139,14 +139,14 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
 Run the following command(s) in individual terminals:
 
 ```console
-yarn server
+yarn server --throttle
 ```
 
 ```console
 yarn customer-portal -- -o
 ```
 
-> If you already have one(s) running and need to restart, you can stop the run with `ctrl+c`.
+> The `--throttle` option introduces random delays in the REST server responses... so the in-progress spinner becomes much more obvious.
 
 
 <br/>
