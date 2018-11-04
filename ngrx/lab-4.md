@@ -1,4 +1,4 @@
-# NgRx Lab 3: Use Entity-like Pattern
+# NgRx Lab 4: Use Entity-like Pattern
 
 
 ### Scenario
