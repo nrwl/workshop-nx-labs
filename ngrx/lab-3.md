@@ -1,4 +1,4 @@
-# NgRx Lab 2: Effects and Redux Tools
+# NgRx Lab 3: Effects and Redux Tools
 
 
 ### Scenario
