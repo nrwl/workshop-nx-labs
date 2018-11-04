@@ -7,6 +7,7 @@ Our Tickets view components use the HttpClient service to directly load ticket R
 
 Such async activity should be relegated to NgRx **Effects** classes!
 
+![image](https://user-images.githubusercontent.com/210413/47959514-0d986a80-dfb4-11e8-9a6f-a52c53cbbdcd.png)
 
 <br/>
 
