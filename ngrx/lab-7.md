@@ -1,4 +1,4 @@
-# NgRx Lab 6: Use NgRx Facade
+# NgRx Lab 7: Use NgRx Facades
 
 
 ### Scenario
@@ -99,4 +99,4 @@ yarn customer-portal -- -o
 
 ## Next Lab
 
-Go to NgRx Lab #7: [Use NgRx Facade](lab-8.md)
+Go to NgRx Lab #8: [Select Action and Loading Indicators](lab-8.md)
