@@ -1,4 +1,4 @@
-# NgRx Lab 4: Use @ngrx/entity
+# NgRx Lab 5: Use @ngrx/entity
 
 
 ### Scenario
@@ -136,4 +136,4 @@ yarn customer-portal -- -o
 
 ## Next Lab
 
-Go to NgRx Lab #5: [Use DataPersistence `fetch()` and `navigate()`](lab-6.md)
+Go to NgRx Lab #6: [Use DataPersistence `fetch()` and `navigate()`](lab-6.md)
