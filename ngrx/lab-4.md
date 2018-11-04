@@ -115,4 +115,4 @@ yarn customer-portal -- -o
 
 ### Next Lab
 
-Go to NgRx Lab #4: [Use @ngrx/entity](lab-5.md)
+Go to NgRx Lab #5: [Use @ngrx/entity](lab-5.md)
