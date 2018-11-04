@@ -105,4 +105,4 @@ yarn customer-portal -- -o
 
 ### Next Lab
 
-Go to NgRx Lab #3: [Use Entity-like Pattern](lab-4.md)
+Go to NgRx Lab #4: [Use Entity-like Pattern](lab-4.md)
