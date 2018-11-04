@@ -69,4 +69,4 @@ yarn customer-portal -- -o
 
 ### Next Lab
 
-Go to NgRx Lab #2: [Effects and ReduxTools](lab-3.md)
+Go to NgRx Lab #3: [Effects and ReduxTools](lab-3.md)
