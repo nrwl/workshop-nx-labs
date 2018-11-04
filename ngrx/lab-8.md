@@ -10,7 +10,20 @@ And if the ticket is not available in our NgRx state, we will auto-load it.
 
 Also, let's simulate a delayed server responses and show a loading/in-progress UI indicator while we are loading REST ticket data.
  
-### Code Instructions
+### Extra Instructions
+
+To properly see the spinning, loading indicators, you will need to simulate a slow network. The NodeJS server has a special `--throttle` argument that can be used to introduce random delays to the server's REST responses:
+
+
+Run the following command(s) in individual terminals:
+
+```console
+yarn server --throttle
+```
+
+```console
+yarn customer-portal -- -o
+```
 
 <br/>
 
@@ -58,7 +71,8 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
 ##### **Code Snippets**
 
 ###### `tickets.reducer.ts`
-![tickets.reducer.ts](https://user-images.githubusercontent.com/210413/47938571-8f07d400-deb2-11e8-8ec2-5792f51c0539.png)
+![image](https://user-images.githubusercontent.com/210413/47971266-7ab00c80-e055-11e8-8d1d-e2b546c3abc3.png)
+
 
 ###### `ticket-list.component.html`
 ![ticket-list.component.html](https://user-images.githubusercontent.com/210413/47938584-97f8a580-deb2-11e8-9727-6db09c34e4f1.png)
