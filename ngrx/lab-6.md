@@ -20,16 +20,19 @@ Then we can remove deprecated *load* action code that is no longer needed in our
 
 ----
   
+##### In `ticket.actions.ts`
+
+1. Create a `RouterLoadTicket` action with a `ROUTER_LOAD_TICKET` enum. This action will have payload of `ticketId`.
 
 ##### In `libs/ticket-list-view/src/lib/+state/router.effects.ts`
 
 1. Inject the `private d: DataPersistence<any>` into the constructor.
-2. Implement `@Effect() loadAllTickets$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketListComponent**. The callback function should dispatch a `LoadTickets` action.
-3. Implement `@Effect() loadTicket$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketDetailsComponent**. The callback function should dispatch a `LoadTicket` action.
+2. Implement `@Effect() loadview_TicketList$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketListComponent**. The callback function should dispatch a `LoadTickets` action.
+  > This solution will auto-dispatch the 'load tickets' action when routing to the TicketList view... very nice! 
+3. Implement `@Effect() loadview_TicketDetails$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketDetailsComponent**. The callback function should dispatch a `RouterLoadTicket` action.
+  > This solution will auto-dispatch a special load ticket action when routing to the views... very nice! 
 
-This solution with auto-dispatch load ticket actions when routing to views... very nice! 
-
-> Don't forget to register this `RouterEffects` with `EffectsModule.forRoot()` 
+Don't forget to register this `RouterEffects` with `EffectsModule.forRoot()` 
 
 ##### In `tickets.effects.ts`
 
