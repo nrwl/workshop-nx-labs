@@ -1,79 +1,44 @@
-# NgRx Lab 2: Effects and Redux Tools
+# NgRx Lab 2: Composed Store Selectors
 
+![image](https://user-images.githubusercontent.com/210413/47935906-02f1ae80-deaa-11e8-8cd7-0615e6234c76.png)
 
 ### Scenario
 
-Our Tickets view components use the HttpClient service to directly load ticket REST data. This is another poor design... views should never know how to load REST data.
-
-Such async activity should be relegated to NgRx **Effects** classes!
-
+We need to convert our raw selectors to composed, memoized Store selectors using `createFeatureSelector()` and `createSelector()`
 
 <br/>
 
 ### Code Instructions
 
-In this lab, you will:
-
-  * Create an Effects class to handle async activity to load ticket REST data 
-  * Update the view components to remove HttpClient usages; replaced with **LoadTicket** actions
-  
 <br/>
 
 ----
+    
+##### In `tickets.selectors.ts`
+
+1. Import and use the `createFeatureSelector()` to create a `getTicketsState` selector.
+2. Use `createSelector` to convert are the other raw selectors to composed, memoized selectors.
   
-##### In `libs/tickets-state/src/lib/+state/tickets.effects.ts`
-
-1. Implement a `@Effect loadAllTicket$` property that uses `this.actions.pipe()` for `TicketActionTypes.LOAD_ALL_TICKETS`, calls `ticketService.getTickets()` and then dispatches a LoadTicketsDone action.
-1. Implement a `@Effect loadTicket$` property that uses `this.actions.pipe()` for `TicketActionTypes.LOAD_TICKET`, calls `ticketService.ticketById()` and then dispatches a LoadTicketDone action.
-
-> Do not forget to register this Effects class in the `tickets-state.module.ts` **EffectsModule.forFeature()**
-  
-##### In `ticket-list.component.ts`
-
-1. Remove the usage of `this.service.getTickets()`
-2. Simply dispatch a `LoadTickets` action. 
-
-##### In `ticket-details.component.ts`
-
-1. Dispatch a `LoadTicket` action in the `ngOnInit()` 
-
-
 <br/>
+
 
 ### Code Snippets
 
-###### `tickets.effects.ts`
+###### `tickets.selectors.ts`
 
-![tickets.effects.ts](https://user-images.githubusercontent.com/210413/47936640-4cdb9400-deac-11e8-94d5-46facc5d917b.png)
+![image](https://user-images.githubusercontent.com/210413/47958976-85ab6400-dfa5-11e8-8b47-7dd35c0c32b3.png)
 
-###### `tickets-list.component.ts`
-
-![tickets-list.component.ts](https://user-images.githubusercontent.com/210413/47936662-5e24a080-deac-11e8-9aac-94536b13b02f.png)
-
-###### `ticket-details.component.ts`
-
-![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47936682-798fab80-deac-11e8-9543-443bd895157c.png)
 
 <br/>
-
 
 ----
 
-<br/>
 
+<br/>
 
 ### Investigate
 
-Why are we dispatching a LoadTicket action in the TicketDetails component? What issue does this solve.
-
-
-### Using Redux DevTools 
-
-Open the Redux DevTools in Browser and watch the state changes and you route in the Customer-Portal application.
-
-![image](https://user-images.githubusercontent.com/210413/47936825-f1f66c80-deac-11e8-8a17-d80f742bfdee.png)
-
-> Install Chrome Extension: []Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+Be prepared to discuss what memoization means for NgRx state and view templates. 
 
 
 <br/>
@@ -102,7 +67,6 @@ yarn customer-portal -- -o
 
 <br/>
 
-
 ### Next Lab
 
-Go to NgRx Lab #3: [Use Entity-like Pattern](lab-3.md)
+Go to NgRx Lab #2: [Effects and ReduxTools](lab-3.md)

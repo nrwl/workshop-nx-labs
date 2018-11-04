@@ -1,75 +1,70 @@
-# NgRx Lab 6: Use NgRx Facade
+# NgRx Lab 5: Use DataPersistence fetch() & navigate()
 
 
 ### Scenario
 
-NgRx **Facades** provide a public API layer between the NgRx layers and the View component layers. 
+Nx provides a **DataPersistence** feature to manage pessimistic and optimistic updates, data fetch, and Router navigation operations.
 
-Architectures with Facades allow developers to implement views that maintain 1-way data flows and passively render *pushed data*.
+Data fetching implemented naively suffers from race conditions and poor error handling. `DataPersistence::fetch` addresses these problems; 
+it runs all fetches in order, which removes race conditions and forces the developer to handle errors.
 
 
 ### Code Instructions
 
-Let's implement a TicketsFacade that encapsulates all the selectors to build Store Queries (e.g. `this.store.pipe(select(ticketsQuery.getAllTickets))`) and all store action dispatching.
+Let's create a Router effects class to auto-dispatch ticket Load actions when routing to ticket views.
+Also, let's reduce the complexity in our `ticket.effects` implementation by using DataPersistence. 
 
-  > Store queries are observables to specific NgRx state data; extracted with memoized selectors.
+Then we can remove deprecated *load* action code that is no longer needed in our views. 
 
 <br/>
 
 ----
   
 
-##### In `libs/tickets-state/src/lib/+state/tickets.facade.ts`
+##### In `libs/ticket-list-view/src/lib/+state/router.effects.ts`
 
-1. Inject the Store using `private readonly store: Store<PartialAppState>`
-2. Implement the following Query Observables using `store.pipe(select(<query>))`:
-  * `allItems$`
-  * `entities$`
-  * `isLoading$`
-  * `error$`  
-3. Implement a `loadTicketById(ticketId)` public method that dispatches a LoadTicket action.
+1. Inject the `private d: DataPersistence<any>` into the constructor.
+2. Implement `@Effect() loadAllTickets$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketListComponent**. The callback function should dispatch a `LoadTickets` action.
+3. Implement `@Effect() loadTicket$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketDetailsComponent**. The callback function should dispatch a `LoadTicket` action.
 
-> Be sure to register the Facade as a service within the `tickets-state.module.ts`! And don't forget to add this service to the library barrel/Public API.
+This solution with auto-dispatch load ticket actions when routing to views... very nice! 
 
-##### In `ticket-details.component.ts`
+> Don't forget to register this `RouterEffects` with `EffectsModule.forRoot()` 
 
-1. Replace the deprecated injection of Store within an injected Facade instance using `private facade: TicketsFacade`
-2. Replace all uses of `store.pipe(select(<query>)` with `facade.entities$.pipe(...)`
-3. Remove the dispatching of the `LoadTicket` action
+##### In `tickets.effects.ts`
+
+1. Update `@Effect() loadAllTickets$` to use `this.d.fetch(...)` instead of `this.actions.pipe`. The `run` callback should still use the HttpClient service and dispatch `LoadTicketsDone`.
+2. Implement an `OnError` callback to dispatch `LoadTicketsError`
+3. Update `@Effect() loadTicket$` to use `this.d.fetch(...)` instead of `this.actions.pipe`. The `run` callback should still use the HttpClient service and dispatch `LoadTicketDone`.
+
+> Notice how many of the operators (`mergeMap`, `exhaustMap`, and `catchError`) are no longer needed.
 
 ##### In `ticket-list.component.ts`
 
-1. Replace the deprecated injection of Store within an injected Facade instance using `private facade: TicketsFacade`
-2. Replace all uses of `store.pipe(select(<query>)` with `facade.allItems$.pipe(...)`
-3. Remove the dispatching of the `LoadTicket` action
+1. Delete the deprecated code `this.store.dispatch(new LoadTickets());`
+
 
 <br/>
 
 ### Code Snippets
 
-###### `tickets.facade.ts`
-![tickets.facade.ts](https://user-images.githubusercontent.com/210413/47938099-fc1a6a00-deb0-11e8-94f7-efd294104052.png)
+###### `router.effects.ts`
 
-###### `ticket-details.component.ts`
-![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47938113-03da0e80-deb1-11e8-8094-acf9e9c39be6.png)
+![router.effects.ts](https://user-images.githubusercontent.com/210413/47937862-2e779780-deb0-11e8-9d28-14812f93a3cb.png)
+
+###### `tickets.effects.ts`
+
+![tickets.effects.ts](https://user-images.githubusercontent.com/210413/47937875-3a635980-deb0-11e8-94b1-bce679c0107a.png)
 
 ###### `ticket-list.component.ts`
-![ticket-list.component.ts](https://user-images.githubusercontent.com/210413/47938126-0c324980-deb1-11e8-9b3c-94a78482dc73.png)
 
-###### `tickets-state.module.ts`
-![tickets-state.module.ts](https://user-images.githubusercontent.com/210413/47938212-574c5c80-deb1-11e8-9306-1159e67492ba.png)
+![ticket-list.component.ts](https://user-images.githubusercontent.com/210413/47937884-42bb9480-deb0-11e8-87dd-45de0135288b.png)
+
 
 <br/>
+
 
 ----
-
-<br/>
-
-### Investigate
-
-Why is the TicketDetails using the `entities$` query instead of the `allItems$`?
-
-Be prepared to discuss this? 
 
 <br/>
 
@@ -97,6 +92,7 @@ yarn customer-portal -- -o
 
 <br/>
 
+
 ## Next Lab
 
-Go to NgRx Lab #7: [Use NgRx Facade](lab-6.md)
+Go to NgRx Lab #6: [Use NgRx Facade](lab-7.md)

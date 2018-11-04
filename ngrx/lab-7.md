@@ -1,121 +1,65 @@
-# NgRx Lab 7: Select Action and Loading Indicators
+# NgRx Lab 6: Use NgRx Facade
+
 
 ### Scenario
 
-Each time the user routes to the TicketDetails view, a LoadTicket action requests a refresh from the server. 
-Let's instead *select* the ticket in the TicketList view and then query for the **selectedTicket** when we route to the TicketDetails view. 
-And if the ticket is not available in our NgRx state, we will auto-load it.
+NgRx **Facades** provide a public API layer between the NgRx layers and the View component layers. 
 
-> Note this solution will use an NgRx **Action Decider** to conditionally load ticket details remotely.
+Architectures with Facades allow developers to implement views that maintain 1-way data flows and passively render *pushed data*.
 
-Also, let's simulate a delayed server responses and show a loading/in-progress UI indicator while we are loading REST ticket data.
- 
+
 ### Code Instructions
 
+Let's implement a TicketsFacade that encapsulates all the selectors to build Store Queries (e.g. `this.store.pipe(select(ticketsQuery.getAllTickets))`) and all store action dispatching.
+
+  > Store queries are observables to specific NgRx state data; extracted with memoized selectors.
+
 <br/>
 
 ----
   
 
-#### Feature (a): **Loading Indicators**
+##### In `libs/tickets-state/src/lib/+state/tickets.facade.ts`
 
-<br/>
+1. Inject the Store using `private readonly store: Store<PartialAppState>`
+2. Implement the following Query Observables using `store.pipe(select(<query>))`:
+  * `allItems$`
+  * `entities$`
+  * `isLoading$`
+  * `error$`  
+3. Implement a `loadTicketById(ticketId)` public method that dispatches a LoadTicket action.
 
-##### In `tickets-list-view.module.ts`
+> Be sure to register the Facade as a service within the `tickets-state.module.ts`! And don't forget to add this service to the library barrel/Public API.
 
-1. Import and register the `UiMaterialModule` so the TicketList and TicketDetails views can use the `mat-spinner` component.
- 
+##### In `ticket-details.component.ts`
 
-##### In `tickets.reducer.ts`
+1. Replace the deprecated injection of Store within an injected Facade instance using `private facade: TicketsFacade`
+2. Replace all uses of `store.pipe(select(<query>)` with `facade.entities$.pipe(...)`
+3. Remove the dispatching of the `LoadTicket` action
 
-1. Update `getInitialState()` to initialize with `loading: true`
-2. Add `case TicketActionTypes.LOAD_TICKET: {...}` to update the state with `loading: true`
-3. Update `case TicketActionTypes.LOAD_ALL_TICKETS_DONE:` to set `loading: false`
-4. Update `case TicketActionTypes.LOAD_TICKET_DONE:` to set `loading: false`
- 
- 
 ##### In `ticket-list.component.ts`
 
-1. Add a property `loading$ = this.facade.isLoading$;`
-2. Update the template to hide the list content and show the spinner when the loading == true; use:
-```html
-<div *ngIf="!(loading$ | async) else loading" >
-...
-</div>
-<ng-template #loading>
-  <mat-spinner class="nrwl"></mat-spinner>
-</ng-template>
-```
-
-##### In `ticket-details.component.ts`
-
-1. Add a property `loading$ = this.facade.isLoading$;`
-2. Update the template to hide the list content and show the spinner when the loading == true; use:
-
+1. Replace the deprecated injection of Store within an injected Facade instance using `private facade: TicketsFacade`
+2. Replace all uses of `store.pipe(select(<query>)` with `facade.allItems$.pipe(...)`
+3. Remove the dispatching of the `LoadTicket` action
 
 <br/>
 
-##### **Code Snippets**
-
-###### `tickets.reducer.ts`
-![tickets.reducer.ts](https://user-images.githubusercontent.com/210413/47938571-8f07d400-deb2-11e8-8ec2-5792f51c0539.png)
-
-###### `ticket-list.component.html`
-![ticket-list.component.html](https://user-images.githubusercontent.com/210413/47938584-97f8a580-deb2-11e8-9727-6db09c34e4f1.png)
-
-###### `ticket-details.component.html`
-![ticket-details.component.html](https://user-images.githubusercontent.com/210413/47938591-9e871d00-deb2-11e8-95bc-766713786cb4.png)
-
-
-<br/>
-
-----
-  
-<br/>
-
-#### Feature (b): **SelectTicket**
-
-<br/>
-
-1. In `tickets.actions.ts`, add a `SelectTicket` enum and action class to `tickets.actions.ts` 
-2. In `tickets.reducer.ts`, add a `case TicketActionTypes.SELECT_TICKET: {...}` to update the `selectedId` state value.
-
-##### In `tickets.facade.ts`
-
-1. Create a `selectedTicket$` observable using `ticketsQuery.getSelectedTicket`
-2. Replace `loadTicketById()` with `selectTicket()` and dispatch a `SelectTicket` action.
-
-##### In `tickets.effects.ts`
-
-1. Create a `@Effect() selectTicket$` with a `run` callback that conditionally emits a `LoadTicket()` action. 
-  > Use `ticketsQuery.getTicketAsEntities(state)` to get all currently loaded tickets and check it the selected ticket has already been loaded. 
-
-
-##### In `ticket-details.component.ts`
-
-1. Use the TicketFacade `selectedTicket$` query:  `ticket$ = this.facade.selectedTicket$`
-2. Replace the use of `facade.entities$.pipe(...)` with `this.facade.selectTicket(id);`
-
-
-<br/>
-
-##### **Code Snippets**
-
-###### `tickets.actions.ts`
-![tickets.actions.ts](https://user-images.githubusercontent.com/210413/47938930-9380bc80-deb3-11e8-9ee2-78664af6edef.png)
-
-###### `tickets.reducer.ts`
-![tickets.reducer.ts](https://user-images.githubusercontent.com/210413/47938937-99769d80-deb3-11e8-957d-268d1b4482bb.png)
+### Code Snippets
 
 ###### `tickets.facade.ts`
-![tickets.facade.ts](https://user-images.githubusercontent.com/210413/47938946-a09dab80-deb3-11e8-95af-214a9d8db8b5.png)
+![tickets.facade.ts](https://user-images.githubusercontent.com/210413/47938099-fc1a6a00-deb0-11e8-94f7-efd294104052.png)
 
-###### `tickets.effects.ts`
-![tickets.effects.ts](https://user-images.githubusercontent.com/210413/47939902-de500380-deb6-11e8-89e3-d4089a9f48f6.png)
+###### `ticket-details.component.ts`
+![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47938113-03da0e80-deb1-11e8-8094-acf9e9c39be6.png)
 
+###### `ticket-list.component.ts`
+![ticket-list.component.ts](https://user-images.githubusercontent.com/210413/47938126-0c324980-deb1-11e8-9b3c-94a78482dc73.png)
+
+###### `tickets-state.module.ts`
+![tickets-state.module.ts](https://user-images.githubusercontent.com/210413/47938212-574c5c80-deb1-11e8-9306-1159e67492ba.png)
 
 <br/>
-
 
 ----
 
@@ -123,15 +67,13 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
 
 ### Investigate
 
-* Why did we use `ticketsQuery.getTicketAsEntities(state)`? 
-* What are the benefits?
+Why is the TicketDetails using the `entities$` query instead of the `allItems$`?
 
-> Be prepared to discuss this? 
-
+Be prepared to discuss this? 
 
 <br/>
 
-### Running the Application with REST Delays
+### Running the Application
 
 *  Open the **Customer Portal** application with the browser: http://localhost:4203
 *  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
@@ -139,14 +81,14 @@ Also, let's simulate a delayed server responses and show a loading/in-progress U
 Run the following command(s) in individual terminals:
 
 ```console
-yarn server --throttle
+yarn server
 ```
 
 ```console
 yarn customer-portal -- -o
 ```
 
-> The `--throttle` option introduces random delays in the REST server responses... so the in-progress spinner becomes much more obvious.
+> If you already have one(s) running and need to restart, you can stop the run with `ctrl+c`.
 
 
 <br/>
@@ -157,4 +99,4 @@ yarn customer-portal -- -o
 
 ## Next Lab
 
-You have finished the **Nx Workshop: NgRx Course**. Congratulations. 
+Go to NgRx Lab #7: [Use NgRx Facade](lab-8.md)

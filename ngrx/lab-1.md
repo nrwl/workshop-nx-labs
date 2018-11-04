@@ -117,4 +117,4 @@ yarn customer-portal -- -o
 
 ### Next Lab
 
-Go to NgRx Lab #2: [Effects and ReduxTools](lab-2.md)
+Go to NgRx Lab #2: [Composed Store Selectors](lab-2.md)

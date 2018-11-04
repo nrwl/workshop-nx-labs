@@ -1,71 +1,58 @@
-# NgRx Lab 3: Use Entity-like Pattern
+# NgRx Lab 2: Effects and Redux Tools
 
 
 ### Scenario
 
-Often NgRx solutions contain large collections of data items with subsequent CRUD code in the Reducers. Before using **@ngrx/entity** to solve those issues, let's manually create a entity-like solution... to explore simple concepts and benefits.
+Our Tickets view components use the HttpClient service to directly load ticket REST data. This is another poor design... views should never know how to load REST data.
+
+Such async activity should be relegated to NgRx **Effects** classes!
+
 
 <br/>
 
 ### Code Instructions
 
-In this lab, you will update the TicketsState to use entity-like patterns in the following NgRx artifacts:
+In this lab, you will:
 
-  * `tickets.interfaces.ts`
-  * `tickets.reducer.ts`
-  * `tickets.selectors.ts`
+  * Create an Effects class to handle async activity to load ticket REST data 
+  * Update the view components to remove HttpClient usages; replaced with **LoadTicket** actions
   
-We will also introduce the support of a **selected** ticket in our TicketsState. 
-
-> Note that no view components will need to be updated. This is only an NgRx-layer change! 
- 
 <br/>
 
 ----
- 
-##### In `tickets.interfaces.ts`
-
-1. Replace the `list` property with `entities` and `ids`. Define an interface for the `entities`
-```ts
-export interface TicketDictionary {
-  [key: number]: Ticket;
-}
-```
-2. Add a `selectedId: number` property.
-
   
-##### In `tickets.reducer.ts`
+##### In `libs/tickets-state/src/lib/+state/tickets.effects.ts`
 
-1. Update the `initialState: TicketsState` to match the updated `TicketsState` interface.
-2. Update the `ticketsReducer` function 
-  1. Update `case TicketActionTypes.LOAD_ALL_TICKETS_DONE` to build the entities and ids values appropriately
-    > Use `tickets.reduce(()={},{...state.entities})` to build a new **entities** TicketDictionary instance.  
-  2. Update `case TicketActionTypes.LOAD_TICKET_DONE` to simply add the ticket to the **TicketDictionary**
+1. Implement a `@Effect loadAllTicket$` property that uses `this.actions.pipe()` for `TicketActionTypes.LOAD_ALL_TICKETS`, calls `ticketService.getTickets()` and then dispatches a LoadTicketsDone action.
+2. Implement a `@Effect loadTicket$` property that uses `this.actions.pipe()` for `TicketActionTypes.LOAD_TICKET`, calls `ticketService.ticketById()` and then dispatches a LoadTicketDone action.
 
-##### In `tickets.selectors.ts`
+> Do not forget to register this Effects class in the `tickets-state.module.ts` **EffectsModule.forFeature()**
+  
+##### In `ticket-list.component.ts`
 
-1. Create a `getEntities` selector.
-2. Create a `getIds` selector.
-3. Update the `getAllTickets` and `getSelectedTicket` selectors to use the new getEntities and getIds selectors.
-4. export all the selectors as part of a namespace using `export namespace ticketsQuery { ... } `
+1. Remove the usage of `this.service.getTickets()`
+2. Simply dispatch a `LoadTickets` action. 
+
+##### In `ticket-details.component.ts`
+
+1. Dispatch a `LoadTicket` action in the `ngOnInit()` 
+
 
 <br/>
-
 
 ### Code Snippets
 
-###### `tickets.interfaces.ts`
+###### `tickets.effects.ts`
 
-![tickets.interfaces.ts](https://user-images.githubusercontent.com/210413/47937224-0d15ac00-deae-11e8-9a3f-010c6a5e688b.png)
+![tickets.effects.ts](https://user-images.githubusercontent.com/210413/47936640-4cdb9400-deac-11e8-94d5-46facc5d917b.png)
 
-###### `tickets.reducer.ts`
+###### `tickets-list.component.ts`
 
-![tickets.reducer.ts](https://user-images.githubusercontent.com/210413/47937238-169f1400-deae-11e8-84f0-963e54f0657b.png)
+![tickets-list.component.ts](https://user-images.githubusercontent.com/210413/47936662-5e24a080-deac-11e8-9aac-94536b13b02f.png)
 
-###### `tickets.selectors.ts`
+###### `ticket-details.component.ts`
 
-![tickets.selectors.ts](https://user-images.githubusercontent.com/210413/47937253-1dc62200-deae-11e8-9ccd-5107b7e0ed42.png)
-
+![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47936682-798fab80-deac-11e8-9543-443bd895157c.png)
 
 <br/>
 
@@ -74,16 +61,19 @@ export interface TicketDictionary {
 
 <br/>
 
+
 ### Investigate
 
-The selectors and reducer have become slightly more complex... but this initial complexity is only an aspect of an manual simulation of @ngrx/entity.
+Why are we dispatching a LoadTicket action in the TicketDetails component? What issue does this solve.
 
-Consider these questions:
 
-* Why did we use a `namespace ticketsQuery`? 
-* Why did we add selected ticket features like `selectedId` and `getSelectedTicket`?
+### Using Redux DevTools 
 
-Be prepared to discuss this? 
+Open the Redux DevTools in Browser and watch the state changes and you route in the Customer-Portal application.
+
+![image](https://user-images.githubusercontent.com/210413/47936825-f1f66c80-deac-11e8-8a17-d80f742bfdee.png)
+
+> Install Chrome Extension: []Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
 
 
 <br/>
@@ -115,4 +105,4 @@ yarn customer-portal -- -o
 
 ### Next Lab
 
-Go to NgRx Lab #4: [Use @ngrx/entity](lab-4.md)
+Go to NgRx Lab #3: [Use Entity-like Pattern](lab-4.md)

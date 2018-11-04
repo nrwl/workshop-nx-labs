@@ -1,70 +1,110 @@
-# NgRx Lab 5: Use DataPersistence fetch() & navigate()
+# NgRx Lab 4: Use @ngrx/entity
 
 
 ### Scenario
 
-Nx provides a **DataPersistence** feature to manage pessimistic and optimistic updates, data fetch, and Router navigation operations.
+NgRx entity is designed to take care of data management in your state in a way that is efficient and performant. 
 
-Data fetching implemented naively suffers from race conditions and poor error handling. `DataPersistence::fetch` addresses these problems; 
-it runs all fetches in order, which removes race conditions and forces the developer to handle errors.
+**@ngrx/entity** handles the store structure part and provides an easy way avoid tedious CRUD logic in your reducers.
 
 
 ### Code Instructions
 
-Let's create a Router effects class to auto-dispatch ticket Load actions when routing to ticket views.
-Also, let's reduce the complexity in our `ticket.effects` implementation by using DataPersistence. 
+Let's refactor the tickets state to use Entity instead of the hand crafted version you wrote last lab. Update the interface, initial state and reducer.
+ 
+Then we will introduce selector functions as they are needed to get to the entities in the state. 
 
-Then we can remove deprecated *load* action code that is no longer needed in our views. 
+  > Take note how some of this will be easier to work with (and provide some additional mutation safety), but for other parts it will add some complexity.
 
 <br/>
 
 ----
   
 
-##### In `libs/ticket-list-view/src/lib/+state/router.effects.ts`
+##### In `tickets.interfaces.ts`
 
-1. Inject the `private d: DataPersistence<any>` into the constructor.
-2. Implement `@Effect() loadAllTickets$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketListComponent**. The callback function should dispatch a `LoadTickets` action.
-3. Implement `@Effect() loadTicket$` which uses `this.d.navigation()` to auto-run a callback function when routing to a **TicketDetailsComponent**. The callback function should dispatch a `LoadTicket` action.
+1. Delete the `TicketDictionary` interface
+2. Use `export interface TicketsState extends EntityState<Ticket> { ... }`
 
-This solution with auto-dispatch load ticket actions when routing to views... very nice! 
+##### In `tickets.reducer.ts`
 
-> Don't forget to register this `RouterEffects` with `EffectsModule.forRoot()` 
+1. Implement an entity adapter `ticketsAdapter = createEntityAdapter<Ticket>()`
+2. Implement an initialState builder function 
+```ts
+getInitialSate = () => ticketsAdapter.getInitialState( <custom initializations> );`
+```
+3. In the ticketsReducer, use `...ticketsAdapter.addAll(tickets, state)` for **LoadTicketsDone** actions
+4. In the ticketsReducer, use `...ticketsAdapter.upsertOne(ticket, state)` for **LoadTicketDone** actions 
 
-##### In `tickets.effects.ts`
+##### In `tickets.selectors.ts`
 
-1. Update `@Effect() loadAllTickets$` to use `this.d.fetch(...)` instead of `this.actions.pipe`. The `run` callback should still use the HttpClient service and dispatch `LoadTicketsDone`.
-2. Implement an `OnError` callback to dispatch `LoadTicketsError`
-3. Update `@Effect() loadTicket$` to use `this.d.fetch(...)` instead of `this.actions.pipe`. The `run` callback should still use the HttpClient service and dispatch `LoadTicketDone`.
+1. Access the @ngrx/entity selectors using:
+```typescript
+const { selectAll, selectEntities } = ticketsAdapter.getSelectors();
+```
+2. Implement a `getTicketAsEntities` selector.
+3. Update the `getAllTickets` and `getSelectedTicket` selectors to compose/use the @ngrx/entity selectors.
 
-> Notice how many of the operators (`mergeMap`, `exhaustMap`, and `catchError`) are no longer needed.
 
-##### In `ticket-list.component.ts`
+##### In `tickets-state.module.ts`
 
-1. Delete the deprecated code `this.store.dispatch(new LoadTickets());`
+1. Use the initialState builder function in the feature store registration:
+```typescript
+ StoreModule.forFeature(FEATURE_TICKETS, ticketsReducer, { initialState: getInitialState }),
+```
+
+##### In `ticket-details.component.ts`
+
+1. Use `select(ticketsQuery.getTicketAsEntities)` and lookup the ticket directly from the emitted dictionary. 
+
 
 
 <br/>
 
 ### Code Snippets
 
-###### `router.effects.ts`
+###### `tickets.interfaces.ts`
 
-![router.effects.ts](https://user-images.githubusercontent.com/210413/47937862-2e779780-deb0-11e8-9d28-14812f93a3cb.png)
+![tickets.interfaces.ts](https://user-images.githubusercontent.com/210413/47937603-44d12380-deaf-11e8-818f-dc39ec631769.png)
 
-###### `tickets.effects.ts`
+###### `tickets.reducer.ts`
 
-![tickets.effects.ts](https://user-images.githubusercontent.com/210413/47937875-3a635980-deb0-11e8-94b1-bce679c0107a.png)
+![tickets.reducer.ts](https://user-images.githubusercontent.com/210413/47937627-54506c80-deaf-11e8-90b2-4ceedb3af59f.png)
 
-###### `ticket-list.component.ts`
+###### `tickets.selectors.ts`
 
-![ticket-list.component.ts](https://user-images.githubusercontent.com/210413/47937884-42bb9480-deb0-11e8-87dd-45de0135288b.png)
+![tickets.selectors.ts](https://user-images.githubusercontent.com/210413/47937653-67fbd300-deaf-11e8-8699-75ae03a39663.png)
+
+###### `ticket-details.component.ts`
+
+![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47937663-70eca480-deaf-11e8-9328-d71953d15bb5.png)
+
 
 
 <br/>
 
 
 ----
+
+### Running the Application
+
+*  Open the **Customer Portal** application with the browser: http://localhost:4203
+*  Confirm the **Node Server** is running with browser page:  http://localhost:3000/api/tickets
+
+Run the following command(s) in individual terminals:
+
+```console
+yarn server
+```
+
+```console
+yarn customer-portal -- -o
+```
+
+> If you already have one(s) running and need to restart, you can stop the run with `ctrl+c`.
+
+
+<br/>
 
 <br/>
 
@@ -93,6 +133,7 @@ yarn customer-portal -- -o
 <br/>
 
 
+
 ## Next Lab
 
-Go to NgRx Lab #6: [Use NgRx Facade](lab-6.md)
+Go to NgRx Lab #5: [Use DataPersistence `fetch()` and `navigate()`](lab-6.md)
