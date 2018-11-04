@@ -1,4 +1,4 @@
-# NgRx Lab 7: Select Action and Loading Indicators
+# NgRx Lab 8: Select Action and Loading Indicators
 
 ### Scenario
 
