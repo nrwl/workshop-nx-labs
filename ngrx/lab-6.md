@@ -1,4 +1,4 @@
-# NgRx Lab 5: Use DataPersistence fetch() & navigate()
+# NgRx Lab 6: Use DataPersistence fetch() & navigate()
 
 
 ### Scenario
@@ -95,4 +95,4 @@ yarn customer-portal -- -o
 
 ## Next Lab
 
-Go to NgRx Lab #6: [Use NgRx Facade](lab-7.md)
+Go to NgRx Lab #7: [Use NgRx Facade](lab-7.md)
