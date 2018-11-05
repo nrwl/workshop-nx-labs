@@ -51,7 +51,7 @@ Let's implement a TicketsFacade that encapsulates all the selectors to build Sto
 ![tickets.facade.ts](https://user-images.githubusercontent.com/210413/47938099-fc1a6a00-deb0-11e8-94f7-efd294104052.png)
 
 ###### `ticket-details.component.ts`
-![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47938113-03da0e80-deb1-11e8-8094-acf9e9c39be6.png)
+![image](https://user-images.githubusercontent.com/210413/47974960-709c0700-e071-11e8-97ad-e1d95e24b251.png)
 
 ###### `ticket-list.component.ts`
 ![ticket-list.component.ts](https://user-images.githubusercontent.com/210413/47938126-0c324980-deb1-11e8-9b3c-94a78482dc73.png)
