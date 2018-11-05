@@ -104,7 +104,6 @@ yarn customer-portal -- -o
 ##### In `ticket-details.component.ts`
 
 1. Use the TicketFacade `selectedTicket$` query:  `ticket$ = this.facade.selectedTicket$`
-2. Replace the use of `facade.entities$.pipe(...)` with `this.facade.selectTicket(id);`
 
 
 <br/>
