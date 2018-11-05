@@ -78,7 +78,7 @@ const { selectAll, selectEntities } = ticketsAdapter.getSelectors();
 
 ###### `ticket-details.component.ts`
 
-![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47937663-70eca480-deaf-11e8-9328-d71953d15bb5.png)
+![image](https://user-images.githubusercontent.com/210413/48032726-62f08b00-e11e-11e8-9a5c-e28340300da7.png)
 
 
 
