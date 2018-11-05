@@ -1,4 +1,4 @@
-# NgRx Lab 8: Select, Action Decideers, and Loading Indicators
+# NgRx Lab 8: Spinners, Select, & Action Deciders
 
 ### Scenario
 
