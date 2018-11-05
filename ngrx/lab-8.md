@@ -96,14 +96,17 @@ yarn customer-portal -- -o
 
 ##### In `tickets.effects.ts`
 
+Here we do not want to relaod the ticket if it is already loaded in our state cache. So we need to check if the ticket exists in our state and decide if we are selecting-only, or selecting AND loading the ticket details.
+
 1. Make sure the `@Effect() loadTicket$` is listening for the `LoadTicket` action.
-2.Create a `@Effect() routeAndLoadTicket$` that listens on the NgRx `action$` stream for the ROUTER_LOAD_TICKET with a `run` callback that conditionally emits a `LoadTicket()` action. 
-  > Use `ticketsQuery.getTicketAsEntities(state)` to get all currently loaded tickets and check it the selected ticket has already been loaded. 
+2. Create an `ticketRegistry$` Observable to our state Ticket entities using `select(ticketsQuery.getTicketAsEntities));`
+2. Create a `@Effect() routeAndLoadTicket$` that listens on the NgRx `action$` stream for the ROUTER_LOAD_TICKET with a `run` callback that conditionally emits a `LoadTicket()` action. 
+  > Use `withLatestFrom(ticketRegistry$)` to get all currently loaded tickets and check it the selected ticket has already been loaded. 
 
 
 ##### In `ticket-details.component.ts`
 
-1. Use the TicketFacade `selectedTicket$` query:  `ticket$ = this.facade.selectedTicket$`
+1. Use the TicketFacade `selectedTicket$` query to update the `ticket$ = this.facade.selectedTicket$`
 
 
 <br/>
