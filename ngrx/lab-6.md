@@ -50,7 +50,7 @@ Then we can remove deprecated *load* action code that is no longer needed in our
 
 ### Code Snippets
 
-###### `router.effects.ts`
+###### `libs/ticket-list-view/src/lib/+state/router.effects.ts`
 
 ![router.effects.ts](https://user-images.githubusercontent.com/210413/47971894-d54c6700-e05b-11e8-944d-ff5db30b20c6.png)
 
