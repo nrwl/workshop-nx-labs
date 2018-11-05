@@ -53,11 +53,12 @@ Don't forget to register this `RouterEffects` with `EffectsModule.forRoot()`
 
 ###### `router.effects.ts`
 
-![router.effects.ts](https://user-images.githubusercontent.com/210413/47937862-2e779780-deb0-11e8-9d28-14812f93a3cb.png)
+![router.effects.ts](https://user-images.githubusercontent.com/210413/47971894-d54c6700-e05b-11e8-944d-ff5db30b20c6.png)
+
 
 ###### `tickets.effects.ts`
 
-![tickets.effects.ts](https://user-images.githubusercontent.com/210413/47937875-3a635980-deb0-11e8-94b1-bce679c0107a.png)
+![ticket.effects.ts](https://user-images.githubusercontent.com/210413/47971891-c9f93b80-e05b-11e8-85bd-004f1f0dc6c6.png)
 
 ###### `ticket-list.component.ts`
 
