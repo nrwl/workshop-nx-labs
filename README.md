@@ -29,12 +29,13 @@ For your local repository, checkout branch [`m3start`](https://github.com/nrwl/w
 For your local dev repository, checkout branch [`m5start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
 
 1. [Lab 1: Actions, Reducers, and Selectors](ngrx/lab-1.md)
-1. [Lab 2: Effects and Redux Tools](ngrx/lab-2.md)
-1. [Lab 3: Use Entity-like Pattern](ngrx/lab-3.md)
-1. [Lab 4: Use @ngrx/entity](ngrx/lab-4.md)
-1. [Lab 5: Use DataPersistence fetch() & navigate()](ngrx/lab-5.md)
-1. [Lab 6: Use NgRx Facade](ngrx/lab-6.md)
-1. [Lab 7: Select Action and Loading Indicators](ngrx/lab-7.md)
+1. [Lab 2: Composed Store Selectors](ngrx/lab-2.md)
+1. [Lab 3: Effects and Redux Tools](ngrx/lab-3.md)
+1. [Lab 4: Use Entity-like Pattern](ngrx/lab-4.md)
+1. [Lab 5: Use @ngrx/entity](ngrx/lab-5.md)
+1. [Lab 6: Use DataPersistence fetch() & navigate()](ngrx/lab-6.md)
+1. [Lab 7: Use NgRx Facade](ngrx/lab-7.md)
+1. [Lab 8: 8: Spinners, Select, & Action Deciders](ngrx/lab-8.md)
 
 ----
 
