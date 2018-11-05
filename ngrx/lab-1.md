@@ -66,7 +66,7 @@ In this lab, you will:
 
 ###### `ticket-details.component.ts`
 
-![ticket-details.component.ts](https://user-images.githubusercontent.com/210413/47936287-2ec16400-deab-11e8-96e1-975e84eea843.png)
+![image](https://user-images.githubusercontent.com/210413/48026826-bd80eb80-e10c-11e8-8d3c-b95e064190e7.png)
 
 ###### `tickets.reducer.ts`
 
