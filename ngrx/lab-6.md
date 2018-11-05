@@ -45,6 +45,10 @@ Then we can remove deprecated *load* action code that is no longer needed in our
 
 1. Delete the deprecated code `this.store.dispatch(new LoadTickets());`
 
+##### In `ticket-details.component.ts`
+
+1. Delete the deprecated code `this.store.dispatch(new LoadTicket());`
+
 
 <br/>
 
