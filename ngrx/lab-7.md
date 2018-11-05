@@ -67,7 +67,7 @@ Let's implement a TicketsFacade that encapsulates all the selectors to build Sto
 
 ### Investigate
 
-Why is the TicketDetails using the `entities$` query instead of the `allItems$`?
+In `ticket-details.component.ts`, why is the TicketDetails using the `entities$` query instead of the `allItems$`?
 
 Be prepared to discuss this? 
 
