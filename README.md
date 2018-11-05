@@ -26,7 +26,7 @@ For your local repository, checkout branch [`m3start`](https://github.com/nrwl/w
 
 ## NgRx  
 
-For your local dev repository, checkout branch [`m5start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
+For your local dev repository, checkout branch [`m4start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
 
 1. [Lab 1: Actions, Reducers, and Selectors](ngrx/lab-1.md)
 1. [Lab 2: Composed Store Selectors](ngrx/lab-2.md)
