@@ -50,6 +50,7 @@ In this lab, you will:
 
 1. Inject the `store: Store<PartialAppState>` in the constructor
 2. In `ngOnInit()`, use `ticketsQuery.getAllTickets` with `store.pipe(select())` to get a list of all available tickets and then use the router param ticket `id` to extract the ticket.  
+3. When the `service.ticketById(id)` returns the ticket, save that ticket to the NgRx state using `LoadTicketDone()`
 
 ##### In `tickets.reducer.ts`
 
@@ -66,7 +67,8 @@ In this lab, you will:
 
 ###### `ticket-details.component.ts`
 
-![image](https://user-images.githubusercontent.com/210413/48026826-bd80eb80-e10c-11e8-8d3c-b95e064190e7.png)
+![image](https://user-images.githubusercontent.com/210413/48030527-f6be5900-e116-11e8-96c8-572451b01ad9.png)
+
 
 ###### `tickets.reducer.ts`
 
