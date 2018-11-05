@@ -39,7 +39,7 @@ export interface TicketDictionary {
 1. Update the `initialState: TicketsState` to match the updated `TicketsState` interface.
 2. Update the `ticketsReducer` function 
   1. Update `case TicketActionTypes.LOAD_ALL_TICKETS_DONE` to build the entities and ids values appropriately
-    > Use `tickets.reduce(()={},{...state.entities})` to build a new **entities** TicketDictionary instance.  
+   > Use `tickets.reduce(()={},{...state.entities})` to build a new **entities** TicketDictionary instance.  
   2. Update `case TicketActionTypes.LOAD_TICKET_DONE` to simply add the ticket to the **TicketDictionary**
 
 ##### In `tickets.selectors.ts`
