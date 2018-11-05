@@ -60,7 +60,7 @@ export interface TicketDictionary {
 
 ###### `tickets.reducer.ts`
 
-![tickets.reducer.ts](https://user-images.githubusercontent.com/210413/47937238-169f1400-deae-11e8-84f0-963e54f0657b.png)
+![image](https://user-images.githubusercontent.com/210413/48031553-405c7300-e11a-11e8-9741-0e6178e2d857.png)
 
 ###### `tickets.selectors.ts`
 
