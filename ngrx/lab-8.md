@@ -94,14 +94,10 @@ yarn customer-portal -- -o
 1. In `tickets.actions.ts`, add a `SelectTicket` enum and action class to `tickets.actions.ts` 
 2. In `tickets.reducer.ts`, add a `case TicketActionTypes.SELECT_TICKET: {...}` to update the `selectedId` state value.
 
-##### In `tickets.facade.ts`
-
-1. Create a `selectedTicket$` observable using `ticketsQuery.getSelectedTicket`
-2. Replace `loadTicketById()` with `selectTicket()` and dispatch a `SelectTicket` action.
-
 ##### In `tickets.effects.ts`
 
-1. Create a `@Effect() selectTicket$` with a `run` callback that conditionally emits a `LoadTicket()` action. 
+1. Make sure the `@Effect() loadTicket$` is listening for the `LoadTicket` action.
+2.Create a `@Effect() routeAndLoadTicket$` that listens on the NgRx `action$` stream for the ROUTER_LOAD_TICKET with a `run` callback that conditionally emits a `LoadTicket()` action. 
   > Use `ticketsQuery.getTicketAsEntities(state)` to get all currently loaded tickets and check it the selected ticket has already been loaded. 
 
 
