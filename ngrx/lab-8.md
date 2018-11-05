@@ -123,7 +123,8 @@ Here we do not want to relaod the ticket if it is already loaded in our state ca
 ![tickets.facade.ts](https://user-images.githubusercontent.com/210413/47938946-a09dab80-deb3-11e8-95af-214a9d8db8b5.png)
 
 ###### `tickets.effects.ts`
-![tickets.effects.ts](https://user-images.githubusercontent.com/210413/47939902-de500380-deb6-11e8-89e3-d4089a9f48f6.png)
+![image](https://user-images.githubusercontent.com/210413/47975400-45b2b280-e073-11e8-8b80-1dc4721b9a7f.png)
+
 
 
 <br/>
