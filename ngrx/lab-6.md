@@ -34,9 +34,10 @@ Then we can remove deprecated *load* action code that is no longer needed in our
 
 ##### In `tickets.effects.ts`
 
-1. Update `@Effect() loadAllTickets$` to use `this.d.fetch(...)` instead of `this.actions.pipe`. The `run` callback should still use the HttpClient service and dispatch `LoadTicketsDone`.
-2. Implement an `OnError` callback to dispatch `LoadTicketsError`
-3. Update `@Effect() loadTicket$` to use `this.d.fetch(...)` instead of `this.actions.pipe`. The `run` callback should still use the HttpClient service and dispatch `LoadTicketDone`.
+1. Add a **Action Switcher**  new `@Effect() routeToTicket$` that listens to the NgRx `action$` stream for ROUTER_LOAD_TICKET and switches to emit a `LoadTicket` action.
+2. Update `@Effect() loadTickets$` to use `this.d.fetch(...)` instead of `this.actions.pipe`. fetch() listens for `LOAD_ALL_TICKETS` and calls `run` callback should still use the HttpClient service and dispatch `LoadTicketsDone`.
+3. Implement an `OnError` callback to dispatch `LoadTicketsError`
+4. Update `@Effect() loadTicket$` to use `this.d.fetch(...)`instead of `this.actions.pipe`. fetch() listens for `LOAD_TICKET` and uses the `run` callback should still use the HttpClient service and dispatch `LoadTicketDone`.
 
 > Notice how many of the operators (`mergeMap`, `exhaustMap`, and `catchError`) are no longer needed.
 
