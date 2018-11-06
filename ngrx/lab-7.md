@@ -28,9 +28,10 @@ Let's implement a TicketsFacade that encapsulates all the selectors to build Sto
   * `entities$`
   * `isLoading$`
   * `error$`  
-4. Implement a `loadTicketById(ticketId)` public method that dispatches a LoadTicket action.
 
-> Be sure to register the Facade as a service within the `tickets-state.module.ts`! And don't forget to add this service to the library barrel/Public API.
+Be sure to register the Facade as a service within the `tickets-state.module.ts`! And don't forget to add this service to the library barrel/Public API. 
+
+> Be prepared to talked about why it should be in the barrel.
 
 ##### In `ticket-details.component.ts`
 
