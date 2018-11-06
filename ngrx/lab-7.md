@@ -21,13 +21,14 @@ Let's implement a TicketsFacade that encapsulates all the selectors to build Sto
 
 ##### In `libs/tickets-state/src/lib/+state/tickets.facade.ts`
 
-1. Inject the Store using `private readonly store: Store<PartialAppState>`
-2. Implement the following Query Observables using `store.pipe(select(<query>))`:
+1. Use the Angular Console (or CLI) to create a new service `TicketsFacade`.
+2. Inject the Store using `private readonly store: Store<PartialAppState>`
+3. Implement the following Query Observables using `store.pipe(select(<query>))`:
   * `allItems$`
   * `entities$`
   * `isLoading$`
   * `error$`  
-3. Implement a `loadTicketById(ticketId)` public method that dispatches a LoadTicket action.
+4. Implement a `loadTicketById(ticketId)` public method that dispatches a LoadTicket action.
 
 > Be sure to register the Facade as a service within the `tickets-state.module.ts`! And don't forget to add this service to the library barrel/Public API.
 
