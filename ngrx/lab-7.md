@@ -25,6 +25,7 @@ Let's implement a TicketsFacade that encapsulates all the selectors to build Sto
 2. Inject the Store using `private readonly store: Store<PartialAppState>`
 3. Implement the following Query Observables using `store.pipe(select(<query>))`:
   * `allItems$`
+  * `openItems$`: this observable will use the same filter that was formerly in the TicketList component.
   * `entities$`
   * `isLoading$`
   * `error$`  
@@ -44,6 +45,7 @@ Be sure to register the Facade as a service within the `tickets-state.module.ts`
 1. Replace the deprecated injection of Store within an injected Facade instance using `private facade: TicketsFacade`
 2. Replace all uses of `store.pipe(select(<query>)` with `facade.allItems$.pipe(...)`
 3. Remove the dispatching of the `LoadTicket` action
+4. Remove the deprecated filter function.
 
 <br/>
 
@@ -51,13 +53,13 @@ Be sure to register the Facade as a service within the `tickets-state.module.ts`
 
 ###### `tickets.facade.ts`
 
-![image](https://user-images.githubusercontent.com/210413/48034840-8b7c8300-e126-11e8-882d-b8b3406adc18.png)
+![image](https://user-images.githubusercontent.com/210413/48090760-aa2d5900-e1bc-11e8-94c8-47fea4706b63.png)
 
 ###### `ticket-details.component.ts`
 ![image](https://user-images.githubusercontent.com/210413/47974960-709c0700-e071-11e8-97ad-e1d95e24b251.png)
 
 ###### `ticket-list.component.ts`
-![ticket-list.component.ts](https://user-images.githubusercontent.com/210413/47938126-0c324980-deb1-11e8-9b3c-94a78482dc73.png)
+![image](https://user-images.githubusercontent.com/210413/48090776-b0233a00-e1bc-11e8-99ff-012eff0db287.png)
 
 ###### `tickets-state.module.ts`
 ![tickets-state.module.ts](https://user-images.githubusercontent.com/210413/47938212-574c5c80-deb1-11e8-9306-1159e67492ba.png)
