@@ -50,7 +50,8 @@ Be sure to register the Facade as a service within the `tickets-state.module.ts`
 ### Code Snippets
 
 ###### `tickets.facade.ts`
-![tickets.facade.ts](https://user-images.githubusercontent.com/210413/47938099-fc1a6a00-deb0-11e8-94f7-efd294104052.png)
+![image](https://user-images.githubusercontent.com/210413/48034810-6f78e180-e126-11e8-89bb-18e4b3bbe94a.png)
+
 
 ###### `ticket-details.component.ts`
 ![image](https://user-images.githubusercontent.com/210413/47974960-709c0700-e071-11e8-97ad-e1d95e24b251.png)
