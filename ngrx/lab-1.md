@@ -19,7 +19,7 @@ to use NgRx features and the beneficial impacts of NgRx on view components.
 We already did some NgRx setup for you...
 
   * The Customer Portal application already has its `apps/customer-portal/src/app/app.module.ts` configured with NgRx
-  * A **TicketsState** feature library `libs/tickets-state` with NgRx has also been created with initial actions, reducer, and selectors.
+  * A **TicketsState** feature library `libs/tickets-state` with NgRx has also been created with initial actions, reducer, and selectors; but this feature has **not yet** been registered with the NgRx store.
 
 >  Take a moment to explore those files to quickly familiarize yourself with the NgRx artifacts and setup.
 
