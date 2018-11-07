@@ -38,6 +38,10 @@ In this lab, you will:
 
 ----
     
+##### In `tickets-state.module.ts` 
+
+1. Use `StoreModule.forFeature()` to register the *Tickets* feature with the `ticketsReducer` and **FEATURE_TICKETS**.
+
 ##### In `ticket-list.component.ts`
 
 1. Inject the `store: Store<PartialAppState>` in the constructor
@@ -60,6 +64,11 @@ In this lab, you will:
 
 
 ### Code Snippets
+
+###### `tickets-state.module.ts`
+
+![image](https://user-images.githubusercontent.com/210413/48104301-c0044380-e1e7-11e8-8bdc-148e6ce3ac74.png)
+
 
 ###### `ticket-list.component.ts`
 
