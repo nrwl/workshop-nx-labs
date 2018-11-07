@@ -42,6 +42,14 @@ In this lab, you will:
 
 1. Use `StoreModule.forFeature()` to register the *Tickets* feature with the `ticketsReducer` and **FEATURE_TICKETS**.
 
+##### In `ticket-details.component.ts`
+
+1. Inject the `store: Store<PartialAppState>` in the constructor
+2. In `ngOnInit()`, use `ticketsQuery.getAllTickets` with `store.pipe(select())` to get a list of all available tickets and then use the router param ticket `id` to extract the ticket.  
+3. When the `service.ticketById(id)` returns the ticket, save that ticket to the NgRx state using `LoadTicketDone()`
+
+> The `tickets.reducer.ts` already handles the `LoadTicketDone` action... so no more work is needed here.
+
 ##### In `ticket-list.component.ts`
 
 1. Inject the `store: Store<PartialAppState>` in the constructor
@@ -50,12 +58,6 @@ In this lab, you will:
 
 > Do not use imports that by-pass the library public api. E.g. `import { LoadTicketsDone } from '@tuskdesk-suite/tickets-state/src/...'`
   
-##### In `ticket-details.component.ts`
-
-1. Inject the `store: Store<PartialAppState>` in the constructor
-2. In `ngOnInit()`, use `ticketsQuery.getAllTickets` with `store.pipe(select())` to get a list of all available tickets and then use the router param ticket `id` to extract the ticket.  
-3. When the `service.ticketById(id)` returns the ticket, save that ticket to the NgRx state using `LoadTicketDone()`
-
 ##### In `tickets.reducer.ts`
 
 1. Add `case TicketActionTypes.LOAD_ALL_TICKETS_DONE:` to process the **LoadTicketsDone** action and update the state.
