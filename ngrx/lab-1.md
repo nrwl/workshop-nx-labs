@@ -78,7 +78,8 @@ In this lab, you will:
 
 ###### `ticket-details.component.ts`
 
-![image](https://user-images.githubusercontent.com/210413/48030527-f6be5900-e116-11e8-96c8-572451b01ad9.png)
+![image](https://user-images.githubusercontent.com/210413/48229090-f1058500-e35b-11e8-91b6-3da0e2e2a940.png)
+
 
 
 ###### `tickets.reducer.ts`
