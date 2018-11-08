@@ -4,7 +4,8 @@
 
 Now that performance and race-conditions have been addressed, let's explore creating observables and stopping the **observable execution**. We will also explore how an observable can be shared and the impacts of the sharing.
 
-![starttimer](https://user-images.githubusercontent.com/210413/35164280-5fc82abc-fd0f-11e7-97f8-e71ef3618c6c.jpg)
+![image](https://user-images.githubusercontent.com/210413/48207479-93564600-e325-11e8-9663-d35903ff83b7.png)
+
 
 We will create a custom Observable that emits a ticker value.<br/>
 And then we will use that observable [in the `TicketTimerService`] as an Observable API.
