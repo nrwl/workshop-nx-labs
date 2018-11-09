@@ -50,7 +50,10 @@ In this lab, you will:
 ###### `tickets-list.component.ts`
 
 
-[tickets-list.component.ts](https://user-images.githubusercontent.com/210413/47936662-5e24a080-deac-11e8-9aac-94536b13b02f.png)
+![tickets-list.component.ts](https://user-images.githubusercontent.com/210413/47936662-5e24a080-deac-11e8-9aac-94536b13b02f.png)
+
+![image](https://user-images.githubusercontent.com/210413/48272613-d8e14480-e3f3-11e8-9bbb-82d70bab19a6.png)
+
 </a>
 
 ###### `ticket-details.component.ts`
