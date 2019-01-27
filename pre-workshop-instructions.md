@@ -21,10 +21,10 @@ git clone https://github.com/nrwl/workshop-nx-starter.git
 ```
 
 #### Installing dependencies
-Once you have that cloned you will want to change to that directory and use NPM (or Yarn) to install the project dependencies:
+Once you have that cloned you will want to change to that directory and use Yarn (or NPM) to install the project dependencies:
 ```console
 cd ./workshop-nx-starter
-npm install
+yarn install
 ```
 
 #### Confirming the set up
