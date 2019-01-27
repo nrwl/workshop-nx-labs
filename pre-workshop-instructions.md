@@ -12,18 +12,18 @@ The following are required to be able to work with the workshop code on your loc
 ## The Project Code
 We will be working with an existing Nx Workspace project repo during the workshop that can be found at:
 
-https://github.com/nrwl/workshop-project-nx-enterprise
+https://github.com/nrwl/workshop-nx-starter
 
 #### Pulling down the code
 You can clone the repo onto your local machine by using the following **git** command at the terminal:
 ```console
-git clone https://github.com/nrwl/workshop-project-nx-enterprise.git
+git clone https://github.com/nrwl/workshop-nx-starter.git
 ```
 
 #### Installing dependencies
 Once you have that cloned you will want to change to that directory and use NPM (or Yarn) to install the project dependencies:
 ```console
-cd ./workshop-project-nx-enterprise
+cd ./workshop-nx-starter
 npm install
 ```
 
