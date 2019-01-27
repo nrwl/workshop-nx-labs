@@ -7,7 +7,7 @@ Here are the labs synced with the git repos:  [workshop-nx-finisher](https://git
 
 ## Workspaces
 
-For your local repository, checkout branch [`m2start`](https://github.com/nrwl/workshop-nx-starter/tree/m2start):
+For your local repository, checkout branch [`workspaces_start`](https://github.com/nrwl/workshop-nx-starter/tree/m2start):
 
 1. [Lab 1: Create an App and a Lib](organizing-code-in-a-workspace/lab-1.md)
 1. [Lab 2: Create a Lazy Loaded UI Lib](organizing-code-in-a-workspace/lab-2.md)
@@ -16,7 +16,7 @@ For your local repository, checkout branch [`m2start`](https://github.com/nrwl/w
 
 ## RxJS
 
-For your local repository, checkout branch [`m3start`](https://github.com/nrwl/workshop-nx-starter/tree/m3start):
+For your local repository, checkout branch [`rxjs_start`](https://github.com/nrwl/workshop-nx-starter/tree/m3start):
 
 1. [Lab 1: Ticket Search DropDown](rxjs/lab-1.md)
 1. [Lab 2: Throttle Search Requests](rxjs/lab-2.md)
@@ -26,7 +26,7 @@ For your local repository, checkout branch [`m3start`](https://github.com/nrwl/w
 
 ## NgRx  
 
-For your local dev repository, checkout branch [`m4start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
+For your local dev repository, checkout branch [`ngrx_start`](https://github.com/nrwl/workshop-nx-starter/tree/m5start):
 
 1. [Lab 1: Actions, Reducers, and Selectors](ngrx/lab-1.md)
 1. [Lab 2: Composed Store Selectors](ngrx/lab-2.md)
