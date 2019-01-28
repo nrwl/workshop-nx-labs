@@ -193,7 +193,7 @@ export interface TicketsState extends EntityState<Ticket> {
 }
 ```
 
-Then update the Reducer, Effects, Actions, and Facade to manage and track changes to search criteria.
+Then update the Reducer, Effects, Actions, and Facade to manage and track changes to search criteria. Whenever the user routes to *Search Tickets*, the last used search criteria and search results should be shown.
 
 ## Next Lab
 
