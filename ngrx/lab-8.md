@@ -169,6 +169,32 @@ yarn customer-portal -- -o
 
 <br/>
 
+## Challenge Lab
+
+Currently the Search Tickets view does not remember the search criteria.
+
+Add TicketSearch state to to the **tickets-state** library:
+
+```ts
+export interface SearchCriteria {
+   searchTerm ?: string,
+   assignedToUser ?: string;
+};
+```
+
+Then update TicketState: 
+
+```ts
+export interface TicketsState extends EntityState<Ticket> {
+  searchCriteria: SearchCriteria;
+  selectedId: number;
+  loading: boolean;
+  error: any;
+}
+```
+
+Then update the Reducer, Effects, Actions, and Facade to manage and track changes to search criteria.
+
 ## Next Lab
 
 You have finished the **Nx Workshop: NgRx Course**. Congratulations. 
