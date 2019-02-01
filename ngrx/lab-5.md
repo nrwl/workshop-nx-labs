@@ -31,7 +31,7 @@ Then we will introduce selector functions as they are needed to get to the entit
 1. Implement an entity adapter `ticketsAdapter = createEntityAdapter<Ticket>()`
 2. Implement an initialState builder function 
 ```ts
-getInitialSate = () => ticketsAdapter.getInitialState( <custom initializations> );`
+getInitialState = () => ticketsAdapter.getInitialState( <custom initializations> );`
 ```
 3. In the ticketsReducer, use `...ticketsAdapter.addAll(tickets, state)` for **LoadTicketsDone** actions
 4. In the ticketsReducer, use `...ticketsAdapter.upsertOne(ticket, state)` for **LoadTicketDone** actions 
