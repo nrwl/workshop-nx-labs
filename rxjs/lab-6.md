@@ -1,4 +1,4 @@
-# RxJS Lab 6 (bonus): Combining Observable Streams
+# RxJS Lab 6: Combining Observable Streams
 
 
 ## Scenario
@@ -11,6 +11,12 @@ Currently the application will auto search for users matching search criteria in
 Let's remove the 'Submit' button and auto-search for matching tickets based on values in the 'Find Tickets' and 'Assigned To:' fields.
 
 We will need to use the `combineLatest` creation operator to gather values from two (2) observable streams;
+
+----
+
+This is a Bonus lab based on time and developer interest
+
+----
 
 ## Instructions
 
