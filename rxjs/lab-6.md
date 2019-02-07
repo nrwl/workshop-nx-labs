@@ -14,7 +14,7 @@ We will need to use the `combineLatest` creation operator to gather values from 
 
 ----
 
-This is a Bonus lab based on time and developer interest
+This is a optional **Bonus Lab** based on time and developer interest
 
 ----
 
