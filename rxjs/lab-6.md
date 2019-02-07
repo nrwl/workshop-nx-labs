@@ -29,19 +29,6 @@ We will need to use the `combineLatest` creation operator to gather values from 
   this.searchResults$ = combineLatest(searchBy$, users$).pipe(... );
 ```
 
-##### In `ticket-details.component.html`, 
-
-Use class data binding to update CSS header stylings when the current ticket is "marked to work":
-
-##### In `ticket-list.component.ts` 
-
-Watch for the `markedToWork$` list and update a counter of current tickets 'marked to work'.
-
-##### In `ticket-list.component.html ` 
-
-Now, let's update template to render the current count of tickets marked as 'to-work'.
-
-
 <br/>
 
 ---
