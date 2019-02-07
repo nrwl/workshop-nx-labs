@@ -41,8 +41,11 @@ When the AssignedUsers search criteria field is empty, how can you auto-clear th
 
 ###### `search-tickets.component.ts`
 
-![image](https://user-images.githubusercontent.com/210413/47941339-c29b2c00-debb-11e8-96a3-bdf0b2e0bfad.png)
+![image](https://user-images.githubusercontent.com/210413/52433501-d665b800-2ad2-11e9-9388-01a57271615a.png)
 
+###### `search-tickets.component.html`
+
+![image](https://user-images.githubusercontent.com/210413/52433500-d5cd2180-2ad2-11e9-9347-9e057ee60261.png)
 
 <br/>
 
