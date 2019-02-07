@@ -22,6 +22,8 @@ For your local repository, checkout branch [`rxjs-start`](https://github.com/nrw
 1. [Lab 3: Use SwitchMap](rxjs/lab-3.md)
 1. [Lab 4: Create a custom Observable](rxjs/lab-4.md)
 1. [Lab 5: Use BehaviorSubject](rxjs/lab-5.md)
+1. [Lab 6: Combine Multiple Observable Streams](rxjs/lab-6.md)
+1. [Lab 7: RxJS + Facades](rxjs/lab-7.md)
 
 ## NgRx  
 
