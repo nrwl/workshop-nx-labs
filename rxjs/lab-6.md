@@ -1,4 +1,4 @@
-# RxJS Lab 6: Combining Observable Streams
+# RxJS Lab 6 (bonus): Combining Observable Streams
 
 
 ## Scenario
