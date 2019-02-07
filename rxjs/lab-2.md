@@ -31,12 +31,21 @@ Let's fix these **performance issues**! 😱
 5. Use `pipe` with the **`map`** operator on the `UserService.users` observable to transform each user object to just the `fullName` property; this is known as *extracting a property value*. Update the `users` class field to be an array of strings and update the template `ngFor` logic for the suggest on type.
   >  Hint: you can use `Array.map()` within the observable `map` operator.
 
+##### In `search-tickets.component.html`
+
+1. Change the name of the templateRef variable from `#users` to `#dropDown`.
+2. Update the variable name `usersFound` to be `users`.
+  > Notice that now we have `users: string[]` instead of `usersFound: User[]`.
+  
 ### Code Snippets
 
 ###### `search-tickets.component.ts`
 
-![rxjs2 1](https://user-images.githubusercontent.com/210413/47622233-a456ba00-dad0-11e8-84cf-96899908704f.jpg)
+![rxjs2 1](https://user-images.githubusercontent.com/210413/52433219-327c0c80-2ad2-11e9-953d-784402e6f221.png)
 
+###### `search-tickets.component.html`
+
+![rxjs2 2](https://user-images.githubusercontent.com/210413/52433221-327c0c80-2ad2-11e9-89cc-389eac3f6897.png)
 
 <br/>
 
