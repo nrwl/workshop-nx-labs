@@ -4,6 +4,12 @@
 
 In this last lab, we will use the concepts of Facades to simplify our view layer and enable super-easy, non-UI component testing.
 
+----
+
+This is a optional **Bonus Lab** based on time and developer interest
+
+----
+
 
 ## Instructions
 
