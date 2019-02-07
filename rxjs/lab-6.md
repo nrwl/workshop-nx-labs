@@ -52,4 +52,4 @@ The important lesson here is the joining of two input streams to auto-call `tick
 
 ### Next Lab
 
-Go to RxJS Lab #7: [RxJS + Facades](/rxjs/lab-7.md)
+Go to **RxJS Lab #7: [RxJS + Facades](/rxjs/lab-7.md)**
