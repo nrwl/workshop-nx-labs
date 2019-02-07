@@ -44,18 +44,11 @@ You should NOT use the `async` pipe. For now, you will manually subscribe to `as
 
 ###### `search-tickets.component.ts`
 
-![rxjs1 2](https://user-images.githubusercontent.com/210413/47622136-660ccb00-dacf-11e8-8e62-2cbc910fea9f.jpg)
+![rxjs1 2](https://user-images.githubusercontent.com/210413/52433076-c6010d80-2ad1-11e9-98e2-86eb91ef09e0.png)
 
 ###### `search-tickets.component.html`
 
-![rxjs1 1](https://user-images.githubusercontent.com/210413/47622122-2e9e1e80-dacf-11e8-8f0a-9616c55943f8.jpg)
-
-<br/>
-
-### Bonus:
-
-Replace your custom drop down with [Material **Select** component](https://material.angular.io/components/select/examples).
-
+![rxjs1 1](https://user-images.githubusercontent.com/210413/52433075-c6010d80-2ad1-11e9-9045-a6879a1e2976.png)
 
 <br/>
 
