@@ -88,4 +88,4 @@ Add a way to remove a ticket from the 'marked to work' status list. This will al
 
 ### Next Lab
 
-Go to NgRx Lab #1: [Actions, Reducers, and Selectors](/ngrx/lab-1.md)
+Go to RxJS Lab #6: [Combining Observables](/rxjs/lab-6.md)
